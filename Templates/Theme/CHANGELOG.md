@@ -1,5 +1,12 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.1.0 - 2026-09-28
+
+- Compact Golden Sample header/navigation, three equal filters and 96 px value-only KPIs; table gains 16 px height without restyling.
+- Defines optional comparison/status KPI variant and five-slot native navigation states.
+- Removes internal development text from the canvas and documents the visible date/customer model issues without report workarounds.
+- Canonical theme stays at 1.0.0; visual bindings, model and module reports are unchanged. Revised rendering remains pending.
+
 ## 1.0.0 - 2026-09-28
 
 ### Added

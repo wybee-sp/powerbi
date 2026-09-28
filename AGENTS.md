@@ -25,6 +25,8 @@
 - Keep staging queries unloaded and technical fields hidden. Expose curated business fields; import only required attributes, not entire ERP configuration tables.
 - Define table grain and validate key uniqueness across company/branch scope. Document inactive relationships and filtering exceptions.
 - Use an explicit shared Date dimension and documented date roles. Do not generate automatic date-hierarchy dependencies.
+- `Date` is the only canonical calendar. Follow `docs/MODEL.md`: daily unique `Date[Date]`, explicit sorted calendar fields, ISO weeks, and range coverage extended when new fact-date fields are added. Do not create InvoiceDate, DueDate, PaymentDate or report-specific calendar tables at this stage.
+- Keep Auto Date/Time disabled. Use `Date[Year-Month]` for monthly trends and `Date[Date]` for shared date slicers. The default active role is invoice-header date; alternate roles stay inactive unless a separately explained shared-model measure deliberately changes date propagation. Do not introduce ambiguous active paths.
 - Identifiers/status codes must not sum. Unit prices, rates and percentages require explicit aggregation rules.
 - Define parsing locale, precision, currency, cancellations and credit notes. Do not silently reinterpret ambiguous values or treat missing data as zero.
 - Styling does not authorize calculation, relationship or source-transformation changes. Make these separately scoped and validated changes.

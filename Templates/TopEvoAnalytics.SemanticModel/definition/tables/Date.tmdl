@@ -1,0 +1,158 @@
+/// Canonical daily calendar. Range and ISO-week conventions are documented in docs/MODEL.md.
+table 'Date'
+	dataCategory: Time
+	lineageTag: 5109673b-eedb-4f9c-b343-562eb18222a7
+
+	column 'Date'
+		dataType: dateTime
+		isKey
+		formatString: yyyy-MM-dd
+		lineageTag: 1fb43bf1-c75d-4a13-9bc9-696ee88d1c50
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: ee9903d9-79f6-420c-af52-c7c1bf5946aa
+		summarizeBy: none
+		sourceColumn: [Year]
+
+	column Quarter
+		dataType: string
+		lineageTag: dd5f437f-b586-4df5-abbe-c46f663656a3
+		summarizeBy: none
+		sourceColumn: [Quarter]
+		sortByColumn: 'Quarter Number'
+
+	column 'Quarter Number'
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 6ad98785-b831-4084-ab14-a0e2062c1da3
+		summarizeBy: none
+		sourceColumn: [Quarter Number]
+
+	column Month
+		dataType: string
+		lineageTag: 2e945ced-1b01-49d4-9b03-b9bb7f8191c6
+		summarizeBy: none
+		sourceColumn: [Month]
+		sortByColumn: 'Month Number'
+
+	column 'Month Number'
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: dd30f7f9-bfab-4bfe-9857-b678fb11cd8d
+		summarizeBy: none
+		sourceColumn: [Month Number]
+
+	column 'Year-Month'
+		dataType: string
+		lineageTag: 903ccedc-6829-488e-94c6-0a152af94a73
+		summarizeBy: none
+		sourceColumn: [Year-Month]
+		sortByColumn: 'Year-Month Sort'
+
+	column 'Year-Month Sort'
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 790d7bb0-a16a-4f55-83e6-d9bc599d5120
+		summarizeBy: none
+		sourceColumn: [Year-Month Sort]
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ae131f9-4f77-4167-9340-bfb1bceb9bd0
+		summarizeBy: none
+		sourceColumn: [Day]
+
+	column 'Day of Week'
+		dataType: string
+		lineageTag: ee2ff115-f0aa-47ed-945d-a16e4732fd82
+		summarizeBy: none
+		sourceColumn: [Day of Week]
+		sortByColumn: 'Day of Week Number'
+
+	column 'Day of Week Number'
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 1fd6e8b5-a3d7-4add-9663-a8f3b9d600e1
+		summarizeBy: none
+		sourceColumn: [Day of Week Number]
+
+	column Week
+		dataType: int64
+		formatString: 0
+		lineageTag: a60c616a-d36f-4027-89aa-e239c7029fad
+		summarizeBy: none
+		sourceColumn: [Week]
+
+	column 'ISO Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7af6fc57-1ce3-4a41-b69c-95f824279231
+		summarizeBy: none
+		sourceColumn: [ISO Year]
+
+	column 'Year-Week'
+		dataType: string
+		lineageTag: cdf8f1ea-e8d8-4d9f-87fc-44bf55ae51da
+		summarizeBy: none
+		sourceColumn: [Year-Week]
+		sortByColumn: 'Year-Week Sort'
+
+	column 'Year-Week Sort'
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: c55900cd-b033-4aa8-b8f1-725f974aa6c7
+		summarizeBy: none
+		sourceColumn: [Year-Week Sort]
+
+	partition 'Date' = calculated
+		mode: import
+		source =
+				VAR SourceBounds =
+				    UNION (
+				        ROW ( "MinDate", MIN ( a42001[OrderDate] ), "MaxDate", MAX ( a42001[OrderDate] ) ),
+				        ROW ( "MinDate", MIN ( a42001[ServiceDate] ), "MaxDate", MAX ( a42001[ServiceDate] ) ),
+				        ROW ( "MinDate", MIN ( a42001[InvoiceDate] ), "MaxDate", MAX ( a42001[InvoiceDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_invoices[InvoiceDate] ), "MaxDate", MAX ( a8101op_invoices[InvoiceDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_invoices[DueDate] ), "MaxDate", MAX ( a8101op_invoices[DueDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_invoices[EntryDate] ), "MaxDate", MAX ( a8101op_invoices[EntryDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_invoices[ValueDate] ), "MaxDate", MAX ( a8101op_invoices[ValueDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_payments[InvoiceDate] ), "MaxDate", MAX ( a8101op_payments[InvoiceDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_payments[DueDate] ), "MaxDate", MAX ( a8101op_payments[DueDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_payments[EntryDate] ), "MaxDate", MAX ( a8101op_payments[EntryDate] ) ),
+				        ROW ( "MinDate", MIN ( a8101op_payments[ValueDate] ), "MaxDate", MAX ( a8101op_payments[ValueDate] ) )
+				    )
+				VAR FirstDataDate = MINX ( SourceBounds, [MinDate] )
+				VAR LastDataDate = MAXX ( SourceBounds, [MaxDate] )
+				VAR RefreshDate = TODAY ()
+				VAR FirstYear = YEAR ( MIN ( COALESCE ( FirstDataDate, RefreshDate ), RefreshDate ) )
+				VAR LastYear = MIN ( 9999, YEAR ( MAX ( COALESCE ( LastDataDate, RefreshDate ), RefreshDate ) ) + 1 )
+				RETURN
+				    ADDCOLUMNS (
+				        CALENDAR ( DATE ( FirstYear, 1, 1 ), DATE ( LastYear, 12, 31 ) ),
+				        "Year", YEAR ( [Date] ),
+				        "Quarter", "Q" & FORMAT ( QUARTER ( [Date] ), "0", "en-US" ),
+				        "Quarter Number", QUARTER ( [Date] ),
+				        "Month", FORMAT ( [Date], "MMMM", "en-US" ),
+				        "Month Number", MONTH ( [Date] ),
+				        "Year-Month", FORMAT ( [Date], "yyyy-MM", "en-US" ),
+				        "Year-Month Sort", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+				        "Day", DAY ( [Date] ),
+				        "Day of Week", FORMAT ( [Date], "dddd", "en-US" ),
+				        "Day of Week Number", WEEKDAY ( [Date], 2 ),
+				        "Week", WEEKNUM ( [Date], 21 ),
+				        "ISO Year", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ),
+				        "Year-Week", FORMAT ( YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ), "0000", "en-US" ) & "-W" & FORMAT ( WEEKNUM ( [Date], 21 ), "00", "en-US" ),
+				        "Year-Week Sort", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ) * 100 + WEEKNUM ( [Date], 21 )
+				    )

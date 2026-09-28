@@ -6,7 +6,7 @@
     "y": 24,
     "z": 0,
     "width": 608,
-    "height": 40,
+    "height": 32,
     "tabOrder": 0
   },
   "visual": {
@@ -92,7 +92,7 @@
                     "value": "TopEvo | Receivables overview",
                     "textStyle": {
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "22pt",
+                      "fontSize": "20pt",
                       "color": "#182230"
                     }
                   }

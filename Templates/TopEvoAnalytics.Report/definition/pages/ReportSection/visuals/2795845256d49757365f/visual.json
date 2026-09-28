@@ -3,11 +3,11 @@
   "name": "2795845256d49757365f",
   "position": {
     "x": 24,
-    "y": 272,
+    "y": 256,
     "z": 10000,
     "width": 816,
     "height": 224,
-    "tabOrder": 10000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineChart",
@@ -25,7 +25,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Invoices by invoice date'"
+                  "Value": "'Invoices by month'"
                 }
               }
             }
@@ -38,7 +38,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Invoices by invoice date'"
+                  "Value": "'Invoice activity by calendar year and month, sorted chronologically.'"
                 }
               }
             }
@@ -56,16 +56,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "a42001"
+                      "Entity": "Date"
                     }
                   },
-                  "Property": "InvoiceDate"
+                  "Property": "Year-Month"
                 }
               },
-              "queryRef": "a42001.InvoiceDate",
-              "nativeQueryRef": "Invoice date",
-              "active": true,
-              "displayName": "Invoice date"
+              "queryRef": "Date.Year-Month",
+              "nativeQueryRef": "Year-Month",
+              "displayName": "Year-Month",
+              "active": true
             }
           ]
         },
@@ -96,10 +96,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "a42001"
+                    "Entity": "Date"
                   }
                 },
-                "Property": "InvoiceDate"
+                "Property": "Year-Month"
               }
             },
             "direction": "Ascending"
@@ -127,7 +127,7 @@
             "axisType": {
               "expr": {
                 "Literal": {
-                  "Value": "'Continuous'"
+                  "Value": "'Categorical'"
                 }
               }
             }

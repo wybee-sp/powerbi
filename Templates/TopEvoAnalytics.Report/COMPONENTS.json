@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "status": "Draft - Desktop and embedded verification pending",
+  "version": "1.1.0",
+  "status": "Draft - refined after user-reported Desktop rendering; revised rendering pending",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
   "page": "ReportSection",
@@ -17,23 +17,8 @@
         "y": 24,
         "z": 0,
         "width": 608,
-        "height": 40,
+        "height": 32,
         "tabOrder": 0
-      },
-      "bindings": {}
-    },
-    {
-      "role": "header.context",
-      "id": "03a1f28996d7f9d80b05",
-      "type": "textbox",
-      "status": "Draft",
-      "position": {
-        "x": 856,
-        "y": 24,
-        "z": 1000,
-        "width": 400,
-        "height": 40,
-        "tabOrder": 1000
       },
       "bindings": {}
     },
@@ -43,12 +28,12 @@
       "type": "pageNavigator",
       "status": "Draft",
       "position": {
-        "x": 24,
-        "y": 80,
+        "x": 648,
+        "y": 24,
         "z": 2000,
-        "width": 296,
-        "height": 56,
-        "tabOrder": 2000
+        "width": 608,
+        "height": 32,
+        "tabOrder": 1000
       },
       "bindings": {}
     },
@@ -58,12 +43,12 @@
       "type": "slicer",
       "status": "Draft",
       "position": {
-        "x": 336,
-        "y": 80,
+        "x": 24,
+        "y": 72,
         "z": 3000,
-        "width": 296,
+        "width": 400,
         "height": 56,
-        "tabOrder": 3000
+        "tabOrder": 2000
       },
       "bindings": {
         "Values": {
@@ -73,13 +58,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "a42001"
+                      "Entity": "Date"
                     }
                   },
-                  "Property": "InvoiceDate"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "a42001.InvoiceDate",
+              "queryRef": "Date.Date",
               "nativeQueryRef": "Invoice date",
               "active": true,
               "displayName": "Invoice date"
@@ -94,12 +79,12 @@
       "type": "slicer",
       "status": "Draft",
       "position": {
-        "x": 648,
-        "y": 80,
+        "x": 440,
+        "y": 72,
         "z": 4000,
-        "width": 296,
+        "width": 400,
         "height": 56,
-        "tabOrder": 4000
+        "tabOrder": 3000
       },
       "bindings": {
         "Values": {
@@ -130,12 +115,12 @@
       "type": "slicer",
       "status": "Draft",
       "position": {
-        "x": 960,
-        "y": 80,
+        "x": 856,
+        "y": 72,
         "z": 5000,
-        "width": 296,
+        "width": 400,
         "height": 56,
-        "tabOrder": 5000
+        "tabOrder": 4000
       },
       "bindings": {
         "Values": {
@@ -167,11 +152,11 @@
       "status": "Draft",
       "position": {
         "x": 24,
-        "y": 152,
+        "y": 144,
         "z": 6000,
         "width": 296,
-        "height": 104,
-        "tabOrder": 6000
+        "height": 96,
+        "tabOrder": 5000
       },
       "bindings": {
         "Data": {
@@ -193,6 +178,14 @@
             }
           ]
         }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
       }
     },
     {
@@ -202,11 +195,11 @@
       "status": "Draft",
       "position": {
         "x": 336,
-        "y": 152,
+        "y": 144,
         "z": 7000,
         "width": 296,
-        "height": 104,
-        "tabOrder": 7000
+        "height": 96,
+        "tabOrder": 6000
       },
       "bindings": {
         "Data": {
@@ -228,6 +221,14 @@
             }
           ]
         }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
       }
     },
     {
@@ -237,11 +238,11 @@
       "status": "Draft",
       "position": {
         "x": 648,
-        "y": 152,
+        "y": 144,
         "z": 8000,
         "width": 296,
-        "height": 104,
-        "tabOrder": 8000
+        "height": 96,
+        "tabOrder": 7000
       },
       "bindings": {
         "Data": {
@@ -263,6 +264,14 @@
             }
           ]
         }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
       }
     },
     {
@@ -272,11 +281,11 @@
       "status": "Draft",
       "position": {
         "x": 960,
-        "y": 152,
+        "y": 144,
         "z": 9000,
         "width": 296,
-        "height": 104,
-        "tabOrder": 9000
+        "height": 96,
+        "tabOrder": 8000
       },
       "bindings": {
         "Data": {
@@ -298,21 +307,29 @@
             }
           ]
         }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
       }
     },
     {
       "role": "chart.trend",
       "id": "2795845256d49757365f",
       "type": "lineChart",
-      "title": "Invoices by invoice date",
+      "title": "Invoices by month",
       "status": "Draft",
       "position": {
         "x": 24,
-        "y": 272,
+        "y": 256,
         "z": 10000,
         "width": 816,
         "height": 224,
-        "tabOrder": 10000
+        "tabOrder": 9000
       },
       "bindings": {
         "Category": {
@@ -322,16 +339,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "a42001"
+                      "Entity": "Date"
                     }
                   },
-                  "Property": "InvoiceDate"
+                  "Property": "Year-Month"
                 }
               },
-              "queryRef": "a42001.InvoiceDate",
-              "nativeQueryRef": "Invoice date",
-              "active": true,
-              "displayName": "Invoice date"
+              "queryRef": "Date.Year-Month",
+              "nativeQueryRef": "Year-Month",
+              "displayName": "Year-Month",
+              "active": true
             }
           ]
         },
@@ -364,11 +381,11 @@
       "status": "Draft",
       "position": {
         "x": 856,
-        "y": 272,
+        "y": 256,
         "z": 11000,
         "width": 400,
         "height": 224,
-        "tabOrder": 11000
+        "tabOrder": 10000
       },
       "bindings": {
         "Category": {
@@ -420,11 +437,11 @@
       "status": "Draft",
       "position": {
         "x": 24,
-        "y": 512,
+        "y": 496,
         "z": 12000,
         "width": 1232,
-        "height": 184,
-        "tabOrder": 12000
+        "height": 200,
+        "tabOrder": 11000
       },
       "bindings": {
         "Values": {
