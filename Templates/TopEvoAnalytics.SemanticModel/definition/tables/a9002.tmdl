@@ -1,0 +1,91 @@
+table a9002
+	lineageTag: bfd9b9f4-d3dc-4c9d-a51b-f85eee495718
+
+	column %Keys
+		dataType: string
+		lineageTag: 5681fde7-0729-4a5e-ab8a-b498f7459232
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: int64
+		formatString: 0
+		lineageTag: ff10838d-8637-45d8-9387-b553980a33ec
+		summarizeBy: none
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Betrieb
+		dataType: int64
+		formatString: 0
+		lineageTag: 4aed467c-5258-443a-91e7-27efeabcb3a8
+		summarizeBy: none
+		sourceColumn: Betrieb
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Suchbegriff [101]'
+		dataType: string
+		lineageTag: 29cf31af-3b35-436c-8a38-62f55d755508
+		summarizeBy: none
+		sourceColumn: Suchbegriff [101]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bezeichnung [102]'
+		dataType: string
+		lineageTag: 3a0bb075-497b-48bc-b92a-e453d55ad181
+		summarizeBy: none
+		sourceColumn: Bezeichnung [102]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bezeichnung 2 [103]'
+		dataType: string
+		lineageTag: 1a4904e9-3cc2-40fc-90b4-f5de27491c56
+		summarizeBy: none
+		sourceColumn: Bezeichnung 2 [103]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition a9002-6c6d3794-9863-4cbd-8a77-78a74d4b52df = m
+		mode: import
+		source =
+				let
+				    Source = a9002_raw,
+				
+				    #"Selected Columns" =
+				        Table.SelectColumns(
+				            Source,
+				            {
+				                "%Keys",
+				                "Firma",
+				                "Betrieb",
+				                "Suchbegriff [101]",
+				                "Bezeichnung [102]",
+				                "Bezeichnung 2 [103]"
+				            }
+				        ),
+				
+				    #"Changed Type" =
+				        Table.TransformColumnTypes(
+				            #"Selected Columns",
+				            {
+				                {"%Keys", type text},
+				                {"Firma", Int64.Type},
+				                {"Betrieb", Int64.Type},
+				                {"Suchbegriff [101]", type text},
+				                {"Bezeichnung [102]", type text},
+				                {"Bezeichnung 2 [103]", type text}
+				            }
+				        )
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

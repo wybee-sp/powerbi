@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "48080225a009c7816619",
+  "position": {
+    "x": 187.72036474164133,
+    "y": 9.72644376899696,
+    "z": 0,
+    "height": 183.82978723404256,
+    "width": 642.91793313069911,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Betrieb"
+                }
+              },
+              "queryRef": "a42001.Betrieb"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Kunde [103]"
+                }
+              },
+              "queryRef": "a42001.Kunde [103]"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "InvoiceDate"
+                }
+              },
+              "queryRef": "a42001.InvoiceDate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a9002"
+                    }
+                  },
+                  "Property": "Bezeichnung [102]"
+                }
+              },
+              "queryRef": "a9002.Bezeichnung [102]"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Rechnung"
+                }
+              },
+              "queryRef": "Sum(a42001.Rechnung)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "a42001"
+                  }
+                },
+                "Property": "Betrieb"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

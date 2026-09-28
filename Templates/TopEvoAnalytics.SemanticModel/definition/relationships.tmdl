@@ -1,0 +1,25 @@
+relationship c161d6ad-9361-4bb2-abe2-f061a6f18b28
+	fromColumn: a420011.a42001Key
+	toColumn: a42001.%Keys
+
+relationship 696ad15e-245c-4ce6-88e3-67b1c20885fc
+	fromColumn: a42001.'Kunde [103]'
+	toColumn: a1101.Kundennummer
+
+relationship 69f6c3bd-65d2-4533-b287-3a30074fe6ba
+	fromColumn: a42001.Betrieb
+	toColumn: a9002.Betrieb
+
+relationship AutoDetected_ed213627-7adc-47ad-9bf1-7d9c64c7fe58
+	fromColumn: a8101op_payments.OpenItemKey
+	toColumn: a8101op_invoices.OpenItemKey
+
+relationship a7e77d24-6fbf-d9b0-4ec3-34d017e490d4
+	fromColumn: a8101op_invoices.InvoiceKey
+	toColumn: a42001.%Keys
+
+relationship 3a605dc8-db84-067d-ecb5-917368029bcb
+	isActive: false
+	fromColumn: a8101op_invoices.Kunde
+	toColumn: a1101.Kundennummer
+

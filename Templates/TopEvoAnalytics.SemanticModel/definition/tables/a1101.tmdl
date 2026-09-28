@@ -1,0 +1,121 @@
+table a1101
+	lineageTag: 12920030-256e-462a-8023-5b3d99262b18
+
+	column %Keys
+		dataType: string
+		lineageTag: 8d7bde61-7d22-400a-b620-343929f261ca
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: int64
+		formatString: 0
+		lineageTag: 8bcd81c5-1b6b-417e-bc52-62ec4a572d16
+		summarizeBy: none
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kundennummer
+		dataType: int64
+		formatString: 0
+		lineageTag: 462bfd6c-c197-4af3-b6c2-4cb3ccaf2fa2
+		summarizeBy: none
+		sourceColumn: Kundennummer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Suchbegriff [101]'
+		dataType: string
+		lineageTag: f9ffbcc7-7f44-455e-889e-8babb30b8204
+		summarizeBy: none
+		sourceColumn: Suchbegriff [101]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anschrift 1 [103]'
+		dataType: string
+		lineageTag: 27357e13-2394-4869-a8fa-674c6062986e
+		summarizeBy: none
+		sourceColumn: Anschrift 1 [103]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Strasse [108]'
+		dataType: string
+		lineageTag: 0059c64d-8403-4dc6-9685-91daced20ff4
+		summarizeBy: none
+		sourceColumn: Strasse [108]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PLZ [109]'
+		dataType: string
+		lineageTag: 22de95ec-f24b-41e3-811d-3b8ab3012d8d
+		summarizeBy: none
+		sourceColumn: PLZ [109]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ort [110]'
+		dataType: string
+		lineageTag: ccf2d5f0-dee0-4ebe-a2e3-62a84baca6fe
+		summarizeBy: none
+		sourceColumn: Ort [110]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Land [111]'
+		dataType: string
+		lineageTag: 9425b274-78e5-4b46-a803-ee25967d6dcf
+		summarizeBy: none
+		sourceColumn: Land [111]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition a1101-d1483a7b-326f-4f98-8dea-dd0e91e89a77 = m
+		mode: import
+		source =
+				let
+				    Source = a1101_raw,
+				
+				    #"Selected Columns" =
+				        Table.SelectColumns(
+				            Source,
+				            {
+				                "%Keys",
+				                "Firma",
+				                "Kundennummer",
+				                "Suchbegriff [101]",
+				                "Anschrift 1 [103]",
+				                "Strasse [108]",
+				                "PLZ [109]",
+				                "Ort [110]",
+				                "Land [111]"
+				            }
+				        ),
+				
+				    #"Changed Type" =
+				        Table.TransformColumnTypes(
+				            #"Selected Columns",
+				            {
+				                {"%Keys", type text},
+				                {"Firma", Int64.Type},
+				                {"Kundennummer", Int64.Type},
+				                {"Suchbegriff [101]", type text},
+				                {"Anschrift 1 [103]", type text},
+				                {"Strasse [108]", type text},
+				                {"PLZ [109]", type text},
+				                {"Ort [110]", type text},
+				                {"Land [111]", type text}
+				            }
+				        )
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

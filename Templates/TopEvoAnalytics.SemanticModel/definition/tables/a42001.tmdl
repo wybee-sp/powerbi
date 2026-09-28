@@ -1,0 +1,217 @@
+table a42001
+	lineageTag: 25495f5f-1aaf-4651-bd87-4c751ff41785
+
+	measure 'Invoice Count' = COUNTROWS(a42001)
+		formatString: 0
+		lineageTag: 998ef4aa-4eed-4d24-82ec-6251140d80e4
+
+	measure 'Net Revenue' = SUM(a420011[NetAmount])
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: efc39186-4209-4a66-bf7e-3e219ca7fd24
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column %Keys
+		dataType: string
+		lineageTag: 930e77ec-594f-46b5-926f-09ba9ddcf1ae
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f51ffe7-69f9-48c3-b95e-9c14c978e6b3
+		summarizeBy: sum
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Betrieb
+		dataType: int64
+		formatString: 0
+		lineageTag: d95ddca3-ad94-4da7-b63f-3f734ff8f0d9
+		summarizeBy: none
+		sourceColumn: Betrieb
+
+		annotation SummarizationSetBy = Automatic
+
+	column Auftrag
+		dataType: int64
+		formatString: 0
+		lineageTag: 2edf9d0c-cafb-456e-9e3a-5530becbe45b
+		summarizeBy: sum
+		sourceColumn: Auftrag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rechnung
+		dataType: int64
+		formatString: 0
+		lineageTag: 43a9ec69-0410-427c-9199-c9b26f9fbc04
+		summarizeBy: sum
+		sourceColumn: Rechnung
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status [101]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07ec262f-f0e9-40c4-aae3-3530e92f0e96
+		summarizeBy: sum
+		sourceColumn: Status [101]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Auftragsart [102]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 91f0db59-2360-468e-8602-26db45137c17
+		summarizeBy: sum
+		sourceColumn: Auftragsart [102]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Kunde [103]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d608d84-42f4-4bf0-acea-82292fd67fe8
+		summarizeBy: none
+		sourceColumn: Kunde [103]
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3ee8426a-58ac-43d6-b946-45bcb52140f0
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ServiceDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1eb06e04-5bf7-4dea-98be-eabb4f55db60
+		summarizeBy: none
+		sourceColumn: ServiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 488ae46b-b29f-40a9-9fb3-db73bfe53bdc
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition a42001-c9f89788-a81b-452e-ac70-978e71cbdaca = m
+		mode: import
+		source =
+				let
+				    Source = a42001_raw,
+				
+				    #"Selected Columns" =
+				        Table.SelectColumns(
+				            Source,
+				            {
+				                "%Keys",
+				                "Firma",
+				                "Betrieb",
+				                "Auftrag",
+				                "Rechnung",
+				                "Status [101]",
+				                "Auftragsart [102]",
+				                "Kunde [103]",
+				                "Auftragsdatum [104]",
+				                "Leistungsdatum [106]",
+				                "Datum [315]"
+				            },
+				            MissingField.UseNull
+				        ),
+				
+				    #"Changed Text Types" =
+				        Table.TransformColumnTypes(
+				            #"Selected Columns",
+				            {
+				                {"%Keys", type text},
+				                {"Firma", Int64.Type},
+				                {"Betrieb", Int64.Type},
+				                {"Auftrag", Int64.Type},
+				                {"Rechnung", Int64.Type},
+				                {"Status [101]", Int64.Type},
+				                {"Auftragsart [102]", Int64.Type},
+				                {"Kunde [103]", Int64.Type},
+				                {"Auftragsdatum [104]", type text},
+				                {"Leistungsdatum [106]", type text},
+				                {"Datum [315]", type text}
+				            }
+				        ),
+				
+				    ParseDate = (Value as nullable text) as nullable date =>
+				        if
+				            Value = null
+				            or Text.Trim(Value) = ""
+				            or Text.Length(Text.Trim(Value)) <> 8
+				        then
+				            null
+				        else
+				            try
+				                #date(
+				                    Number.FromText(Text.Start(Text.Trim(Value), 4)),
+				                    Number.FromText(Text.Range(Text.Trim(Value), 4, 2)),
+				                    Number.FromText(Text.End(Text.Trim(Value), 2))
+				                )
+				            otherwise
+				                null,
+				
+				    #"Added OrderDate" =
+				        Table.AddColumn(
+				            #"Changed Text Types",
+				            "OrderDate",
+				            each ParseDate([#"Auftragsdatum [104]"]),
+				            type date
+				        ),
+				
+				    #"Added ServiceDate" =
+				        Table.AddColumn(
+				            #"Added OrderDate",
+				            "ServiceDate",
+				            each ParseDate([#"Leistungsdatum [106]"]),
+				            type date
+				        ),
+				
+				    #"Added InvoiceDate" =
+				        Table.AddColumn(
+				            #"Added ServiceDate",
+				            "InvoiceDate",
+				            each ParseDate([#"Datum [315]"]),
+				            type date
+				        ),
+				
+				    #"Removed Raw Dates" =
+				        Table.RemoveColumns(
+				            #"Added InvoiceDate",
+				            {
+				                "Auftragsdatum [104]",
+				                "Leistungsdatum [106]",
+				                "Datum [315]"
+				            }
+				        )
+				in
+				    #"Removed Raw Dates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

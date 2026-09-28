@@ -1,0 +1,60 @@
+table _Measures
+	lineageTag: 610a3013-d455-4654-bb8c-2334e2a329b0
+
+	measure 'A8101OP Invoice Count' =
+			
+			COUNTROWS(a8101op_invoices)
+		formatString: 0
+		lineageTag: bf7a9cc4-78fb-432e-b24e-4853d4d06e46
+
+	measure 'A8101OP Payment Count' =
+			
+			COUNTROWS(a8101op_payments)
+		formatString: 0
+		lineageTag: 7e166333-8635-45e9-8688-2c4a7cc7f989
+
+	measure 'A8101OP Payment Amount' =
+			
+			SUM(a8101op_payments[Betrag [101]]])
+		lineageTag: a8996c5a-232d-448d-8501-ee6e7e52d4eb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'A8101OP Closed Invoice Count' =
+			
+			CALCULATE(
+			    COUNTROWS(a8101op_invoices),
+			    a8101op_invoices[OP erledigt 0/1 [110]]] = 1
+			)
+		formatString: 0
+		lineageTag: 02aa36ad-9a56-41f2-9fd9-9a589b4157a7
+
+	measure 'A8101OP Open Invoice Count' =
+			
+			CALCULATE(
+			    COUNTROWS(a8101op_invoices),
+			    a8101op_invoices[OP erledigt 0/1 [110]]] = 0
+			)
+		formatString: 0
+		lineageTag: 627adce3-86e6-40bd-9535-6370a5a3d349
+
+	column Value
+		dataType: int64
+		formatString: 0
+		lineageTag: 10afc522-3f43-4826-9e5f-875d92a95f84
+		summarizeBy: sum
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Value = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Value", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

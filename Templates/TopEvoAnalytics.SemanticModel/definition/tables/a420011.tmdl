@@ -1,0 +1,258 @@
+table a420011
+	lineageTag: 200001ab-77a9-4e83-81ee-279998a8d47d
+
+	column %Keys
+		dataType: string
+		lineageTag: aaaabf11-032b-4029-83b2-a01ae983adf3
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: int64
+		formatString: 0
+		lineageTag: 8638d3a8-6f91-4bf0-a0bf-72a39f8fe742
+		summarizeBy: sum
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Betrieb
+		dataType: int64
+		formatString: 0
+		lineageTag: 516f5cc2-4972-4ab2-a224-93cc66b97c78
+		summarizeBy: sum
+		sourceColumn: Betrieb
+
+		annotation SummarizationSetBy = Automatic
+
+	column Auftrag
+		dataType: int64
+		formatString: 0
+		lineageTag: deaff863-db22-455f-a8ba-1429a2ef518c
+		summarizeBy: sum
+		sourceColumn: Auftrag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rechnung
+		dataType: int64
+		formatString: 0
+		lineageTag: 1921fff7-8327-4643-89da-3df28c34ed1f
+		summarizeBy: sum
+		sourceColumn: Rechnung
+
+		annotation SummarizationSetBy = Automatic
+
+	column HPos
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e3e9ff3-cd9b-4fae-871e-45f700de9f87
+		summarizeBy: sum
+		sourceColumn: HPos
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: int64
+		formatString: 0
+		lineageTag: 92a44d93-19a0-4b9c-95c7-94956efb9917
+		summarizeBy: sum
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Positionsart [101]'
+		dataType: int64
+		formatString: 0
+		lineageTag: d35b81b8-4346-4f84-a2b1-04d4b9044269
+		summarizeBy: sum
+		sourceColumn: Positionsart [101]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Artikel [102]'
+		dataType: string
+		lineageTag: 21124354-2517-4b69-8820-bf579f6aa4c4
+		summarizeBy: none
+		sourceColumn: Artikel [102]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: cf0b3285-e711-4491-90f7-9faf95b60316
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 06d54b2e-3dd4-4de2-a01b-4e15dbe047ec
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column NetAmount
+		dataType: decimal
+		formatString: #,0.###############\ "€";-#,0.###############\ "€";#,0.###############\ "€"
+		lineageTag: 9caeb265-db16-4499-9ba1-c7df99c6a91d
+		summarizeBy: sum
+		sourceColumn: NetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"de-DE"}
+
+	column VatRate
+		dataType: double
+		lineageTag: 8e7f5198-c3da-426a-89e4-cc093693215d
+		summarizeBy: sum
+		sourceColumn: VatRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column a42001Key
+		dataType: string
+		lineageTag: 686688e1-51e2-4653-b3bc-5cd946bfffe4
+		summarizeBy: none
+		sourceColumn: a42001Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition a420011-db1e396c-1cb6-425a-a456-379798213a98 = m
+		mode: import
+		source =
+				let
+				    Source = a420011_raw,
+				
+				    #"Selected Columns" =
+				        Table.SelectColumns(
+				            Source,
+				            {
+				                "%Keys",
+				                "Firma",
+				                "Betrieb",
+				                "Auftrag",
+				                "Rechnung",
+				                "HPos",
+				                "Position",
+				                "Positionsart [101]",
+				                "Artikel [102]",
+				                "Vk-Menge [104]",
+				                "Vk-Preis [105]",
+				                "Nettowert [111]",
+				                "%-Satz Mwst [112]"
+				            },
+				            MissingField.UseNull
+				        ),
+				
+				    #"Changed Key Types" =
+				        Table.TransformColumnTypes(
+				            #"Selected Columns",
+				            {
+				                {"%Keys", type text},
+				                {"Firma", Int64.Type},
+				                {"Betrieb", Int64.Type},
+				                {"Auftrag", Int64.Type},
+				                {"Rechnung", Int64.Type},
+				                {"HPos", Int64.Type},
+				                {"Position", Int64.Type},
+				                {"Positionsart [101]", Int64.Type},
+				                {"Artikel [102]", type text},
+				                {"Vk-Menge [104]", type text},
+				                {"Vk-Preis [105]", type text},
+				                {"Nettowert [111]", type text},
+				                {"%-Satz Mwst [112]", type text}
+				            }
+				        ),
+				
+				    ParseNumber = (Value as nullable text) as nullable number =>
+				        let
+				            TextValue =
+				                if Value = null
+				                then ""
+				                else Text.Trim(Value),
+				
+				            Result =
+				                if TextValue = ""
+				                then null
+				                else
+				                    try Number.FromText(TextValue, "en-US")
+				                    otherwise
+				                        try Number.FromText(TextValue, "de-DE")
+				                        otherwise null
+				        in
+				            Result,
+				
+				    #"Added Quantity" =
+				        Table.AddColumn(
+				            #"Changed Key Types",
+				            "Quantity",
+				            each ParseNumber([#"Vk-Menge [104]"]),
+				            type number
+				        ),
+				
+				    #"Added UnitPrice" =
+				        Table.AddColumn(
+				            #"Added Quantity",
+				            "UnitPrice",
+				            each ParseNumber([#"Vk-Preis [105]"]),
+				            Currency.Type
+				        ),
+				
+				    #"Added NetAmount" =
+				        Table.AddColumn(
+				            #"Added UnitPrice",
+				            "NetAmount",
+				            each ParseNumber([#"Nettowert [111]"]),
+				            Currency.Type
+				        ),
+				
+				    #"Added VatRate" =
+				        Table.AddColumn(
+				            #"Added NetAmount",
+				            "VatRate",
+				            each ParseNumber([#"%-Satz Mwst [112]"]),
+				            type number
+				        ),
+				
+				        #"Removed Raw Values" =
+				        Table.RemoveColumns(
+				            #"Added VatRate",
+				            {
+				                "Vk-Menge [104]",
+				                "Vk-Preis [105]",
+				                "Nettowert [111]",
+				                "%-Satz Mwst [112]"
+				            }
+				        ),
+				
+				    #"Added a42001Key" =
+				        Table.AddColumn(
+				            #"Removed Raw Values",
+				            "a42001Key",
+				            each
+				                Text.From([Firma]) & "," &
+				                Text.From([Betrieb]) & "," &
+				                Text.From([Auftrag]) & "," &
+				                Text.From([Rechnung]),
+				            type text
+				        )
+				in
+				    #"Added a42001Key"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

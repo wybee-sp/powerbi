@@ -1,0 +1,15 @@
+# Power BI local/cache files
+**/.pbi/
+*.pbix
+
+# Kundendaten niemals ins Repository
+Customers/**/Data/
+Customers/**/*.xml
+Customers/**/*.xlsx
+Customers/**/*.csv
+*.csv
+*.xml
+
+# OS
+Thumbs.db
+.DS_Store

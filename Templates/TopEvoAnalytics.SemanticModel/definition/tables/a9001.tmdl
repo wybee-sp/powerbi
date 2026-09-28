@@ -1,0 +1,1159 @@
+table a9001
+	lineageTag: 216ac4ec-a5e2-4325-b671-e3b2d794f592
+
+	column %Keys
+		dataType: string
+		lineageTag: c123d205-5d57-49f8-82df-50b54c80b2ec
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: string
+		lineageTag: d832f47a-bbd5-4c3d-90a4-666a6d05eb19
+		summarizeBy: none
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anwender [101]'
+		dataType: string
+		lineageTag: 7d8c242f-be8e-49c8-9441-bc7a75295ee0
+		summarizeBy: none
+		sourceColumn: Anwender [101]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top-Kundennummer [102]'
+		dataType: string
+		lineageTag: 3006a89b-f3a6-4b5a-a05c-c4bc0487cd15
+		summarizeBy: none
+		sourceColumn: Top-Kundennummer [102]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abw.Firma Stammdaten [103]'
+		dataType: string
+		lineageTag: b09258ad-c8ae-4b95-bfc4-89f175d8bc28
+		summarizeBy: none
+		sourceColumn: Abw.Firma Stammdaten [103]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prg.-Version [104]'
+		dataType: string
+		lineageTag: 5c486244-5baa-42c2-b6d9-8636239fe02b
+		summarizeBy: none
+		sourceColumn: Prg.-Version [104]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Menu [105]'
+		dataType: string
+		lineageTag: c762f7a5-b366-4b17-b80e-d3c32dfc2fb2
+		summarizeBy: none
+		sourceColumn: Menu [105]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Waehrung [106]'
+		dataType: string
+		lineageTag: aede90e9-33e4-4bdd-9662-d6f85a3df19a
+		summarizeBy: none
+		sourceColumn: Waehrung [106]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Firma Kontokorrent [107]'
+		dataType: string
+		lineageTag: 5ecb87b7-5a0b-4534-b11d-e124b77544a3
+		summarizeBy: none
+		sourceColumn: Firma Kontokorrent [107]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sprachversion [108]'
+		dataType: string
+		lineageTag: 895265ff-c3fe-42a1-b88f-d14611f6a140
+		summarizeBy: none
+		sourceColumn: Sprachversion [108]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu [109]'
+		dataType: string
+		lineageTag: bf2898f3-a8f8-470f-a8db-cc8106f5ba7e
+		summarizeBy: none
+		sourceColumn: Fibu [109]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Text [110]'
+		dataType: string
+		lineageTag: a7c53009-a65d-4392-b196-c5b38a1d9f82
+		summarizeBy: none
+		sourceColumn: Text [110]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'L{nder-Kennzeichen [111]'
+		dataType: string
+		lineageTag: 49a67273-78aa-4929-9709-1444aeb64ce0
+		summarizeBy: none
+		sourceColumn: L{nder-Kennzeichen [111]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Textgruppe [112]'
+		dataType: string
+		lineageTag: 600bb6d1-71c8-49b6-b0cd-85b9207eea9a
+		summarizeBy: none
+		sourceColumn: Textgruppe [112]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'System-Mitarbeiter [113]'
+		dataType: string
+		lineageTag: 7642c35f-9d10-439e-a9de-1769bc07e37b
+		summarizeBy: none
+		sourceColumn: System-Mitarbeiter [113]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Standardpreisliste [114]'
+		dataType: string
+		lineageTag: f1405aa8-f0eb-4c4b-86a2-25a7257ec240
+		summarizeBy: none
+		sourceColumn: Standardpreisliste [114]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rechnung Auf Bs [115]'
+		dataType: string
+		lineageTag: 9fd755c5-9a21-4716-a2bd-7a4f34f97050
+		summarizeBy: none
+		sourceColumn: Rechnung Auf Bs [115]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Europa-Ident-Nr [116]'
+		dataType: string
+		lineageTag: bcf21b47-d57b-499a-9413-512afee5ccc5
+		summarizeBy: none
+		sourceColumn: Europa-Ident-Nr [116]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eingabe (._) [117]'
+		dataType: string
+		lineageTag: 7ff0dd61-325f-4167-8750-9d33e2d8857b
+		summarizeBy: none
+		sourceColumn: Eingabe (._) [117]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '5-Er Feld [118]'
+		dataType: string
+		lineageTag: 09dc8f4e-360f-42c7-93df-7fc482bdb1ef
+		summarizeBy: none
+		sourceColumn: 5-Er Feld [118]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10-Er Feld [119]'
+		dataType: string
+		lineageTag: 8d4a2d7e-2799-48e5-8b4d-ee7d7c2727e5
+		summarizeBy: none
+		sourceColumn: 10-Er Feld [119]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Timeout (Sekunden) [120]'
+		dataType: string
+		lineageTag: 0552496a-7da7-4c16-9c30-4992a06033bc
+		summarizeBy: none
+		sourceColumn: Timeout (Sekunden) [120]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Erfassungsdatum [121]'
+		dataType: string
+		lineageTag: 153d97dc-a17d-40c5-869f-1ad83c0fd7e4
+		summarizeBy: none
+		sourceColumn: Erfassungsdatum [121]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Aenderungsdatum [122]'
+		dataType: string
+		lineageTag: 07b09806-fb34-46ca-af48-4622ef35a939
+		summarizeBy: none
+		sourceColumn: Aenderungsdatum [122]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anmeldetext 1 [123]'
+		dataType: string
+		lineageTag: 42a5a729-f627-4a13-8f3a-06d7ed9739e8
+		summarizeBy: none
+		sourceColumn: Anmeldetext 1 [123]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anmeldetext 2 [124]'
+		dataType: string
+		lineageTag: 98e18b68-8cbd-48a2-80cd-442c66bc39f9
+		summarizeBy: none
+		sourceColumn: Anmeldetext 2 [124]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Systemdrucker [125]'
+		dataType: string
+		lineageTag: d01a34a8-a032-4410-b622-0bc496a9801f
+		summarizeBy: none
+		sourceColumn: Systemdrucker [125]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Scan-Version [126]'
+		dataType: string
+		lineageTag: 4add47f3-8156-4853-a4b4-25156e57cd14
+		summarizeBy: none
+		sourceColumn: Scan-Version [126]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '%Sp(Datenbankcheck) [127]'
+		dataType: string
+		lineageTag: 4e41e536-0c64-48d4-900d-a23ec4f497b3
+		summarizeBy: none
+		sourceColumn: %Sp(Datenbankcheck) [127]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max.Positionsmenge [129]'
+		dataType: string
+		lineageTag: 50f67d89-a43c-4fae-9e83-2ee1aa6a3750
+		summarizeBy: none
+		sourceColumn: Max.Positionsmenge [129]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max.Positionswert [130]'
+		dataType: string
+		lineageTag: 9a0b21b0-53d1-4473-8cf6-0d42d5b24a2e
+		summarizeBy: none
+		sourceColumn: Max.Positionswert [130]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max.Skontowert/Bvk [131]'
+		dataType: string
+		lineageTag: 9ce21a46-6e47-4fbd-bf63-4898ae0c17e9
+		summarizeBy: none
+		sourceColumn: Max.Skontowert/Bvk [131]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Steuer-Nr [132]'
+		dataType: string
+		lineageTag: 88bcdd43-dfff-4744-9880-f903bef791d8
+		summarizeBy: none
+		sourceColumn: Steuer-Nr [132]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Abw-Anwender [133]'
+		dataType: string
+		lineageTag: 5fa3ee50-6d8f-437d-920c-36590bd7d5a1
+		summarizeBy: none
+		sourceColumn: Abw-Anwender [133]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eigenkapital der Gesellschaft [134]'
+		dataType: string
+		lineageTag: 1c074bc4-150c-44e6-94f8-94182b09f408
+		summarizeBy: none
+		sourceColumn: Eigenkapital der Gesellschaft [134]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Handelsregister Nr [135]'
+		dataType: string
+		lineageTag: fe744af0-e336-4fe2-8522-fb1f494b5b41
+		summarizeBy: none
+		sourceColumn: Handelsregister Nr [135]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 1. Miete [201]'
+		dataType: string
+		lineageTag: ff3a9c0c-dd37-4cf4-ba21-6df5f7c106e9
+		summarizeBy: none
+		sourceColumn: " 1. Miete [201]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 2. Werkstatt [202]'
+		dataType: string
+		lineageTag: 4d09ed5e-bc01-40fd-9b44-e7b2832e33ff
+		summarizeBy: none
+		sourceColumn: " 2. Werkstatt [202]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 3. Kasse [203]'
+		dataType: string
+		lineageTag: e505ed22-89d2-4d2f-89ff-ccb384bb64f5
+		summarizeBy: none
+		sourceColumn: " 3. Kasse [203]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 4. Hauspost [204]'
+		dataType: string
+		lineageTag: 9977e408-ba73-45f7-bed6-4178e51741e6
+		summarizeBy: none
+		sourceColumn: " 4. Hauspost [204]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 5. Preispflege [205]'
+		dataType: string
+		lineageTag: 8812b947-0b81-42da-b0f4-2fa4ca93411e
+		summarizeBy: none
+		sourceColumn: " 5. Preispflege [205]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 6. Fremdspr/Waehr [206]'
+		dataType: string
+		lineageTag: f249d318-b203-46ae-aab7-3386126a3a27
+		summarizeBy: none
+		sourceColumn: " 6. Fremdspr/Waehr [206]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 7. Fremdsystem [207]'
+		dataType: string
+		lineageTag: a84ffff3-1187-4f37-9929-70e3bb47ebf7
+		summarizeBy: none
+		sourceColumn: " 7. Fremdsystem [207]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 8. Provision [208]'
+		dataType: string
+		lineageTag: 5e5d588c-f8b4-4a20-b0d6-72d8fbbb4b06
+		summarizeBy: none
+		sourceColumn: " 8. Provision [208]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' 9. Adm-Steuerung [209]'
+		dataType: string
+		lineageTag: 98645a31-0ca9-483c-ba12-7aa93e1612d5
+		summarizeBy: none
+		sourceColumn: " 9. Adm-Steuerung [209]"
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10. Monatsabgrenzung [210]'
+		dataType: string
+		lineageTag: bd471712-dcdf-47e7-a35b-6ffaeb7ffdd2
+		summarizeBy: none
+		sourceColumn: 10. Monatsabgrenzung [210]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '11. Auftr.-Automatik [211]'
+		dataType: string
+		lineageTag: acccc037-8e25-41b6-85bf-448fede8f3bd
+		summarizeBy: none
+		sourceColumn: 11. Auftr.-Automatik [211]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '12. Zeiterfassung [212]'
+		dataType: string
+		lineageTag: be247a0b-8829-40ef-97af-3a7e55728c77
+		summarizeBy: none
+		sourceColumn: 12. Zeiterfassung [212]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '13. Einkauf [213]'
+		dataType: string
+		lineageTag: 3ab3df16-12ae-46ec-bed4-726c60f63224
+		summarizeBy: none
+		sourceColumn: 13. Einkauf [213]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '14. Inventur [214]'
+		dataType: string
+		lineageTag: a64e3ea9-cdc4-4ee6-baae-2019081d1c32
+		summarizeBy: none
+		sourceColumn: 14. Inventur [214]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '15. Mengenstaffel [215]'
+		dataType: string
+		lineageTag: 71ba0b68-8b43-4240-86e8-72c9b7270334
+		summarizeBy: none
+		sourceColumn: 15. Mengenstaffel [215]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '16. Bwa-Auswertungen [216]'
+		dataType: string
+		lineageTag: 89c1a5f8-e341-4980-a7f9-64cbbb689194
+		summarizeBy: none
+		sourceColumn: 16. Bwa-Auswertungen [216]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '17. Etikettendruck [217]'
+		dataType: string
+		lineageTag: 69010dfe-6206-458b-8b7c-7be6669e89b0
+		summarizeBy: none
+		sourceColumn: 17. Etikettendruck [217]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '18. Art.-Lebenslauf [218]'
+		dataType: string
+		lineageTag: 94266608-af50-4ef2-af05-ab9d2ae35ef9
+		summarizeBy: none
+		sourceColumn: 18. Art.-Lebenslauf [218]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '19. Serien-Nummern [219]'
+		dataType: string
+		lineageTag: ca2c8033-b402-44ff-8dd0-eda2c0849064
+		summarizeBy: none
+		sourceColumn: 19. Serien-Nummern [219]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '20. A D S [220]'
+		dataType: string
+		lineageTag: 63f8c94e-fe90-4fb7-943c-e45c3504e7cc
+		summarizeBy: none
+		sourceColumn: 20. A D S [220]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fax [221]'
+		dataType: string
+		lineageTag: c7eb6b9d-943d-4bf5-926c-3fc6bd867db9
+		summarizeBy: none
+		sourceColumn: Fax [221]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '22. Dsd-Duales System [222]'
+		dataType: string
+		lineageTag: fbe3bd8f-e2b4-442f-b03c-d87c9ace566a
+		summarizeBy: none
+		sourceColumn: 22. Dsd-Duales System [222]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '23. Qm-Qualitaetsmanagement [223]'
+		dataType: string
+		lineageTag: 969d155b-fd6c-4fb6-802c-309cbdf571ab
+		summarizeBy: none
+		sourceColumn: 23. Qm-Qualitaetsmanagement [223]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '24. Projektverwaltung [224]'
+		dataType: string
+		lineageTag: fef955ac-23dc-4310-8e7c-63aad21d8159
+		summarizeBy: none
+		sourceColumn: 24. Projektverwaltung [224]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '25. Fuhrpark [225]'
+		dataType: string
+		lineageTag: 05eab391-be26-48f0-b600-c4a5aea6c079
+		summarizeBy: none
+		sourceColumn: 25. Fuhrpark [225]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '26. Kasse [226]'
+		dataType: string
+		lineageTag: 23c1c88f-b0f6-4771-bea0-306bc105c690
+		summarizeBy: none
+		sourceColumn: 26. Kasse [226]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '27. DSM-UEBERGABE [227]'
+		dataType: string
+		lineageTag: 53e34d11-771d-4008-93e9-8c8488e2ae0f
+		summarizeBy: none
+		sourceColumn: 27. DSM-UEBERGABE [227]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '28: Par302 [228]'
+		dataType: string
+		lineageTag: 74f36f01-ef86-4a36-a1fb-fa2f0c937a21
+		summarizeBy: none
+		sourceColumn: 28: Par302 [228]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Artikelstamm [301]'
+		dataType: string
+		lineageTag: d4fc1ea5-7aba-4881-86b8-7b6236af0fd9
+		summarizeBy: none
+		sourceColumn: Anzeige Artikelstamm [301]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Kundenstamm [302]'
+		dataType: string
+		lineageTag: caf92647-0ef2-40f4-a59b-a1228fe18c96
+		summarizeBy: none
+		sourceColumn: Anzeige Kundenstamm [302]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Lieferanten [303]'
+		dataType: string
+		lineageTag: 20502449-a327-40e6-b305-d61d52ba44a8
+		summarizeBy: none
+		sourceColumn: Anzeige Lieferanten [303]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Maschinen [304]'
+		dataType: string
+		lineageTag: 376cc940-40b1-48b0-a5c4-414d4384858a
+		summarizeBy: none
+		sourceColumn: Anzeige Maschinen [304]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Preisliste [305]'
+		dataType: string
+		lineageTag: 3176f006-2805-4206-a5b2-816e3c9ee2ec
+		summarizeBy: none
+		sourceColumn: Anzeige Preisliste [305]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzeige Auftrag [306]'
+		dataType: string
+		lineageTag: 398a57ae-c6e2-4285-8bdc-1f68f66c11d4
+		summarizeBy: none
+		sourceColumn: Anzeige Auftrag [306]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anzahl Rabatte [310]'
+		dataType: string
+		lineageTag: b81fabe0-c7c5-4627-b8a6-b47e9aa4d883
+		summarizeBy: none
+		sourceColumn: Anzahl Rabatte [310]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Provision bearbeiten [311]'
+		dataType: string
+		lineageTag: eaed0e97-6ba3-449b-b351-7349b2cf593c
+		summarizeBy: none
+		sourceColumn: Provision bearbeiten [311]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Laenge H-Pos [312]'
+		dataType: string
+		lineageTag: ecfac9c9-a55a-417f-8ace-4dde033192ae
+		summarizeBy: none
+		sourceColumn: Laenge H-Pos [312]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bestellt=Verfuegbar [313]'
+		dataType: string
+		lineageTag: 3aee36d7-7133-45ac-bd0e-11767e66786a
+		summarizeBy: none
+		sourceColumn: Bestellt=Verfuegbar [313]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '%-Zuschlag Netto-Ekp [314]'
+		dataType: string
+		lineageTag: a4acf97a-a32a-41ea-b51b-ca849de6f1ed
+		summarizeBy: none
+		sourceColumn: %-Zuschlag Netto-Ekp [314]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross-Schreibung [315]'
+		dataType: string
+		lineageTag: c3a0bb94-1ce0-482f-b275-9fb0f5ca2b68
+		summarizeBy: none
+		sourceColumn: Gross-Schreibung [315]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vorgabe Buchungsdatum [316]'
+		dataType: string
+		lineageTag: fac3c5b4-e3af-453b-bce2-594fedfa3be3
+		summarizeBy: none
+		sourceColumn: Vorgabe Buchungsdatum [316]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vorgabe Re.-Datum [317]'
+		dataType: string
+		lineageTag: 04e80819-32fd-4f79-a5ae-7ba85e82c2ec
+		summarizeBy: none
+		sourceColumn: Vorgabe Re.-Datum [317]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Re-Freigabe [318]'
+		dataType: string
+		lineageTag: b33ac586-73f9-4bb9-bdb0-7035255c3e06
+		summarizeBy: none
+		sourceColumn: Re-Freigabe [318]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'W-Eingang [319]'
+		dataType: string
+		lineageTag: b7c68f77-4aa2-4db4-8dcb-fb6f80a9a27a
+		summarizeBy: none
+		sourceColumn: W-Eingang [319]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inv.-Abschluss [320]'
+		dataType: string
+		lineageTag: afa57f21-e872-4794-9a72-090854c8eb3e
+		summarizeBy: none
+		sourceColumn: Inv.-Abschluss [320]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fa/Betr Auftragsart [321]'
+		dataType: string
+		lineageTag: 42a34a53-ed31-4b1c-9a51-608bf0b46482
+		summarizeBy: none
+		sourceColumn: Fa/Betr Auftragsart [321]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eingangsrechnung [322]'
+		dataType: string
+		lineageTag: 3c03f7e2-6b31-428e-8533-740d5ed1da55
+		summarizeBy: none
+		sourceColumn: Eingangsrechnung [322]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Anz Artikeltextzeilen [323]'
+		dataType: string
+		lineageTag: 6ae63c34-de98-406a-8492-349ff5b3a99e
+		summarizeBy: none
+		sourceColumn: Anz Artikeltextzeilen [323]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Basis-Kd-Nummer [324]'
+		dataType: string
+		lineageTag: 18836643-fbb5-4e24-936d-ab5bad8659e9
+		summarizeBy: none
+		sourceColumn: Basis-Kd-Nummer [324]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Miettage/Woche [325]'
+		dataType: string
+		lineageTag: 1a5f24d8-656e-464f-b8ad-ec2f4c86a054
+		summarizeBy: none
+		sourceColumn: Miettage/Woche [325]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Miettage/Monat [326]'
+		dataType: string
+		lineageTag: 7f8535e3-6493-4354-91da-e4878944ef30
+		summarizeBy: none
+		sourceColumn: Miettage/Monat [326]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Miettage/Quartal [327]'
+		dataType: string
+		lineageTag: 57770548-0422-456d-a688-4180d8668088
+		summarizeBy: none
+		sourceColumn: Miettage/Quartal [327]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Miettage/Jahr [328]'
+		dataType: string
+		lineageTag: 128996fc-38c0-483d-a716-a698c809cf78
+		summarizeBy: none
+		sourceColumn: Miettage/Jahr [328]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Basis Lief Nr [329]'
+		dataType: string
+		lineageTag: 67283ac5-9ea7-4904-b728-3465ac333d20
+		summarizeBy: none
+		sourceColumn: Basis Lief Nr [329]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Naechste Kd-Nummer [401]'
+		dataType: string
+		lineageTag: 46bd744a-fcbe-4a52-81c2-d887b8eaba2f
+		summarizeBy: none
+		sourceColumn: Naechste Kd-Nummer [401]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Naechste Lief.-Nr [402]'
+		dataType: string
+		lineageTag: f8c798e1-d6d7-47d5-8065-55074bfed7db
+		summarizeBy: none
+		sourceColumn: Naechste Lief.-Nr [402]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Artikel-Nummer [403]'
+		dataType: string
+		lineageTag: d7bc1989-23ed-4929-9919-cc1ffdca8fcb
+		summarizeBy: none
+		sourceColumn: Artikel-Nummer [403]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ean/Bar-Code [404]'
+		dataType: string
+		lineageTag: dbc8ab18-1c97-4d4a-a0c7-2446f1ffaad9
+		summarizeBy: none
+		sourceColumn: Ean/Bar-Code [404]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comp.-Post-Nummer [405]'
+		dataType: string
+		lineageTag: 5860115b-2bcb-4323-9575-b1f702848560
+		summarizeBy: none
+		sourceColumn: Comp.-Post-Nummer [405]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Naechste Auftr.-Nr [406]'
+		dataType: string
+		lineageTag: f157f069-4425-4c09-8b55-a84633e94a02
+		summarizeBy: none
+		sourceColumn: Naechste Auftr.-Nr [406]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Von Auftrag [407]'
+		dataType: string
+		lineageTag: 96cf86dc-3a00-4c2a-86b1-84f3c3616fdc
+		summarizeBy: none
+		sourceColumn: Von Auftrag [407]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bis Auftrag [408]'
+		dataType: string
+		lineageTag: 70475b3f-04f9-429d-9175-85ec4f27219c
+		summarizeBy: none
+		sourceColumn: Bis Auftrag [408]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Naechste Re.-Nr [409]'
+		dataType: string
+		lineageTag: 7f51eb71-92f8-401d-896d-aefec1551e22
+		summarizeBy: none
+		sourceColumn: Naechste Re.-Nr [409]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Von Re.-Nummer [410]'
+		dataType: string
+		lineageTag: d864faae-05df-4824-baf8-a1e565bd10ad
+		summarizeBy: none
+		sourceColumn: Von Re.-Nummer [410]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bis Re.-Nummer [411]'
+		dataType: string
+		lineageTag: 8707a9be-4e92-4c90-9477-53eda9c72a33
+		summarizeBy: none
+		sourceColumn: Bis Re.-Nummer [411]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Re-Nr Bei Ls-Druck [412]'
+		dataType: string
+		lineageTag: 8b6a8626-3b26-4199-a629-80faf296fd63
+		summarizeBy: none
+		sourceColumn: Re-Nr Bei Ls-Druck [412]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Buchungsmonat [413]'
+		dataType: string
+		lineageTag: f4167e0e-df9f-4993-88ee-bf675d8d8cac
+		summarizeBy: none
+		sourceColumn: Buchungsmonat [413]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Eing.-Rechnung [414]'
+		dataType: string
+		lineageTag: bd1261a3-f6b9-4bc8-97da-e13fab72b63c
+		summarizeBy: none
+		sourceColumn: Eing.-Rechnung [414]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'von Eing.-Rechnung [415]'
+		dataType: string
+		lineageTag: d4f01acb-1b33-407e-b06f-7a2e1252d52a
+		summarizeBy: none
+		sourceColumn: von Eing.-Rechnung [415]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'bis Eing.-Rechnung [416]'
+		dataType: string
+		lineageTag: 6255abe5-597c-4e24-b147-cc72bdd8f45a
+		summarizeBy: none
+		sourceColumn: bis Eing.-Rechnung [416]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'letzter Lauf Par302 [417]'
+		dataType: string
+		lineageTag: 5469f072-84d4-4138-879b-4579643dbfaf
+		summarizeBy: none
+		sourceColumn: letzter Lauf Par302 [417]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Top [501]'
+		dataType: string
+		lineageTag: 21d3c47c-6ae0-4fa8-a152-c65b2a02bf2f
+		summarizeBy: none
+		sourceColumn: Top [501]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu [502]'
+		dataType: string
+		lineageTag: 1ef56e92-663c-4bbc-ac85-94def448c001
+		summarizeBy: none
+		sourceColumn: Fibu [502]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lohn/Gehalt [503]'
+		dataType: string
+		lineageTag: ee1e91d1-df78-45d8-9543-97c98940604b
+		summarizeBy: none
+		sourceColumn: Lohn/Gehalt [503]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Textverarbeitung [504]'
+		dataType: string
+		lineageTag: dcc6f643-3d5f-4a01-b145-c5e35644f7a6
+		summarizeBy: none
+		sourceColumn: Textverarbeitung [504]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hintergrund [505]'
+		dataType: string
+		lineageTag: 831d4603-9ac8-4998-8c7f-a0201de2a186
+		summarizeBy: none
+		sourceColumn: Hintergrund [505]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-System [506]'
+		dataType: string
+		lineageTag: f486b486-88e0-4ce5-9689-9b7e9237429b
+		summarizeBy: none
+		sourceColumn: Fibu-System [506]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Uci [507]'
+		dataType: string
+		lineageTag: ffec869b-3f52-4882-8da0-c3ef0dd933c7
+		summarizeBy: none
+		sourceColumn: Fibu-Uci [507]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Zw-Kto Verkauf [508]'
+		dataType: string
+		lineageTag: 0173a3be-b931-488a-b90b-1e56112a509b
+		summarizeBy: none
+		sourceColumn: Fibu-Zw-Kto Verkauf [508]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Zw-Kto Einkauf [509]'
+		dataType: string
+		lineageTag: a8846817-fad6-4438-9614-7e4eb4c32ee1
+		summarizeBy: none
+		sourceColumn: Fibu-Zw-Kto Einkauf [509]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Zw-Kto Skonto [510]'
+		dataType: string
+		lineageTag: 5b2d1228-18a0-4afb-9644-d710a8e9178b
+		summarizeBy: none
+		sourceColumn: Fibu-Zw-Kto Skonto [510]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Zw-Kto Bank [511]'
+		dataType: string
+		lineageTag: 1008e510-4ba3-495d-921d-a8a4fcd414f4
+		summarizeBy: none
+		sourceColumn: Fibu-Zw-Kto Bank [511]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fibu-Zw-Kto Kasse [512]'
+		dataType: string
+		lineageTag: da3e68e6-9e2c-4122-bfb2-77c8538a2d1f
+		summarizeBy: none
+		sourceColumn: Fibu-Zw-Kto Kasse [512]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Skr - Sachkontenrahmen [513]'
+		dataType: string
+		lineageTag: 19d93183-91bb-45d6-992b-52e84d39c4b3
+		summarizeBy: none
+		sourceColumn: Skr - Sachkontenrahmen [513]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '%-Kl.-Teilezuschlag [514]'
+		dataType: string
+		lineageTag: dfe5d075-348e-474e-ab2a-57b74a6d71a0
+		summarizeBy: none
+		sourceColumn: %-Kl.-Teilezuschlag [514]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Inventur-Jahr [515]'
+		dataType: string
+		lineageTag: d3a5a2fc-9615-47ee-a609-826701f451e2
+		summarizeBy: none
+		sourceColumn: Inventur-Jahr [515]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Buchungsjahr [516]'
+		dataType: string
+		lineageTag: 1f5a0e01-fbdb-4b75-b110-23d4e7990051
+		summarizeBy: none
+		sourceColumn: Buchungsjahr [516]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Euro-Umstellung [517]'
+		dataType: string
+		lineageTag: c8b747ad-0bc7-4ecb-a860-e1ab54c82a06
+		summarizeBy: none
+		sourceColumn: Euro-Umstellung [517]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '2000.Er-Umstellung [518]'
+		dataType: string
+		lineageTag: 9e257581-7e4e-4ead-94a3-12c10bda9643
+		summarizeBy: none
+		sourceColumn: 2000.Er-Umstellung [518]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Jahrhundertwechsel [519]'
+		dataType: string
+		lineageTag: 5c99a57e-c255-4ba6-8748-bea64bcba62b
+		summarizeBy: none
+		sourceColumn: Jahrhundertwechsel [519]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Verzeichnis Ascii2Word-Ablage [520]'
+		dataType: string
+		lineageTag: a717b30f-79bb-4eaa-b6d1-a732963a3f8a
+		summarizeBy: none
+		sourceColumn: Verzeichnis Ascii2Word-Ablage [520]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Serien-Nr [521]'
+		dataType: string
+		lineageTag: 7f853485-3ca1-4f89-8061-3ab18f02e7e3
+		summarizeBy: none
+		sourceColumn: Serien-Nr [521]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Umstellung Fremdsprachen [522]'
+		dataType: string
+		lineageTag: be208456-c591-4fed-a5a7-b4e5557c465e
+		summarizeBy: none
+		sourceColumn: Umstellung Fremdsprachen [522]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Umstellung All (Art.-Lebenslla [523]'
+		dataType: string
+		lineageTag: 83ab708e-7979-4b9f-964c-c7e7e3a724a8
+		summarizeBy: none
+		sourceColumn: Umstellung All (Art.-Lebenslla [523]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DEL-Notierung [524]'
+		dataType: string
+		lineageTag: be6ee988-3a58-4ce4-a5b8-3e9a688a11ff
+		summarizeBy: none
+		sourceColumn: DEL-Notierung [524]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Datum DEL-Notierung [525]'
+		dataType: string
+		lineageTag: 7108c223-b4f7-4427-be74-6802258503a6
+		summarizeBy: none
+		sourceColumn: Datum DEL-Notierung [525]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MKK Materialgemeinkosten % [526]'
+		dataType: string
+		lineageTag: 5f568c82-a78b-4daa-b07a-6470f192daa6
+		summarizeBy: none
+		sourceColumn: MKK Materialgemeinkosten % [526]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FGK Fertigungsgemeinkosten % [527]'
+		dataType: string
+		lineageTag: 7280aaf1-ac30-4ac4-ade6-772085a09520
+		summarizeBy: none
+		sourceColumn: FGK Fertigungsgemeinkosten % [527]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zuschlag Fremdleistung % [528]'
+		dataType: string
+		lineageTag: 16712a37-8178-4ae4-9abe-ef1cfa4a61e7
+		summarizeBy: none
+		sourceColumn: Zuschlag Fremdleistung % [528]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Produktfixe Kosten [529]'
+		dataType: string
+		lineageTag: 38de15dc-d7ae-4e44-9c6b-8d287e68bdac
+		summarizeBy: none
+		sourceColumn: Produktfixe Kosten [529]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allgemeinkosten [530]'
+		dataType: string
+		lineageTag: 724d4eaf-1cf3-4b43-b7d9-717b8bdd13fa
+		summarizeBy: none
+		sourceColumn: Allgemeinkosten [530]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TarifStunden/Tag [531]'
+		dataType: string
+		lineageTag: 91c20e99-c3b9-4424-94c8-a5b3b81ae91c
+		summarizeBy: none
+		sourceColumn: TarifStunden/Tag [531]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PrE-Rohstoffe [532]'
+		dataType: string
+		lineageTag: e38fd7c5-16be-49af-86cc-55e78f7fbf20
+		summarizeBy: none
+		sourceColumn: PrE-Rohstoffe [532]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'URF-Preis [533]'
+		dataType: string
+		lineageTag: afe607f6-3b6b-4f18-8990-4d432e1d6c1f
+		summarizeBy: none
+		sourceColumn: URF-Preis [533]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Station Server IP [601]'
+		dataType: string
+		lineageTag: 1e8ded3b-d629-4a50-8c72-d0c8b939fea5
+		summarizeBy: none
+		sourceColumn: Station Server IP [601]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Station Tenant GUID [602]'
+		dataType: string
+		lineageTag: af4051d3-70d5-412d-aff8-52deca3fedf0
+		summarizeBy: none
+		sourceColumn: Station Tenant GUID [602]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Station Server Port [603]'
+		dataType: string
+		lineageTag: 2d744903-2a6b-4d60-bacd-29c08ac028f0
+		summarizeBy: none
+		sourceColumn: Station Server Port [603]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition a9001-94e05a4a-db0e-4a38-992f-7d010d6013dd = m
+		mode: import
+		source =
+				let
+				    Source = a9001_raw
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,268 @@
+table a8101op_payments
+	lineageTag: b97da99e-883e-4aaa-957e-55f7c5399d73
+
+	column %Keys
+		dataType: string
+		lineageTag: 89bd50d8-b798-4e7f-a466-4ad24eedba79
+		summarizeBy: none
+		sourceColumn: %Keys
+
+		annotation SummarizationSetBy = Automatic
+
+	column Firma
+		dataType: int64
+		formatString: 0
+		lineageTag: c31cd289-0735-4733-b42b-15eb61ba9d50
+		summarizeBy: sum
+		sourceColumn: Firma
+
+		annotation SummarizationSetBy = Automatic
+
+	column Betrieb
+		dataType: int64
+		formatString: 0
+		lineageTag: 30c3f63b-5645-436b-b0a8-523cbd300638
+		summarizeBy: sum
+		sourceColumn: Betrieb
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kunde
+		dataType: int64
+		formatString: 0
+		lineageTag: b7f729f6-77d5-4e3c-ae2a-1d83b0997a50
+		summarizeBy: sum
+		sourceColumn: Kunde
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rechnung
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c7f341e-b655-468a-abc1-f9d9064949f6
+		summarizeBy: sum
+		sourceColumn: Rechnung
+
+		annotation SummarizationSetBy = Automatic
+
+	column lfdNr
+		dataType: int64
+		formatString: 0
+		lineageTag: f52fa883-523a-40be-8243-7b1c6d56a260
+		summarizeBy: sum
+		sourceColumn: lfdNr
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Betrag [101]'
+		dataType: double
+		lineageTag: 2740e205-1fe8-4263-8a34-e8a938704d5e
+		summarizeBy: sum
+		sourceColumn: Betrag [101]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Konto (Bank/Kasse) [102]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 11eeb81e-6f5e-45a6-9d1d-abf9cd798816
+		summarizeBy: sum
+		sourceColumn: Konto (Bank/Kasse) [102]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'KontoauszugNr [104]'
+		dataType: string
+		lineageTag: a5b957f8-2c4a-4388-a862-ce2d9c5a4db5
+		summarizeBy: none
+		sourceColumn: KontoauszugNr [104]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Diff / Skonto [105]'
+		dataType: double
+		lineageTag: 8acc02dc-d5f4-4e05-8ec7-2246995c818b
+		summarizeBy: sum
+		sourceColumn: Diff / Skonto [105]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Storno [106]'
+		dataType: string
+		lineageTag: b7d33b9f-5254-4210-ad21-b22fd76ee6c2
+		summarizeBy: none
+		sourceColumn: Storno [106]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stornotext [107]'
+		dataType: string
+		lineageTag: c2ac7203-620a-4a0d-a904-beed7e471b9c
+		summarizeBy: none
+		sourceColumn: Stornotext [107]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Auftragsnummer [108]'
+		dataType: int64
+		formatString: 0
+		lineageTag: d8cdf728-89dc-44f8-acaa-baa2e4cbd3f9
+		summarizeBy: sum
+		sourceColumn: Auftragsnummer [108]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OP erledigt 0/1 [110]'
+		dataType: int64
+		formatString: 0
+		lineageTag: 735ca164-dda1-49fe-ae92-42d46e161a76
+		summarizeBy: sum
+		sourceColumn: OP erledigt 0/1 [110]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mitarbeiter-KZ [111]'
+		dataType: string
+		lineageTag: 0815f21a-2645-4e93-8e3a-b38386bda24e
+		summarizeBy: none
+		sourceColumn: Mitarbeiter-KZ [111]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Erfassungseit HH:MM:SS [113]'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 93f3147c-c141-4a9a-9ac3-bea1063a8c86
+		summarizeBy: none
+		sourceColumn: Erfassungseit HH:MM:SS [113]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Nettowert [114]'
+		dataType: double
+		lineageTag: ae19d9f8-0282-4fa6-96da-e159ff51cc9a
+		summarizeBy: sum
+		sourceColumn: Nettowert [114]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Abzuege [115]'
+		dataType: double
+		lineageTag: bfb3b579-be92-47dd-a14b-165393ad9ee0
+		summarizeBy: sum
+		sourceColumn: Abzuege [115]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bemerkung [116]'
+		dataType: string
+		lineageTag: 4a612552-057e-4749-9fe4-144249f6a7ae
+		summarizeBy: none
+		sourceColumn: Bemerkung [116]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Storno Mitarbeiter [117]'
+		dataType: string
+		lineageTag: 63d24cf6-e877-4493-a192-8bd6a2ad088c
+		summarizeBy: none
+		sourceColumn: Storno Mitarbeiter [117]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Storno Zeit [118]'
+		dataType: string
+		lineageTag: 0ea4edfa-5357-4ba4-ae0a-d8fa1c408ea4
+		summarizeBy: none
+		sourceColumn: Storno Zeit [118]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValueDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fa001b04-c416-4418-848b-3af51124d1dc
+		summarizeBy: none
+		sourceColumn: ValueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3b154d2a-14a9-4862-a74a-1053a0e9a0e9
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EntryDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 78ea9622-7337-4896-ac11-29c80b72f170
+		summarizeBy: none
+		sourceColumn: EntryDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DueDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3ca7c66f-3b78-497d-9707-9b9a242f4fa0
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OpenItemKey
+		dataType: string
+		lineageTag: 704c4e97-d092-46dd-89d5-8837a13211bb
+		summarizeBy: none
+		sourceColumn: OpenItemKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceKey
+		dataType: string
+		lineageTag: 33d1ac1e-ea76-4420-a524-60e81b2f1ce3
+		summarizeBy: none
+		sourceColumn: InvoiceKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition a8101op_payments = m
+		mode: import
+		source =
+				let
+				    Source = a8101op,
+				
+				    #"Filtered Payments" =
+				        Table.SelectRows(
+				            Source,
+				            each [lfdNr] > 0
+				        )
+				in
+				    #"Filtered Payments"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
