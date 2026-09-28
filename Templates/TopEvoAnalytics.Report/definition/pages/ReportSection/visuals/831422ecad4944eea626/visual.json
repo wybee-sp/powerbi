@@ -65,14 +65,14 @@
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "0D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "0D"
                 }
               }
             }
@@ -308,7 +308,14 @@
             "padding": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "2D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
                 }
               }
             }

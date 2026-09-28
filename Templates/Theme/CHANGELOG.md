@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.3.1 - 2026-09-28
+
+- Names the reusable pair TimeControl and records its no-overflow, active-highlight and independent-range acceptance contract.
+- Uses full selector width with reduced item padding; preserves selected-state styling and saved Month.
+- Adds explicit trend axis font/category spacing and documents the existing five canonical parameter mappings and native density limitations. Desktop verification remains pending; model and theme unchanged.
+
 ## Component specification 1.3.0 - 2026-09-28
 
 - Replaces the separate Display by slot with a combined 608 px Time control: adjacent date inputs and horizontal Day/Week/Month/Quarter/Year tiles on one continuous white surface.

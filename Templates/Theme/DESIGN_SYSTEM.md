@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.3.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.3.1 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
 
 ## 1. Purpose and required inputs
 
@@ -232,3 +232,26 @@ In the Golden Sample, Branch/Date range/Customer filter all seven analytical vis
 For a reset component, restore Date range and Display by explicitly and independently (default grain Month). Clearing a native field parameter means all fields, so do not expose a clear/all action for this selector. Test the host's reset and bookmark behavior. The same disconnected parameter can control related trends when intentional, but cross-page slicer synchronization must be explicitly chosen.
 
 The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row has three conceptual groups: Branch (296 px), Time control (608 px) and Customer (296 px). The Time control occupies two standard slots and their internal gutter, forming a continuous surface. Validate both date inputs and all five grain buttons without wrapping or scrolling at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.
+
+
+### TimeControl component contract (1.3.1)
+
+TimeControl is one reusable component composed of two native slicers. Keep its 608 x 56 px group between Branch and the business filter, with date inputs at x=336 (280 px) and Display by at x=616 (328 px). Preserve the shared white surface, identities, independent bindings and interactions when reusing it. COMPONENTS.json records both members; copying only one member does not reproduce the component.
+
+All five labels must be visible: Day | Week | Month | Quarter | Year. The selector uses Segoe UI 10 pt, 2 px item padding and no horizontal container padding, making all 328 px available. Preserve native selected-state highlighting and strict single selection; Month remains the saved default. Do not override all tile backgrounds with one static color. No selector scrolling, clipped text, wrapping or overflow is acceptable at the supported embedded size. Actual fit and highlight require Desktop/embedded verification; static layout checks cannot certify them.
+
+The Invoice activity axis resolves one shared field parameter:
+
+| Display by | Canonical axis | Chronological ordering |
+| --- | --- | --- |
+| Day | Date[Date], actual date | Date ascending |
+| Week | Date[YearWeek] | YearWeekSort |
+| Month | Date[YearMonth] | YearMonthSort |
+| Quarter | Date[YearQuarter] | YearQuarterSort |
+| Year | Date[Year] | Numeric ascending |
+
+Axis labels use 10 pt Segoe UI, no numeric abbreviation, 60 px minimum category width and at most 25% of visual height for the axis. Native collision handling may skip labels; tooltips retain the selected category. Daily/weekly long ranges may scroll the chart; monthly/quarterly/yearly views naturally have fewer categories. This chart scrolling is distinct from the forbidden overflow of the five-option selector. Keep the chosen grain and date range intact rather than automatically aggregating to another grain or excluding data.
+
+The native categorical axis does not expose a verified field-parameter-driven tick interval in the pinned schema. These shared readability settings apply to all grains; do not invent density expressions or claim five independently configured tick intervals. A single reusable chart uses the parameter, never automatic hierarchies or five chart copies. The cached Month projection is an initial parameter state, not a permanent month axis.
+
+Before approval, test all five selections over a fixed range, an ISO year boundary and a multi-year range. Check chronological labels, unchanged date inputs and KPI totals, selected-state highlighting, all five buttons without selector overflow, and keyboard traversal. Capture the Desktop build and actual render evidence.

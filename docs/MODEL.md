@@ -127,3 +127,7 @@ Canonical names now follow the requested contract: QuarterNumber, MonthNumber, Y
 Static validation verifies native TOM hierarchy/parameter metadata, all five NAMEOF targets and sort mappings, PBIR parameter references, default Month selection and interaction isolation. Reference cases cover ISO New Year boundaries and grouping the same date selection at all five grains. Actual DAX evaluation and field-parameter switching require Desktop/model refresh: test all five choices, chronological order, unchanged date-range inputs/KPI totals, partial periods, empty periods and bookmarks. No successful runtime interaction test is claimed yet.
 
 Reference: [Microsoft field parameters](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters).
+
+### TimeControl axis presentation
+
+The shared parameter already implements all five canonical axis mappings above; no extra tables, measures or relationship changes are needed for TimeControl finalization. Golden Sample uses one categorical line chart with parameter sortDirection Ascending and the selected column sort metadata. The initial YearMonth projection is the saved Month state. Readability settings are shared across grains; native label collision handling and chart scrolling preserve the selected data grain. See DESIGN_SYSTEM.md for the runtime acceptance checks.

@@ -4,7 +4,7 @@ Permanent internal visual reference. Do not deploy this report to customers.
 
 ## Implementation
 
-Overview uses the canonical TopEvo 1.0.0 theme and compact 1.3.0 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
+Overview uses the canonical TopEvo 1.0.0 theme and compact 1.3.1 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
 
 `COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. All components are Draft until Desktop rendering and embedded verification pass. Existing report identity and shared-model reference are preserved.
 
@@ -52,3 +52,7 @@ The canonical Date dimension now supplies the monthly trend and date slicer. See
 Date range and Display by retain independent behavior within the combined Time control (component specification 1.3.0). The range uses two date inputs without a slider. Display by supports Day, Week, Month, Quarter and Year, default Month; the shared model owns its NAMEOF targets and chronological sort keys. The chart title is Invoice activity. No measures or relationships changed in this extension. See MODEL.md for explicit hierarchies and the ISO-year rule for Calendar Week.
 
 The previous three-wide-filter description is historical; the current control row uses Branch (296 px), combined Time control (608 px) and Customer (296 px). Verify all five grain buttons remain visible without wrapping or scrolling before approval. Before approval, refresh the model and test all five choices against one fixed range, including partial periods and New Year ISO weeks. Verify date-range retention and unchanged KPI/table totals. Static checks do not establish runtime field-parameter behavior.
+
+## TimeControl finalization (1.3.1)
+
+TimeControl retains its current geometry and selected-state styling. Granularity tiles now use the full 328 px width with 2 px item padding. The dynamic trend keeps the five canonical parameter targets and ascending model sorting; explicit 10 pt axis labels and 60 px category spacing protect readability. Long ranges may scroll the chart, never the selector. Desktop verification of all five visible options and every axis transition remains required; components remain Draft.
