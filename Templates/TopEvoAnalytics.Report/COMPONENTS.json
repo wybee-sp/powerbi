@@ -1,6 +1,6 @@
 {
-  "version": "1.4.0",
-  "status": "Draft - refined after user-reported Desktop rendering; revised rendering pending",
+  "version": "1.4.1",
+  "status": "TimeControl accepted by user as rendered standard; other components retain individual status",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
   "page": "ReportSection",
@@ -77,7 +77,7 @@
       "role": "filter.period",
       "id": "5ddcb2a5d4d5d4b8fc09",
       "type": "slicer",
-      "status": "Draft",
+      "status": "Approved visual reference - user confirmation",
       "position": {
         "x": 232,
         "y": 72,
@@ -114,7 +114,7 @@
       "id": "831422ecad4944eea626",
       "type": "slicer",
       "title": "Display by",
-      "status": "Draft",
+      "status": "Approved visual reference - user confirmation",
       "position": {
         "x": 512,
         "y": 72,
@@ -615,7 +615,10 @@
         "Selected grain visibly highlighted",
         "Date range preserved when grain changes",
         "Keyboard order: Branch, date range, granularity, business filter"
-      ]
+      ],
+      "status": "Approved visual reference - user-confirmed rendered implementation",
+      "layoutFrozen": true,
+      "approvalEvidence": "User requested finalization of current rendered TimeControl; Desktop build not recorded; date validity investigation separate"
     }
   ]
 }

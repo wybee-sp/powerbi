@@ -133,3 +133,7 @@ Reference: [Microsoft field parameters](https://learn.microsoft.com/en-us/power-
 The shared parameter already implements all five canonical axis mappings above; no extra tables, measures or relationship changes are needed for TimeControl finalization. Golden Sample uses one line chart requesting continuous scaling for date/numeric fields and categorical fallback for text fields with parameter sortDirection Ascending and the selected column sort metadata. The initial YearMonth projection is the saved Month state. Readability settings are shared across grains; native label collision handling and chart scrolling preserve the selected data grain. See DESIGN_SYSTEM.md for the runtime acceptance checks.
 
 The 1.4.0 correction removes the forced categorical axis and minimum category width. Date[Date] is verified as dateTime with date-only annotation and yyyy-MM-dd format. The field parameter itself, all sort keys and business measures are unchanged. All five runtime states remain pending as recorded in GOLDEN_SAMPLE.md.
+
+## Date validity investigation
+
+The current TimeControl rendering is accepted by the user as the visual standard; its layout is frozen. The reported 01.01.0106 lower bound remains an open data/model investigation. See [DATE_VALIDITY.md](DATE_VALIDITY.md) for confirmed parser risks, the source-field mapping, a read-only row diagnostic and a proposed validity policy. Responsible source rows cannot be identified until the local CSV exports are available. No transformation or calendar-bound change has been made.

@@ -1,5 +1,10 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.4.1 - 2026-09-28
+
+- Records user acceptance of the rendered TimeControl as the frozen Golden Sample standard; no layout or visual definitions changed.
+- Separates visual acceptance from the open ancient-date investigation; adds source mapping, proposed date-validity policy and read-only diagnostic. No source data or transformations changed.
+
 ## Component specification 1.4.0 - 2026-09-28
 
 - Corrects reported selector overflow by widening TimeControl to 816 px with a 536 px granularity selector, preserving Branch -> TimeControl -> Customer.

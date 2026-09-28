@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.4.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.4.1 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
 
 ## 1. Purpose and required inputs
 
@@ -15,12 +15,12 @@ Every future generated page must use:
 5. Business measures from `_Measures`.
 6. No customer data or machine-specific paths in Git.
 
-The Golden Sample is a permanent internal reference, not a customer report. Exclude it from customer deployment. The Overview now implements the theme and component layout. The user reported a first Desktop rendering; the compact revision still requires render verification before component approval. Module reports are unchanged. The subsequent canonical Date integration is documented in `docs/MODEL.md`.
+The Golden Sample is a permanent internal reference, not a customer report. Exclude it from customer deployment. The Overview now implements the theme and component layout. The user reported a first Desktop rendering; the current TimeControl has now been accepted by the user as the rendered standard. Module reports are unchanged. The subsequent canonical Date integration is documented in `docs/MODEL.md`.
 
 ## 2. Compatibility and ownership
 
 - Schema baseline: Microsoft's `reportThemeSchema-2.150.json` (Desktop 2.150 family). This is a validation baseline, not a claim that it is the newest release.
-- The theme passed static validation against that schema. A first Desktop rendering was reported by the user. Rendering of the compact revision, export and embedded-browser verification remain pending.
+- The theme passed static validation against that schema. A first Desktop rendering was reported by the user. The current TimeControl rendering is user-accepted; independent export and embedded-browser verification remain unrecorded.
 - Validated Desktop build: **not yet recorded**. Record the exact build, theme version and verification date when approving the first Golden Sample.
 - The theme's schema URL references a versioned filename on Microsoft's mutable main branch. Reproducible CI should cache/pin the schema content and record its hash.
 - `TopEvo.json` owns encoded colors and defaults. This document owns layout, behavior and component usage. Update both and the changelog together.
@@ -257,3 +257,7 @@ The parameter binding remains Category.fieldParameters -> Time Granularity[Field
 Microsoft documents that text axes are always categorical and dates/numbers support continuous scaling: [axis guidance](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-customize-x-axis-and-y-axis). The mixed-type parameter behavior still requires runtime verification.
 
 Before approval, test all five selections over a fixed range, an ISO year boundary and a multi-year range. Check chronological labels, unchanged date inputs and KPI totals, selected-state highlighting, all five buttons without selector overflow, and keyboard traversal. Capture the Desktop build and actual render evidence.
+
+## Accepted TimeControl reference (1.4.1)
+
+The user finalized the current rendered implementation as the standard. Freeze the existing 1280 x 720 layout: Branch x24/w192; TimeControl x232/w816 with date range w280 and granularity x512/w536; Customer x1064/w192; all y72/h56. Preserve the active-grain styling and parameter bindings. No PBIR layout change accompanies this acceptance. Earlier pending-render notes describe the development history; this acceptance supersedes the TimeControl visual approval status, but does not claim agent-operated tests or a recorded Desktop build. Date validity is a separate open model investigation in docs/DATE_VALIDITY.md.

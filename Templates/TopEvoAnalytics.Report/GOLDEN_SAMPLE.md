@@ -4,9 +4,9 @@ Permanent internal visual reference. Do not deploy this report to customers.
 
 ## Implementation
 
-Overview uses the canonical TopEvo 1.0.0 theme and compact 1.4.0 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
+Overview uses the canonical TopEvo 1.0.0 theme and compact 1.4.1 component specification with unchanged 1.4.0 layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
 
-`COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. All components are Draft until Desktop rendering and embedded verification pass. Existing report identity and shared-model reference are preserved.
+`COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. TimeControl is the user-accepted rendered visual reference; other components retain their individual status. Existing report identity and shared-model reference are preserved.
 
 The page contains one page-title text box, a native page navigator, one date-range slicer, two dimension dropdowns and a horizontal granularity tile selector, four count cards, an invoice-date trend, a customer ranking and a summary table. The navigator currently exposes the single Overview page; there are no placeholder destinations.
 
@@ -70,3 +70,7 @@ The previous selector still overflowed and Day labels were truncated. That rende
 | Year | Date[Year] | Year | Passed | Pending |
 
 Verify all five options are simultaneously visible without arrows, the active option remains highlighted, and switching each option retains date bounds and KPI totals. Day must show meaningful continuous date ticks over a multi-year selection. Record real Desktop results in this table before approving the component. No Desktop process or native Desktop automation is available in the current session; TimeControl remains incomplete pending these checks.
+
+## Accepted rendered reference (1.4.1)
+
+The user has finalized the current TimeControl as the TopEvo standard. Its current visual layout, member IDs, active-state styling and field bindings are frozen. COMPONENTS.json records user-confirmed acceptance, not agent-executed Desktop testing; the Desktop build and independent per-state test evidence remain unrecorded. This supersedes earlier TimeControl pending-approval statements and does not retroactively turn the historical test matrix into executed tests. The reported date lower bound 01.01.0106 is tracked separately in docs/DATE_VALIDITY.md; no source cause is claimed without row evidence.
