@@ -1,0 +1,512 @@
+{
+  "version": "1.0.0",
+  "status": "Draft - Desktop and embedded verification pending",
+  "deployToCustomers": false,
+  "report": "Templates/TopEvoAnalytics.Report",
+  "page": "ReportSection",
+  "semanticModel": "Templates/TopEvoAnalytics.SemanticModel",
+  "theme": "Templates/Theme/TopEvo.json",
+  "components": [
+    {
+      "role": "header.title",
+      "id": "3a5ca5c0fdc8424c93f4",
+      "type": "textbox",
+      "status": "Draft",
+      "position": {
+        "x": 24,
+        "y": 24,
+        "z": 0,
+        "width": 608,
+        "height": 40,
+        "tabOrder": 0
+      },
+      "bindings": {}
+    },
+    {
+      "role": "header.context",
+      "id": "03a1f28996d7f9d80b05",
+      "type": "textbox",
+      "status": "Draft",
+      "position": {
+        "x": 856,
+        "y": 24,
+        "z": 1000,
+        "width": 400,
+        "height": 40,
+        "tabOrder": 1000
+      },
+      "bindings": {}
+    },
+    {
+      "role": "navigation.pages",
+      "id": "d8f5a9bed09924c8f6f5",
+      "type": "pageNavigator",
+      "status": "Draft",
+      "position": {
+        "x": 24,
+        "y": 80,
+        "z": 2000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 2000
+      },
+      "bindings": {}
+    },
+    {
+      "role": "filter.period",
+      "id": "5ddcb2a5d4d5d4b8fc09",
+      "type": "slicer",
+      "status": "Draft",
+      "position": {
+        "x": 336,
+        "y": 80,
+        "z": 3000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 3000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "InvoiceDate"
+                }
+              },
+              "queryRef": "a42001.InvoiceDate",
+              "nativeQueryRef": "Invoice date",
+              "active": true,
+              "displayName": "Invoice date"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "filter.branch",
+      "id": "9e43bef062079b54db6a",
+      "type": "slicer",
+      "status": "Draft",
+      "position": {
+        "x": 648,
+        "y": 80,
+        "z": 4000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 4000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a9002"
+                    }
+                  },
+                  "Property": "Bezeichnung [102]"
+                }
+              },
+              "queryRef": "a9002.Bezeichnung [102]",
+              "nativeQueryRef": "Branch",
+              "active": true,
+              "displayName": "Branch"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "filter.customer",
+      "id": "92863660e33e39bf2329",
+      "type": "slicer",
+      "status": "Draft",
+      "position": {
+        "x": 960,
+        "y": 80,
+        "z": 5000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 5000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "kpi.invoices",
+      "id": "153e904422493224e572",
+      "type": "cardVisual",
+      "status": "Draft",
+      "position": {
+        "x": 24,
+        "y": 152,
+        "z": 6000,
+        "width": 296,
+        "height": 104,
+        "tabOrder": 6000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "nativeQueryRef": "Invoices",
+              "displayName": "Invoices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "kpi.open",
+      "id": "a267601474d5703ee78e",
+      "type": "cardVisual",
+      "status": "Draft",
+      "position": {
+        "x": 336,
+        "y": 152,
+        "z": 7000,
+        "width": 296,
+        "height": 104,
+        "tabOrder": 7000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Open Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Open Invoice Count",
+              "nativeQueryRef": "Open invoices",
+              "displayName": "Open invoices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "kpi.closed",
+      "id": "44bde52db62b1cce7f88",
+      "type": "cardVisual",
+      "status": "Draft",
+      "position": {
+        "x": 648,
+        "y": 152,
+        "z": 8000,
+        "width": 296,
+        "height": 104,
+        "tabOrder": 8000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Closed Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Closed Invoice Count",
+              "nativeQueryRef": "Closed invoices",
+              "displayName": "Closed invoices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "kpi.payments",
+      "id": "369387969e38ec6613f3",
+      "type": "cardVisual",
+      "status": "Draft",
+      "position": {
+        "x": 960,
+        "y": 152,
+        "z": 9000,
+        "width": 296,
+        "height": 104,
+        "tabOrder": 9000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Payment Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Payment Count",
+              "nativeQueryRef": "Payments",
+              "displayName": "Payments"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "chart.trend",
+      "id": "2795845256d49757365f",
+      "type": "lineChart",
+      "title": "Invoices by invoice date",
+      "status": "Draft",
+      "position": {
+        "x": 24,
+        "y": 272,
+        "z": 10000,
+        "width": 816,
+        "height": 224,
+        "tabOrder": 10000
+      },
+      "bindings": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "InvoiceDate"
+                }
+              },
+              "queryRef": "a42001.InvoiceDate",
+              "nativeQueryRef": "Invoice date",
+              "active": true,
+              "displayName": "Invoice date"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "nativeQueryRef": "Invoices",
+              "displayName": "Invoices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "chart.ranking",
+      "id": "9d27b58b00aba43cd948",
+      "type": "clusteredBarChart",
+      "title": "Customers by invoice count",
+      "status": "Draft",
+      "position": {
+        "x": 856,
+        "y": 272,
+        "z": 11000,
+        "width": 400,
+        "height": 224,
+        "tabOrder": 11000
+      },
+      "bindings": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "nativeQueryRef": "Invoices",
+              "displayName": "Invoices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "table.summary",
+      "id": "8fcfab21f72e5ed59047",
+      "type": "tableEx",
+      "title": "Customer summary · counts",
+      "status": "Draft",
+      "position": {
+        "x": 24,
+        "y": 512,
+        "z": 12000,
+        "width": 1232,
+        "height": 184,
+        "tabOrder": 12000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "nativeQueryRef": "Invoices",
+              "displayName": "Invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Open Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Open Invoice Count",
+              "nativeQueryRef": "Open invoices",
+              "displayName": "Open invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Closed Invoice Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Closed Invoice Count",
+              "nativeQueryRef": "Closed invoices",
+              "displayName": "Closed invoices"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "A8101OP Payment Count"
+                }
+              },
+              "queryRef": "_Measures.A8101OP Payment Count",
+              "nativeQueryRef": "Payments",
+              "displayName": "Payments"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
