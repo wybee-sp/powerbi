@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.3.1 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.4.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
 
 ## 1. Purpose and required inputs
 
@@ -82,10 +82,10 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | --- | ---: | ---: | ---: | ---: |
 | Page title | 24 | 24 | 608 | 32 |
 | Page navigation | 648 | 24 | 608 | 32 |
-| Branch filter | 24 | 72 | 296 | 56 |
-| Time control: date range | 336 | 72 | 280 | 56 |
-| Time control: granularity | 616 | 72 | 328 | 56 |
-| Customer filter | 960 | 72 | 296 | 56 |
+| Branch filter | 24 | 72 | 192 | 56 |
+| Time control: date range | 232 | 72 | 280 | 56 |
+| Time control: granularity | 512 | 72 | 536 | 56 |
+| Customer filter | 1064 | 72 | 192 | 56 |
 | KPI 1 | 24 | 144 | 296 | 96 |
 | KPI 2 | 336 | 144 | 296 | 96 |
 | KPI 3 | 648 | 144 | 296 | 96 |
@@ -94,7 +94,7 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | Ranking | 856 | 256 | 400 | 224 |
 | Summary table | 24 | 496 | 1232 | 200 |
 
-Navigation shares the header instead of consuming a filter slot. Branch and Customer each span three grid columns. The combined Time control spans six grid columns (608 px), with contiguous date-range and granularity visuals on a single white surface. Its internal split is 280/328 px, with no canvas gutter or individual borders; standard 16 px gutters separate it from Branch and Customer. Date range uses two native date inputs; hide the redundant slider to preserve the compact 56 px height. Verify date-input legibility at embedded scale. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
+Navigation shares the header instead of consuming a filter slot. Branch and Customer each span two grid columns. The combined Time control spans eight grid columns (816 px), with contiguous date-range and granularity visuals on a single white surface. Its internal split is 280/536 px, with no canvas gutter or individual borders; standard 16 px gutters separate it from Branch and Customer. Date range uses two native date inputs; hide the redundant slider to preserve the compact 56 px height. Verify date-input legibility at embedded scale. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
 
 The navigation starts at the seventh grid column (x=648). Its five-slot grid has 4 px internal spacing and a 32 px target height. It supports 3-5 short page names in one row; keep unused slots empty instead of inventing destinations. The current report contains only Overview. Validate both the one-page and five-page render before approving this component. Do not allow a single tab to become a full-width 608 px button.
 
@@ -223,7 +223,7 @@ Every analytical trend distinguishes two controls:
 - **Date range** selects the inclusive start/end of the analyzed period, using Date[Date]. It filters data and KPI totals.
 - **Display by** selects Day, Week, Month, Quarter or Year, in that order. It changes only the grouping of the same period in one trend visual.
 
-Use the shared Time Granularity field parameter. Month is the default; native horizontal tile slicer with strict single selection, no Select all. Show Day, Week, Month, Quarter and Year together in one row at 10 pt; preserve visible selected/focus states. The two native visuals form one reusable Time control, not a new model filter. Use a shared white surface, aligned headers and no internal card borders. Avoid dropdowns for the five fixed grains. The chart title is grain-neutral ("Invoice activity"); the visible selector states the grain. Axis fields and sorting come from the shared model, as specified in MODEL.md. Use year-qualified week/month/quarter labels so periods cannot merge across years. The axis stays categorical across the five options and sorts chronologically via parameter sortDirection and the selected column's SortByColumn metadata.
+Use the shared Time Granularity field parameter. Month is the default; native horizontal tile slicer with strict single selection, no Select all. Show Day, Week, Month, Quarter and Year together in one row at 10 pt; preserve visible selected/focus states. The two native visuals form one reusable Time control, not a new model filter. Use a shared white surface, aligned headers and no internal card borders. Avoid dropdowns for the five fixed grains. The chart title is grain-neutral ("Invoice activity"); the visible selector states the grain. Axis fields and sorting come from the shared model, as specified in MODEL.md. Use year-qualified week/month/quarter labels so periods cannot merge across years. The axis requests continuous scaling for real date/numeric fields; text period fields use categorical axes. It and sorts chronologically via parameter sortDirection and the selected column's SortByColumn metadata.
 
 Do not create five separate charts, use weekday names for daily analysis, encode grouping in a report measure or add another calendar table. Explicit Calendar and Calendar Week hierarchies support drill navigation elsewhere; the Display by control selects one standalone grain.
 
@@ -231,14 +231,14 @@ In the Golden Sample, Branch/Date range/Customer filter all seven analytical vis
 
 For a reset component, restore Date range and Display by explicitly and independently (default grain Month). Clearing a native field parameter means all fields, so do not expose a clear/all action for this selector. Test the host's reset and bookmark behavior. The same disconnected parameter can control related trends when intentional, but cross-page slicer synchronization must be explicitly chosen.
 
-The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row has three conceptual groups: Branch (296 px), Time control (608 px) and Customer (296 px). The Time control occupies two standard slots and their internal gutter, forming a continuous surface. Validate both date inputs and all five grain buttons without wrapping or scrolling at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.
+The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row has three conceptual groups: Branch (192 px), Time control (816 px) and Customer (192 px). The Time control occupies eight grid columns, forming a continuous surface. Validate both date inputs and all five grain buttons without wrapping or scrolling at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.
 
 
-### TimeControl component contract (1.3.1)
+### TimeControl component contract (1.4.0)
 
-TimeControl is one reusable component composed of two native slicers. Keep its 608 x 56 px group between Branch and the business filter, with date inputs at x=336 (280 px) and Display by at x=616 (328 px). Preserve the shared white surface, identities, independent bindings and interactions when reusing it. COMPONENTS.json records both members; copying only one member does not reproduce the component.
+TimeControl is one reusable component composed of two native slicers. Keep its 816 x 56 px group between Branch and the business filter, with date inputs at x=232 (280 px) and Display by at x=512 (536 px). Preserve the shared white surface, identities, independent bindings and interactions when reusing it. COMPONENTS.json records both members; copying only one member does not reproduce the component.
 
-All five labels must be visible: Day | Week | Month | Quarter | Year. The selector uses Segoe UI 10 pt, 2 px item padding and no horizontal container padding, making all 328 px available. Preserve native selected-state highlighting and strict single selection; Month remains the saved default. Do not override all tile backgrounds with one static color. No selector scrolling, clipped text, wrapping or overflow is acceptable at the supported embedded size. Actual fit and highlight require Desktop/embedded verification; static layout checks cannot certify them.
+All five labels must be visible: Day | Week | Month | Quarter | Year. The selector uses Segoe UI 10 pt, 2 px item padding and no horizontal container padding, making all 536 px available. Preserve native selected-state highlighting and strict single selection; Month remains the saved default. Do not override all tile backgrounds with one static color. No selector scrolling, clipped text, wrapping or overflow is acceptable at the supported embedded size. Actual fit and highlight require Desktop/embedded verification; static layout checks cannot certify them.
 
 The Invoice activity axis resolves one shared field parameter:
 
@@ -250,8 +250,10 @@ The Invoice activity axis resolves one shared field parameter:
 | Quarter | Date[YearQuarter] | YearQuarterSort |
 | Year | Date[Year] | Numeric ascending |
 
-Axis labels use 10 pt Segoe UI, no numeric abbreviation, 60 px minimum category width and at most 25% of visual height for the axis. Native collision handling may skip labels; tooltips retain the selected category. Daily/weekly long ranges may scroll the chart; monthly/quarterly/yearly views naturally have fewer categories. This chart scrolling is distinct from the forbidden overflow of the five-option selector. Keep the chosen grain and date range intact rather than automatically aggregating to another grain or excluding data.
+Axis labels use 10 pt Segoe UI with no numeric abbreviation. Request Scalar (continuous) scaling for Day and numeric Year. Day resolves to the real Date[Date] column, which remains dateTime with date-only metadata and yyyy-MM-dd format; automatic tick selection can show fewer ticks over long ranges without changing daily aggregation. Text YearWeek, YearMonth and YearQuarter use categorical fallback, preserving model sort keys. Remove the old 60 px minimum category width: it forced daily categories into narrow, truncated labels and scrolling.
 
-The native categorical axis does not expose a verified field-parameter-driven tick interval in the pinned schema. These shared readability settings apply to all grains; do not invent density expressions or claim five independently configured tick intervals. A single reusable chart uses the parameter, never automatic hierarchies or five chart copies. The cached Month projection is an initial parameter state, not a permanent month axis.
+The parameter binding remains Category.fieldParameters -> Time Granularity[Fields], not a label substitution. Its five NAMEOF targets and model sort keys are checked individually. The saved Month projection and corresponding sort are the initial state; parameter sortDirection Ascending governs resolved fields. Runtime transitions from Month to Day and back must confirm Desktop resolves the field and axis type correctly. No per-grain tick interval expressions or automatic hierarchies are added.
+
+Microsoft documents that text axes are always categorical and dates/numbers support continuous scaling: [axis guidance](https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-customize-x-axis-and-y-axis). The mixed-type parameter behavior still requires runtime verification.
 
 Before approval, test all five selections over a fixed range, an ISO year boundary and a multi-year range. Check chronological labels, unchanged date inputs and KPI totals, selected-state highlighting, all five buttons without selector overflow, and keyboard traversal. Capture the Desktop build and actual render evidence.

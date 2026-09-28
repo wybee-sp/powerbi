@@ -4,7 +4,7 @@ Permanent internal visual reference. Do not deploy this report to customers.
 
 ## Implementation
 
-Overview uses the canonical TopEvo 1.0.0 theme and compact 1.3.1 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
+Overview uses the canonical TopEvo 1.0.0 theme and compact 1.4.0 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
 
 `COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. All components are Draft until Desktop rendering and embedded verification pass. Existing report identity and shared-model reference are preserved.
 
@@ -56,3 +56,17 @@ The previous three-wide-filter description is historical; the current control ro
 ## TimeControl finalization (1.3.1)
 
 TimeControl retains its current geometry and selected-state styling. Granularity tiles now use the full 328 px width with 2 px item padding. The dynamic trend keeps the five canonical parameter targets and ascending model sorting; explicit 10 pt axis labels and 60 px category spacing protect readability. Long ranges may scroll the chart, never the selector. Desktop verification of all five visible options and every axis transition remains required; components remain Draft.
+
+## Correction after Desktop feedback (1.4.0)
+
+The previous selector still overflowed and Day labels were truncated. That rendering does not approve TimeControl. Current layout is Branch x24/w192, TimeControl x232/w816 (date w280, granularity w536), Customer x1064/w192. The prior geometry descriptions above are historical. The old categorical-axis override and 60 px minimum category width are replaced by a Scalar request; dates/numbers can use automatic continuous ticks and text periods remain categorical.
+
+| State | Bound field | Sort | Static reference check | Desktop interaction |
+| --- | --- | --- | --- | --- |
+| Day | Date[Date] | Date | Passed | Pending |
+| Week | Date[YearWeek] | YearWeekSort | Passed | Pending |
+| Month | Date[YearMonth] | YearMonthSort | Passed | Pending |
+| Quarter | Date[YearQuarter] | YearQuarterSort | Passed | Pending |
+| Year | Date[Year] | Year | Passed | Pending |
+
+Verify all five options are simultaneously visible without arrows, the active option remains highlighted, and switching each option retains date bounds and KPI totals. Day must show meaningful continuous date ticks over a multi-year selection. Record real Desktop results in this table before approving the component. No Desktop process or native Desktop automation is available in the current session; TimeControl remains incomplete pending these checks.

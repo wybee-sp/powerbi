@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.4.0 - 2026-09-28
+
+- Corrects reported selector overflow by widening TimeControl to 816 px with a 536 px granularity selector, preserving Branch -> TimeControl -> Customer.
+- Removes forced categorical date-axis behavior and 60 px category slots; requests continuous date/numeric scaling with text-period fallback.
+- Verifies all five parameter targets statically and records each Desktop state as Pending. Prior render success did not establish component completion.
+
 ## Component specification 1.3.1 - 2026-09-28
 
 - Names the reusable pair TimeControl and records its no-overflow, active-highlight and independent-range acceptance contract.

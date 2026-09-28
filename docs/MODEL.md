@@ -72,7 +72,7 @@ No such measure is added now. Existing payment measures continue to describe pay
 
 ## Golden Sample
 
-- Trend category: the shared Time Granularity field parameter, defaulting to `Date[YearMonth]`, with categorical axis and ascending parameter sort. Each resolved field uses its model sort key. Value remains `_Measures[A8101OP Invoice Count]`, which counts open-item invoice records through the existing header relationship; this is not a newly defined invoice business metric.
+- Trend category: the shared Time Granularity field parameter, defaulting to `Date[YearMonth]`, with type-aware axis scaling and ascending parameter sort. Each resolved field uses its model sort key. Value remains `_Measures[A8101OP Invoice Count]`, which counts open-item invoice records through the existing header relationship; this is not a newly defined invoice business metric.
 - Date range uses `Date[Date]` in Between mode with inclusive start/end inputs. It filters all analytical visuals independently of granularity.
 - No zero-filling, blank exclusion, report calculations or automatic hierarchy. Months without activity can remain absent/blank according to existing measure/visual behavior; future calendar dates do not imply future activity.
 - Unmatched invoice keys, null dates and `(Blank)` customer categories still require source/model investigation. Adding a calendar cannot repair those records.
@@ -130,4 +130,6 @@ Reference: [Microsoft field parameters](https://learn.microsoft.com/en-us/power-
 
 ### TimeControl axis presentation
 
-The shared parameter already implements all five canonical axis mappings above; no extra tables, measures or relationship changes are needed for TimeControl finalization. Golden Sample uses one categorical line chart with parameter sortDirection Ascending and the selected column sort metadata. The initial YearMonth projection is the saved Month state. Readability settings are shared across grains; native label collision handling and chart scrolling preserve the selected data grain. See DESIGN_SYSTEM.md for the runtime acceptance checks.
+The shared parameter already implements all five canonical axis mappings above; no extra tables, measures or relationship changes are needed for TimeControl finalization. Golden Sample uses one line chart requesting continuous scaling for date/numeric fields and categorical fallback for text fields with parameter sortDirection Ascending and the selected column sort metadata. The initial YearMonth projection is the saved Month state. Readability settings are shared across grains; native label collision handling and chart scrolling preserve the selected data grain. See DESIGN_SYSTEM.md for the runtime acceptance checks.
+
+The 1.4.0 correction removes the forced categorical axis and minimum category width. Date[Date] is verified as dateTime with date-only annotation and yyyy-MM-dd format. The field parameter itself, all sort keys and business measures are unchanged. All five runtime states remain pending as recorded in GOLDEN_SAMPLE.md.

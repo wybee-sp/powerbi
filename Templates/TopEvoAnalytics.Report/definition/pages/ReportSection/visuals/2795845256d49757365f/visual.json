@@ -144,7 +144,7 @@
             "axisType": {
               "expr": {
                 "Literal": {
-                  "Value": "'Categorical'"
+                  "Value": "'Scalar'"
                 }
               }
             },
@@ -166,13 +166,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Segoe UI'"
-                }
-              }
-            },
-            "preferredCategoryWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "60D"
                 }
               }
             },
