@@ -5,48 +5,12 @@
     "x": 24,
     "y": 256,
     "z": 10000,
-    "width": 816,
     "height": 224,
+    "width": 816,
     "tabOrder": 10000
   },
   "visual": {
     "visualType": "lineChart",
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Invoice activity'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {
-            "altText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Invoice activity over the selected date range. Display by changes only the time grouping: day, ISO week, month, quarter or year.'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -59,13 +23,13 @@
                       "Entity": "Date"
                     }
                   },
-                  "Property": "YearMonth"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "Date.YearMonth",
-              "nativeQueryRef": "Month",
-              "displayName": "Month",
-              "active": true
+              "queryRef": "Date.Year",
+              "nativeQueryRef": "Year",
+              "active": true,
+              "displayName": "Year"
             }
           ],
           "fieldParameters": [
@@ -116,7 +80,7 @@
                     "Entity": "Date"
                   }
                 },
-                "Property": "YearMonth"
+                "Property": "Year"
               }
             },
             "direction": "Ascending"
@@ -210,6 +174,42 @@
           }
         }
       ]
-    }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Invoice activity'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Invoice activity over the selected date range. Display by changes only the time grouping: day, ISO week, month, quarter or year.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }

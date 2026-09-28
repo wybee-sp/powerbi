@@ -20,7 +20,11 @@ table 'Time Granularity'
 		sourceColumn: [Value2]
 		sortByColumn: Order
 
-		extendedProperty ParameterMetadata = {"version":3,"kind":2}
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
 
 	column Order
 		dataType: int64
@@ -39,5 +43,4 @@ table 'Time Granularity'
 				    ("Quarter", NAMEOF('Date'[YearQuarter]), 3),
 				    ("Year", NAMEOF('Date'[Year]), 4)
 				}
-
 

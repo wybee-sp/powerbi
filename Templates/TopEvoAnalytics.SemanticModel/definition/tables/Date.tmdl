@@ -1,9 +1,9 @@
 /// Canonical daily calendar. Range and ISO-week conventions are documented in docs/MODEL.md.
-table 'Date'
-	dataCategory: Time
+table Date
 	lineageTag: 5109673b-eedb-4f9c-b343-562eb18222a7
+	dataCategory: Time
 
-	column 'Date'
+	column Date
 		dataType: dateTime
 		isKey
 		formatString: yyyy-MM-dd
@@ -25,12 +25,12 @@ table 'Date'
 		lineageTag: dd5f437f-b586-4df5-abbe-c46f663656a3
 		summarizeBy: none
 		sourceColumn: [Quarter]
-		sortByColumn: 'QuarterNumber'
+		sortByColumn: QuarterNumber
 
-	column 'QuarterNumber'
+	column QuarterNumber
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 6ad98785-b831-4084-ab14-a0e2062c1da3
 		summarizeBy: none
 		sourceColumn: [QuarterNumber]
@@ -40,27 +40,27 @@ table 'Date'
 		lineageTag: 2e945ced-1b01-49d4-9b03-b9bb7f8191c6
 		summarizeBy: none
 		sourceColumn: [Month]
-		sortByColumn: 'MonthNumber'
+		sortByColumn: MonthNumber
 
-	column 'MonthNumber'
+	column MonthNumber
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: dd30f7f9-bfab-4bfe-9857-b678fb11cd8d
 		summarizeBy: none
 		sourceColumn: [MonthNumber]
 
-	column 'YearMonth'
+	column YearMonth
 		dataType: string
 		lineageTag: 903ccedc-6829-488e-94c6-0a152af94a73
 		summarizeBy: none
 		sourceColumn: [YearMonth]
-		sortByColumn: 'YearMonthSort'
+		sortByColumn: YearMonthSort
 
-	column 'YearMonthSort'
+	column YearMonthSort
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 790d7bb0-a16a-4f55-83e6-d9bc599d5120
 		summarizeBy: none
 		sourceColumn: [YearMonthSort]
@@ -72,17 +72,17 @@ table 'Date'
 		summarizeBy: none
 		sourceColumn: [Day]
 
-	column 'DayOfWeek'
+	column DayOfWeek
 		dataType: string
 		lineageTag: ee2ff115-f0aa-47ed-945d-a16e4732fd82
 		summarizeBy: none
 		sourceColumn: [DayOfWeek]
-		sortByColumn: 'DayOfWeekNumber'
+		sortByColumn: DayOfWeekNumber
 
-	column 'DayOfWeekNumber'
+	column DayOfWeekNumber
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: 1fd6e8b5-a3d7-4add-9663-a8f3b9d600e1
 		summarizeBy: none
 		sourceColumn: [DayOfWeekNumber]
@@ -94,24 +94,24 @@ table 'Date'
 		summarizeBy: none
 		sourceColumn: [Week]
 
-	column 'ISOYear'
+	column ISOYear
 		dataType: int64
 		formatString: 0
 		lineageTag: 7af6fc57-1ce3-4a41-b69c-95f824279231
 		summarizeBy: none
 		sourceColumn: [ISOYear]
 
-	column 'YearWeek'
+	column YearWeek
 		dataType: string
 		lineageTag: cdf8f1ea-e8d8-4d9f-87fc-44bf55ae51da
 		summarizeBy: none
 		sourceColumn: [YearWeek]
-		sortByColumn: 'YearWeekSort'
+		sortByColumn: YearWeekSort
 
-	column 'YearWeekSort'
+	column YearWeekSort
 		dataType: int64
-		formatString: 0
 		isHidden
+		formatString: 0
 		lineageTag: c55900cd-b033-4aa8-b8f1-725f974aa6c7
 		summarizeBy: none
 		sourceColumn: [YearWeekSort]
@@ -131,48 +131,41 @@ table 'Date'
 		summarizeBy: none
 		sourceColumn: [YearQuarterSort]
 
-	hierarchy 'Calendar'
+	hierarchy Calendar
 		lineageTag: 8700768c-12fd-455f-8256-e183f25e7c82
 
-		level 'Year'
-			ordinal: 0
-			column: 'Year'
+		level Year
 			lineageTag: 630bbb87-432f-4791-8dae-d3983b63b66b
+			column: Year
 
-		level 'Quarter'
-			ordinal: 1
-			column: 'Quarter'
+		level Quarter
 			lineageTag: 53e9bc7a-735a-4a8a-a6bb-8e32f49ed2be
+			column: Quarter
 
-		level 'Month'
-			ordinal: 2
-			column: 'Month'
+		level Month
 			lineageTag: 9fc4b239-92c1-4bc6-911b-923b5a17b1e8
+			column: Month
 
-		level 'Date'
-			ordinal: 3
-			column: 'Date'
+		level Date
 			lineageTag: 273af054-c949-4821-9cc2-448e492b825c
+			column: Date
 
 	hierarchy 'Calendar Week'
 		lineageTag: 6710a7a2-9923-4741-b3e2-e124d2ddebf5
 
-		level 'Year'
-			ordinal: 0
-			column: 'ISOYear'
+		level Year
 			lineageTag: d311f929-5d8b-424c-a8e5-6ccdeb2b6482
+			column: ISOYear
 
-		level 'Week'
-			ordinal: 1
-			column: 'Week'
+		level Week
 			lineageTag: 9053b56c-7784-48d1-a947-92205531766e
+			column: Week
 
-		level 'Date'
-			ordinal: 2
-			column: 'Date'
+		level Date
 			lineageTag: 227033bc-2f8d-4463-9a46-5bd125a2c5cd
+			column: Date
 
-	partition 'Date' = calculated
+	partition Date = calculated
 		mode: import
 		source =
 				VAR SourceBounds =
@@ -214,3 +207,4 @@ table 'Date'
 				        "YearWeek", FORMAT ( YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ), "0000", "en-US" ) & "-W" & FORMAT ( WEEKNUM ( [Date], 21 ), "00", "en-US" ),
 				        "YearWeekSort", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ) * 100 + WEEKNUM ( [Date], 21 )
 				    )
+

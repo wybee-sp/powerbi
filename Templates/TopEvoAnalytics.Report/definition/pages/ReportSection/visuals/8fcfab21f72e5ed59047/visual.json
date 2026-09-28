@@ -5,48 +5,12 @@
     "x": 24,
     "y": 496,
     "z": 12000,
-    "width": 1232,
     "height": 200,
+    "width": 1232,
     "tabOrder": 12000
   },
   "visual": {
     "visualType": "tableEx",
-    "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Customer summary · counts'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "general": [
-        {
-          "properties": {
-            "altText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Customer summary · counts'"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -170,9 +134,6 @@
       ],
       "columnWidth": [
         {
-          "selector": {
-            "metadata": "a1101.Suchbegriff [101]"
-          },
           "properties": {
             "value": {
               "expr": {
@@ -181,12 +142,26 @@
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "a1101.Suchbegriff [101]"
           }
         },
         {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "190D"
+                }
+              }
+            }
+          },
           "selector": {
             "metadata": "_Measures.A8101OP Invoice Count"
-          },
+          }
+        },
+        {
           "properties": {
             "value": {
               "expr": {
@@ -195,12 +170,12 @@
                 }
               }
             }
-          }
-        },
-        {
+          },
           "selector": {
             "metadata": "_Measures.A8101OP Open Invoice Count"
-          },
+          }
+        },
+        {
           "properties": {
             "value": {
               "expr": {
@@ -209,12 +184,12 @@
                 }
               }
             }
-          }
-        },
-        {
+          },
           "selector": {
             "metadata": "_Measures.A8101OP Closed Invoice Count"
-          },
+          }
+        },
+        {
           "properties": {
             "value": {
               "expr": {
@@ -223,23 +198,61 @@
                 }
               }
             }
-          }
-        },
-        {
+          },
           "selector": {
             "metadata": "_Measures.A8101OP Payment Count"
-          },
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
           "properties": {
-            "value": {
+            "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "190D"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ]
-    }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer summary · counts'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer summary · counts'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
   }
 }

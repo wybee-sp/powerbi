@@ -23,91 +23,57 @@ relationship 3a605dc8-db84-067d-ecb5-917368029bcb
 	fromColumn: a8101op_invoices.Kunde
 	toColumn: a1101.Kundennummer
 
-
 relationship e20f1fa5-5bb7-4e1d-9eac-b60a192d2043
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a42001.OrderDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 73ffc4bc-09a7-4aea-91ab-8fdc32074675
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a42001.ServiceDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship cf4c550b-566d-4090-886f-ed778d6c251d
-	isActive: true
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a42001.InvoiceDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 111c1196-2448-4ad9-825e-3f8b4864d01d
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_invoices.InvoiceDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 22b4943d-6748-47ef-a3ee-7a82ee77cb79
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_invoices.DueDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 3a5d45c4-e5fa-4550-bdb7-6301229d4d48
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_invoices.EntryDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship bfe09f5e-5d17-4b9e-baf3-fb5b37481701
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_invoices.ValueDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 93341ee9-73e0-48a7-9a50-0a1a6a08f8e2
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_payments.InvoiceDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship 34454e7d-33bf-4d1d-81b9-f43adcc8edb5
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_payments.DueDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship c07aa920-d3b8-4c46-bfc2-1df74e4d7bb6
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_payments.EntryDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
 
 relationship a39b7527-f6e3-446f-bc8f-d60641b3de20
 	isActive: false
-	crossFilteringBehavior: oneDirection
-	fromCardinality: many
-	toCardinality: one
 	fromColumn: a8101op_payments.ValueDate
-	toColumn: 'Date'.'Date'
+	toColumn: Date.Date
+
