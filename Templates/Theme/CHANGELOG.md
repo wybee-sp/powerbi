@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.2.0 - 2026-09-28
+
+- Adds shared time-granularity selector and independent Date range control to the Golden Sample; one trend supports Day/Week/Month/Quarter/Year.
+- Documents explicit calendar hierarchies, ISO week-year behavior, sortable axis fields and naming migration in MODEL.md.
+- Control strip now uses four 296 px slots. Canonical theme remains 1.0.0; runtime field-parameter verification is pending.
+
 ## Component specification 1.1.0 - 2026-09-28
 
 - Compact Golden Sample header/navigation, three equal filters and 96 px value-only KPIs; table gains 16 px height without restyling.

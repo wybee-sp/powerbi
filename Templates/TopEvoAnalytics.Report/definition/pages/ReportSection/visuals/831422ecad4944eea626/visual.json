@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "9e43bef062079b54db6a",
+  "name": "831422ecad4944eea626",
   "position": {
-    "x": 336,
+    "x": 960,
     "y": 72,
-    "z": 4000,
+    "z": 13000,
     "width": 296,
     "height": 56,
-    "tabOrder": 3000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -38,7 +38,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'filter.branch'"
+                  "Value": "'Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.'"
                 }
               }
             }
@@ -90,16 +90,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "a9002"
+                      "Entity": "Time Granularity"
                     }
                   },
-                  "Property": "Bezeichnung [102]"
+                  "Property": "Granularity"
                 }
               },
-              "queryRef": "a9002.Bezeichnung [102]",
-              "nativeQueryRef": "Branch",
-              "active": true,
-              "displayName": "Branch"
+              "queryRef": "Time Granularity.Granularity",
+              "nativeQueryRef": "Display by",
+              "displayName": "Display by",
+              "active": true
             }
           ]
         }
@@ -111,10 +111,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "a9002"
+                    "Entity": "Time Granularity"
                   }
                 },
-                "Property": "Bezeichnung [102]"
+                "Property": "Granularity"
               }
             },
             "direction": "Ascending"
@@ -149,7 +149,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Branch'"
+                  "Value": "'Display by'"
                 }
               }
             }
@@ -162,15 +162,69 @@
             "singleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
             "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "g",
+                    "Entity": "Time Granularity",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "g"
+                                }
+                              },
+                              "Property": "Granularity"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Month'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }

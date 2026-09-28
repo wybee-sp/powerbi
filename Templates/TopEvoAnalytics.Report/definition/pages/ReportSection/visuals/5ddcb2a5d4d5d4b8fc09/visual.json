@@ -5,7 +5,7 @@
     "x": 24,
     "y": 72,
     "z": 3000,
-    "width": 400,
+    "width": 296,
     "height": 56,
     "tabOrder": 2000
   },
@@ -38,7 +38,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'filter.period'"
+                  "Value": "'Date range: inclusive start and end dates using the invoice-date role. Independent of Display by granularity.'"
                 }
               }
             }
@@ -99,7 +99,7 @@
               "queryRef": "Date.Date",
               "nativeQueryRef": "Invoice date",
               "active": true,
-              "displayName": "Invoice date"
+              "displayName": "Date range"
             }
           ]
         }
@@ -129,7 +129,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Dropdown'"
+                  "Value": "'Between'"
                 }
               }
             }
@@ -149,27 +149,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Invoice date'"
+                  "Value": "'Date range'"
                 }
               }
             }
           }
         }
       ],
-      "selection": [
+      "slider": [
         {
           "properties": {
-            "singleSelect": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }

@@ -26,6 +26,7 @@ ref table a8101op_invoices
 ref table a8101op_payments
 ref table _Measures
 ref table 'Date'
+ref table 'Time Granularity'
 
 ref cultureInfo en-US
 

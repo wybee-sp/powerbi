@@ -25,45 +25,45 @@ table 'Date'
 		lineageTag: dd5f437f-b586-4df5-abbe-c46f663656a3
 		summarizeBy: none
 		sourceColumn: [Quarter]
-		sortByColumn: 'Quarter Number'
+		sortByColumn: 'QuarterNumber'
 
-	column 'Quarter Number'
+	column 'QuarterNumber'
 		dataType: int64
 		formatString: 0
 		isHidden
 		lineageTag: 6ad98785-b831-4084-ab14-a0e2062c1da3
 		summarizeBy: none
-		sourceColumn: [Quarter Number]
+		sourceColumn: [QuarterNumber]
 
 	column Month
 		dataType: string
 		lineageTag: 2e945ced-1b01-49d4-9b03-b9bb7f8191c6
 		summarizeBy: none
 		sourceColumn: [Month]
-		sortByColumn: 'Month Number'
+		sortByColumn: 'MonthNumber'
 
-	column 'Month Number'
+	column 'MonthNumber'
 		dataType: int64
 		formatString: 0
 		isHidden
 		lineageTag: dd30f7f9-bfab-4bfe-9857-b678fb11cd8d
 		summarizeBy: none
-		sourceColumn: [Month Number]
+		sourceColumn: [MonthNumber]
 
-	column 'Year-Month'
+	column 'YearMonth'
 		dataType: string
 		lineageTag: 903ccedc-6829-488e-94c6-0a152af94a73
 		summarizeBy: none
-		sourceColumn: [Year-Month]
-		sortByColumn: 'Year-Month Sort'
+		sourceColumn: [YearMonth]
+		sortByColumn: 'YearMonthSort'
 
-	column 'Year-Month Sort'
+	column 'YearMonthSort'
 		dataType: int64
 		formatString: 0
 		isHidden
 		lineageTag: 790d7bb0-a16a-4f55-83e6-d9bc599d5120
 		summarizeBy: none
-		sourceColumn: [Year-Month Sort]
+		sourceColumn: [YearMonthSort]
 
 	column Day
 		dataType: int64
@@ -72,20 +72,20 @@ table 'Date'
 		summarizeBy: none
 		sourceColumn: [Day]
 
-	column 'Day of Week'
+	column 'DayOfWeek'
 		dataType: string
 		lineageTag: ee2ff115-f0aa-47ed-945d-a16e4732fd82
 		summarizeBy: none
-		sourceColumn: [Day of Week]
-		sortByColumn: 'Day of Week Number'
+		sourceColumn: [DayOfWeek]
+		sortByColumn: 'DayOfWeekNumber'
 
-	column 'Day of Week Number'
+	column 'DayOfWeekNumber'
 		dataType: int64
 		formatString: 0
 		isHidden
 		lineageTag: 1fd6e8b5-a3d7-4add-9663-a8f3b9d600e1
 		summarizeBy: none
-		sourceColumn: [Day of Week Number]
+		sourceColumn: [DayOfWeekNumber]
 
 	column Week
 		dataType: int64
@@ -94,27 +94,83 @@ table 'Date'
 		summarizeBy: none
 		sourceColumn: [Week]
 
-	column 'ISO Year'
+	column 'ISOYear'
 		dataType: int64
 		formatString: 0
 		lineageTag: 7af6fc57-1ce3-4a41-b69c-95f824279231
 		summarizeBy: none
-		sourceColumn: [ISO Year]
+		sourceColumn: [ISOYear]
 
-	column 'Year-Week'
+	column 'YearWeek'
 		dataType: string
 		lineageTag: cdf8f1ea-e8d8-4d9f-87fc-44bf55ae51da
 		summarizeBy: none
-		sourceColumn: [Year-Week]
-		sortByColumn: 'Year-Week Sort'
+		sourceColumn: [YearWeek]
+		sortByColumn: 'YearWeekSort'
 
-	column 'Year-Week Sort'
+	column 'YearWeekSort'
 		dataType: int64
 		formatString: 0
 		isHidden
 		lineageTag: c55900cd-b033-4aa8-b8f1-725f974aa6c7
 		summarizeBy: none
-		sourceColumn: [Year-Week Sort]
+		sourceColumn: [YearWeekSort]
+
+	column YearQuarter
+		dataType: string
+		lineageTag: c002a6c0-2a0d-4957-b7f4-9110472c4fcd
+		summarizeBy: none
+		sourceColumn: [YearQuarter]
+		sortByColumn: YearQuarterSort
+
+	column YearQuarterSort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: faf3258a-0fe0-402e-9a33-4ab448a9311b
+		summarizeBy: none
+		sourceColumn: [YearQuarterSort]
+
+	hierarchy 'Calendar'
+		lineageTag: 8700768c-12fd-455f-8256-e183f25e7c82
+
+		level 'Year'
+			ordinal: 0
+			column: 'Year'
+			lineageTag: 630bbb87-432f-4791-8dae-d3983b63b66b
+
+		level 'Quarter'
+			ordinal: 1
+			column: 'Quarter'
+			lineageTag: 53e9bc7a-735a-4a8a-a6bb-8e32f49ed2be
+
+		level 'Month'
+			ordinal: 2
+			column: 'Month'
+			lineageTag: 9fc4b239-92c1-4bc6-911b-923b5a17b1e8
+
+		level 'Date'
+			ordinal: 3
+			column: 'Date'
+			lineageTag: 273af054-c949-4821-9cc2-448e492b825c
+
+	hierarchy 'Calendar Week'
+		lineageTag: 6710a7a2-9923-4741-b3e2-e124d2ddebf5
+
+		level 'Year'
+			ordinal: 0
+			column: 'ISOYear'
+			lineageTag: d311f929-5d8b-424c-a8e5-6ccdeb2b6482
+
+		level 'Week'
+			ordinal: 1
+			column: 'Week'
+			lineageTag: 9053b56c-7784-48d1-a947-92205531766e
+
+		level 'Date'
+			ordinal: 2
+			column: 'Date'
+			lineageTag: 227033bc-2f8d-4463-9a46-5bd125a2c5cd
 
 	partition 'Date' = calculated
 		mode: import
@@ -143,16 +199,18 @@ table 'Date'
 				        CALENDAR ( DATE ( FirstYear, 1, 1 ), DATE ( LastYear, 12, 31 ) ),
 				        "Year", YEAR ( [Date] ),
 				        "Quarter", "Q" & FORMAT ( QUARTER ( [Date] ), "0", "en-US" ),
-				        "Quarter Number", QUARTER ( [Date] ),
+				        "QuarterNumber", QUARTER ( [Date] ),
+				        "YearQuarter", FORMAT ( [Date], "yyyy", "en-US" ) & "-Q" & FORMAT ( QUARTER ( [Date] ), "0", "en-US" ),
+				        "YearQuarterSort", YEAR ( [Date] ) * 10 + QUARTER ( [Date] ),
 				        "Month", FORMAT ( [Date], "MMMM", "en-US" ),
-				        "Month Number", MONTH ( [Date] ),
-				        "Year-Month", FORMAT ( [Date], "yyyy-MM", "en-US" ),
-				        "Year-Month Sort", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+				        "MonthNumber", MONTH ( [Date] ),
+				        "YearMonth", FORMAT ( [Date], "yyyy-MM", "en-US" ),
+				        "YearMonthSort", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
 				        "Day", DAY ( [Date] ),
-				        "Day of Week", FORMAT ( [Date], "dddd", "en-US" ),
-				        "Day of Week Number", WEEKDAY ( [Date], 2 ),
+				        "DayOfWeek", FORMAT ( [Date], "dddd", "en-US" ),
+				        "DayOfWeekNumber", WEEKDAY ( [Date], 2 ),
 				        "Week", WEEKNUM ( [Date], 21 ),
-				        "ISO Year", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ),
-				        "Year-Week", FORMAT ( YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ), "0000", "en-US" ) & "-W" & FORMAT ( WEEKNUM ( [Date], 21 ), "00", "en-US" ),
-				        "Year-Week Sort", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ) * 100 + WEEKNUM ( [Date], 21 )
+				        "ISOYear", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ),
+				        "YearWeek", FORMAT ( YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ), "0000", "en-US" ) & "-W" & FORMAT ( WEEKNUM ( [Date], 21 ), "00", "en-US" ),
+				        "YearWeekSort", YEAR ( [Date] - WEEKDAY ( [Date], 2 ) + 4 ) * 100 + WEEKNUM ( [Date], 21 )
 				    )

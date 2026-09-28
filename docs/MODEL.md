@@ -22,21 +22,23 @@ TMDL marks the table with `dataCategory: Time` and `Date[Date]` with `isKey`, da
 | --- | --- |
 | Date | Unique daily key at midnight; yyyy-MM-dd |
 | Year | Calendar year |
-| Quarter | Q1-Q4, sorted by hidden Quarter Number |
-| Quarter Number | 1-4; hidden |
-| Month | English full month name; sorted by hidden Month Number |
-| Month Number | 1-12; hidden |
-| Year-Month | yyyy-MM; sorted by hidden Year-Month Sort |
-| Year-Month Sort | Year * 100 + Month Number; hidden |
+| Quarter | Q1-Q4, sorted by hidden QuarterNumber |
+| QuarterNumber | 1-4; hidden |
+| YearQuarter | yyyy-Qn; sorted by hidden YearQuarterSort |
+| YearQuarterSort | Year * 10 + QuarterNumber; hidden |
+| Month | English full month name; sorted by hidden MonthNumber |
+| MonthNumber | 1-12; hidden |
+| YearMonth | yyyy-MM; sorted by hidden YearMonthSort |
+| YearMonthSort | Year * 100 + MonthNumber; hidden |
 | Day | Day of month, 1-31 |
-| Day of Week | English full name; sorted by hidden Day of Week Number |
-| Day of Week Number | Monday=1 through Sunday=7; hidden |
+| DayOfWeek | English full name; sorted by hidden DayOfWeekNumber |
+| DayOfWeekNumber | Monday=1 through Sunday=7; hidden |
 | Week | ISO 8601 week number, `WEEKNUM(Date, 21)` |
-| ISO Year | Year containing the week's Thursday; may differ from calendar Year |
-| Year-Week | ISO year + -W + two-digit week; sorted by hidden Year-Week Sort |
-| Year-Week Sort | ISO Year * 100 + Week; hidden |
+| ISOYear | Year containing the week's Thursday; may differ from calendar Year |
+| YearWeek | ISO year + -W + two-digit week; sorted by hidden YearWeekSort |
+| YearWeekSort | ISOYear * 100 + Week; hidden |
 
-All attributes use `summarizeBy: none`. Names use explicit en-US formatting to match the existing model culture and avoid refresh-machine locale changes. Use Year-Week for cross-year weekly trends; do not pair calendar Year with ISO Week. Example: 2021-01-01 belongs to 2020-W53; 2024-12-30 belongs to 2025-W01. No automatic date hierarchy is created.
+All attributes use `summarizeBy: none`. Names use explicit en-US formatting to match the existing model culture and avoid refresh-machine locale changes. Use YearWeek for cross-year weekly trends; do not pair calendar Year with ISO Week. Example: 2021-01-01 belongs to 2020-W53; 2024-12-30 belongs to 2025-W01. No automatic date hierarchy is created.
 
 ## Relationships and date roles
 
@@ -70,18 +72,58 @@ No such measure is added now. Existing payment measures continue to describe pay
 
 ## Golden Sample
 
-- Trend category: `Date[Year-Month]`, categorical axis, ascending category sort backed by Year-Month Sort. Value remains `_Measures[A8101OP Invoice Count]`, which counts open-item invoice records through the existing header relationship; this is not a newly defined invoice business metric.
-- Existing invoice-date slicer now uses `Date[Date]`. Its selection mode and interactions remain unchanged.
+- Trend category: the shared Time Granularity field parameter, defaulting to `Date[YearMonth]`, with categorical axis and ascending parameter sort. Each resolved field uses its model sort key. Value remains `_Measures[A8101OP Invoice Count]`, which counts open-item invoice records through the existing header relationship; this is not a newly defined invoice business metric.
+- Date range uses `Date[Date]` in Between mode with inclusive start/end inputs. It filters all analytical visuals independently of granularity.
 - No zero-filling, blank exclusion, report calculations or automatic hierarchy. Months without activity can remain absent/blank according to existing measure/visual behavior; future calendar dates do not imply future activity.
 - Unmatched invoice keys, null dates and `(Blank)` customer categories still require source/model investigation. Adding a calendar cannot repair those records.
 - Sales, Purchases and Inventory PBIR are intentionally unchanged. Future migration must replace their date bindings with explicit Date fields; existing Inventory automatic-hierarchy references are not certified by this change.
 
 ## Validation and limitations
 
-- Microsoft TOM 19.117.0 deserializes the model and resolves table/column, key, sort and relationship metadata.
+- Microsoft TOM 19.117.0 deserializes the model and resolves table/column, key, sort, hierarchy, field-parameter and relationship metadata.
 - Static checks cover all 11 source-date references, one active Date edge, single-direction cardinalities, unchanged measures, report bindings and absence of ambiguous active Date paths.
 - Calendar reference checks cover empty sources, leap days, future extension and ISO year boundaries. These checks do not execute DAX in Analysis Services.
 - Refresh with authorized local data is still required to execute the calculated-table DAX, materialize/validate unique continuous dates and check source-date coverage. Desktop rendering of the revised trend remains pending.
 - At refresh verify row count equals end minus start plus one, no blank/duplicate Date keys, full-year boundaries, correct sort behavior, monthly totals and invoice-to-payment filter propagation. Review extreme source-date outliers rather than adding arbitrary report filters.
 
 References: [Microsoft date-table guidance](https://learn.microsoft.com/en-us/power-bi/guidance/model-date-tables), [ISO week numbering](https://learn.microsoft.com/en-us/dax/weeknum-function-dax), [TMDL serializer](https://learn.microsoft.com/en-us/dotnet/api/microsoft.analysisservices.tabular.tmdlserializer).
+
+## Analytical time grains (shared pattern)
+
+The Date table remains one row per day. Grouping many daily rows into a week/month/quarter/year changes the visual axis, not the stored grain or relationship key. Existing business measures and Date relationships are unchanged.
+
+| Choice | Axis field | Ordering |
+| --- | --- | --- |
+| Day | Date[Date] | Date ascending |
+| Week | Date[YearWeek] | YearWeekSort, ISO year/week |
+| Month | Date[YearMonth] | YearMonthSort |
+| Quarter | Date[YearQuarter] | YearQuarterSort |
+| Year | Date[Year] | Numeric year ascending |
+
+Use year-qualified labels on standalone axes. Month names, quarter labels, week numbers and weekday names alone would combine different periods and are not interchangeable with these grain keys. YearMonth is yyyy-MM, YearQuarter is yyyy-Qn and YearWeek is ISO yyyy-Www.
+
+### Explicit hierarchies
+
+- `Calendar`: Year -> Quarter -> Month -> Date, using the corresponding Date columns.
+- `Calendar Week`: Year -> Week -> Date. The level named Year deliberately uses ISOYear, while Week uses ISO week number. Calendar Year would split a single ISO week across two years. Thus 2021-01-01 belongs under Year 2020 / Week 53; 2024-12-30 belongs under Year 2025 / Week 1.
+- These are model hierarchies, not automatic date hierarchies. Use them for drill navigation. The single-grain trend uses field-parameter columns instead, so selection replaces one axis rather than expanding several hierarchy levels at once.
+
+### Shared field parameter
+
+`Time Granularity` is a disconnected, five-row calculated field-parameter table in the canonical model. It is a UI selector, not a second Date table, and has no relationships. Its columns are Granularity (visible label), Fields (hidden NAMEOF reference with JSON ParameterMetadata) and Order (hidden 0-4). Granularity sorts by Order and groups by Fields, following native field-parameter metadata. Preserve all three columns and metadata when deploying the shared model.
+
+The Golden Sample binds Category.fieldParameters to `Time Granularity[Fields]`, with ascending sortDirection and a cached initial Month projection. The slicer binds `Time Granularity[Granularity]`, shows Day/Week/Month/Quarter/Year, uses strict single selection and saves Month as the initial state. It filters only the trend. Other controls do not filter the parameter selector.
+
+The parameter changes grouping only. Date range remains a Between filter on `Date[Date]`, and branch/customer filters still apply. Selecting a partial month or ISO week aggregates only the selected days; grain selection must not silently extend the requested period. Ordinary count/sum measures should reconcile to the same selected-period total across all grains. Do not assume totals are additive for distinct counts, ratios or snapshots.
+
+Power BI treats an unfiltered parameter as all fields. Do not add Select all or a clear action to this control; retain strict single selection. Test host reset/bookmark behavior and explicitly restore Month when resetting the page. A page/report filter permanently forcing Month would prevent switching and must not be added.
+
+### Naming migration
+
+Canonical names now follow the requested contract: QuarterNumber, MonthNumber, YearMonth, YearMonthSort, YearWeek, YearWeekSort, DayOfWeek and DayOfWeekNumber. Prior spaced/hyphenated names were renamed in place with lineage preserved; duplicate aliases were not added. ISOYear, YearQuarter and hidden YearQuarterSort complete the ISO/quarter contract. Existing Golden Sample references and manifests are migrated. External consumers using previous names must update before deployment. Module reports were not modified.
+
+### Validation before release
+
+Static validation verifies native TOM hierarchy/parameter metadata, all five NAMEOF targets and sort mappings, PBIR parameter references, default Month selection and interaction isolation. Reference cases cover ISO New Year boundaries and grouping the same date selection at all five grains. Actual DAX evaluation and field-parameter switching require Desktop/model refresh: test all five choices, chronological order, unchanged date-range inputs/KPI totals, partial periods, empty periods and bookmarks. No successful runtime interaction test is claimed yet.
+
+Reference: [Microsoft field parameters](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters).

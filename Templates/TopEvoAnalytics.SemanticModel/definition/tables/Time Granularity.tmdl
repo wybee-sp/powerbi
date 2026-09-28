@@ -1,0 +1,43 @@
+/// Shared disconnected field parameter. Changes axis grain, never the analyzed date range.
+table 'Time Granularity'
+	lineageTag: 8274f6af-2096-4045-ba43-35a2da21edef
+
+	column Granularity
+		dataType: string
+		lineageTag: 4f750a07-30fe-4969-a425-b8d142dfd45f
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: Order
+
+		relatedColumnDetails
+			groupByColumn: Fields
+
+	column Fields
+		dataType: string
+		isHidden
+		lineageTag: a31cb30c-5075-4d63-8dd8-281d632e0bd1
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: Order
+
+		extendedProperty ParameterMetadata = {"version":3,"kind":2}
+
+	column Order
+		dataType: int64
+		isHidden
+		lineageTag: 60093246-046b-4521-b9f1-a6701df9d515
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+	partition 'Time Granularity' = calculated
+		mode: import
+		source =
+				{
+				    ("Day", NAMEOF('Date'[Date]), 0),
+				    ("Week", NAMEOF('Date'[YearWeek]), 1),
+				    ("Month", NAMEOF('Date'[YearMonth]), 2),
+				    ("Quarter", NAMEOF('Date'[YearQuarter]), 3),
+				    ("Year", NAMEOF('Date'[Year]), 4)
+				}
+
+

@@ -7,7 +7,7 @@
     "z": 10000,
     "width": 816,
     "height": 224,
-    "tabOrder": 9000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "lineChart",
@@ -25,7 +25,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Invoices by month'"
+                  "Value": "'Invoice activity'"
                 }
               }
             }
@@ -38,7 +38,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Invoice activity by calendar year and month, sorted chronologically.'"
+                  "Value": "'Invoice activity over the selected date range. Display by changes only the time grouping: day, ISO week, month, quarter or year.'"
                 }
               }
             }
@@ -59,13 +59,30 @@
                       "Entity": "Date"
                     }
                   },
-                  "Property": "Year-Month"
+                  "Property": "YearMonth"
                 }
               },
-              "queryRef": "Date.Year-Month",
-              "nativeQueryRef": "Year-Month",
-              "displayName": "Year-Month",
+              "queryRef": "Date.YearMonth",
+              "nativeQueryRef": "Month",
+              "displayName": "Month",
               "active": true
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Time Granularity"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -99,7 +116,7 @@
                     "Entity": "Date"
                   }
                 },
-                "Property": "Year-Month"
+                "Property": "YearMonth"
               }
             },
             "direction": "Ascending"

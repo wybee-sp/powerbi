@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.1.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.2.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
 
 ## 1. Purpose and required inputs
 
@@ -82,9 +82,10 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | --- | ---: | ---: | ---: | ---: |
 | Page title | 24 | 24 | 608 | 32 |
 | Page navigation | 648 | 24 | 608 | 32 |
-| Invoice-date filter | 24 | 72 | 400 | 56 |
-| Branch filter | 440 | 72 | 400 | 56 |
-| Customer filter | 856 | 72 | 400 | 56 |
+| Date range | 24 | 72 | 296 | 56 |
+| Branch filter | 336 | 72 | 296 | 56 |
+| Customer filter | 648 | 72 | 296 | 56 |
+| Display by | 960 | 72 | 296 | 56 |
 | KPI 1 | 24 | 144 | 296 | 96 |
 | KPI 2 | 336 | 144 | 296 | 96 |
 | KPI 3 | 648 | 144 | 296 | 96 |
@@ -93,7 +94,7 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | Ranking | 856 | 256 | 400 | 224 |
 | Summary table | 24 | 496 | 1232 | 200 |
 
-Navigation shares the header instead of consuming a filter slot. Each filter spans four grid columns. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
+Navigation shares the header instead of consuming a filter slot. The three filters and Display by each span three grid columns. Date range uses two native date inputs; hide the redundant slider to preserve the compact 56 px height. Verify date-input legibility at embedded scale. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
 
 The navigation starts at the seventh grid column (x=648). Its five-slot grid has 4 px internal spacing and a 32 px target height. It supports 3-5 short page names in one row; keep unused slots empty instead of inventing destinations. The current report contains only Overview. Validate both the one-page and five-page render before approving this component. Do not allow a single tab to become a full-width 608 px button.
 
@@ -118,7 +119,7 @@ These specifications are implemented in the Golden Sample where existing fields/
 ### Charts
 
 - Native lines for trends, horizontal bars for rankings, columns for period comparisons.
-- Use explicit Date fields and chronological Year-Month sorting, never absent automatic hierarchies.
+- Use explicit Date fields and chronological YearMonth sorting, never absent automatic hierarchies.
 - Bar/column numeric axes start at zero. Set the correct numeric axis per component; orientation differs by chart type.
 - Blue actuals, slate comparison. Add line-style distinctions or labels when needed. Single-series charts omit legends; comparison charts identify series clearly.
 - Quiet gridlines, 2 px trend strokes, markers/data labels off by default. Add labels only where readable.
@@ -206,7 +207,24 @@ Version theme, documentation and component manifests together: major for incompa
 
 The user reported a broken-looking invoice-date trend and a `(Blank)` customer category. These remain visible and are not styling defects to conceal.
 
-- Trend: the canonical Date integration now binds `Date[Year-Month]` to the existing invoice-count measure and the date slicer to `Date[Date]`. A refresh/render must verify this change. Source date parsing/nulls, invoice/open-item key matches and relationship propagation can still affect results; the exact cause of any remaining data issue is not established by visual feedback alone.
+- Trend: the canonical Date integration uses the shared Time Granularity parameter (default `Date[YearMonth]`) with the existing invoice-count measure and a separate date-range slicer on `Date[Date]`. A refresh/render must verify this change. Source date parsing/nulls, invoice/open-item key matches and relationship propagation can still affect results; the exact cause of any remaining data issue is not established by visual feedback alone.
 - Customer `(Blank)`: check empty customer search names, missing/unmatched customer keys and uniqueness across company scope. Equal search names also group together under the existing binding. Fix source/model semantics in a separately scoped change.
 - Do not add exclusion filters for blanks, substitute labels, switch axes to disguise gaps, coalesce missing values or introduce report-level calculations. Preserve the existing bindings and data visibility until the underlying cause is resolved.
 - Static PBIR checks cannot prove data correctness. Approval requires model/data verification and another Desktop render; no claim of production data readiness is implied by this visual refinement.
+
+## 11. Time range and display granularity
+
+Every analytical trend distinguishes two controls:
+
+- **Date range** selects the inclusive start/end of the analyzed period, using Date[Date]. It filters data and KPI totals.
+- **Display by** selects Day, Week, Month, Quarter or Year, in that order. It changes only the grouping of the same period in one trend visual.
+
+Use the shared Time Granularity field parameter. Month is the default; native single-select dropdown with strict single selection, no Select all. The chart title is grain-neutral ("Invoice activity"); the visible selector states the grain. Axis fields and sorting come from the shared model, as specified in MODEL.md. Use year-qualified week/month/quarter labels so periods cannot merge across years. The axis stays categorical across the five options and sorts chronologically via parameter sortDirection and the selected column's SortByColumn metadata.
+
+Do not create five separate charts, use weekday names for daily analysis, encode grouping in a report measure or add another calendar table. Explicit Calendar and Calendar Week hierarchies support drill navigation elsewhere; the Display by control selects one standalone grain.
+
+In the Golden Sample, Date range/Branch/Customer filter all seven analytical visuals. Display by targets only the trend, not KPIs, rankings, the table or other slicers. All incoming interactions to Display by are disabled. Selection of Week does not extend the range to complete weeks: edge buckets remain partial. Show no fabricated zero values or blank-exclusion filters.
+
+For a reset component, restore Date range and Display by explicitly and independently (default grain Month). Clearing a native field parameter means all fields, so do not expose a clear/all action for this selector. Test the host's reset and bookmark behavior. The same disconnected parameter can control related trends when intentional, but cross-page slicer synchronization must be explicitly chosen.
+
+The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row now has four 296 px slots. Validate both date inputs at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.
