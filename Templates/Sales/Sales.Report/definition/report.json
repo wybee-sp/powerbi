@@ -9,6 +9,15 @@
         "page": "1.3.76"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "TopEvo-1.0.0.json",
+      "reportVersionAtImport": {
+        "visual": "1.8.76",
+        "report": "2.0.76",
+        "page": "1.3.76"
+      },
+      "type": "RegisteredResources"
     }
   },
   "objects": {
@@ -35,6 +44,17 @@
           "name": "CY22SU11",
           "path": "BaseThemes/CY22SU11.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "TopEvo-1.0.0.json",
+          "path": "TopEvo-1.0.0.json",
+          "type": "CustomTheme"
         }
       ]
     }

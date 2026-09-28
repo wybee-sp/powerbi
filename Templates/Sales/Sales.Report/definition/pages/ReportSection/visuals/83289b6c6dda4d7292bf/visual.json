@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "fdce3d4398dea1000cb5",
+  "name": "83289b6c6dda4d7292bf",
   "position": {
-    "x": 232,
+    "x": 512,
     "y": 72,
-    "z": 3000,
-    "width": 280,
+    "z": 13000,
+    "width": 536,
     "height": 56,
-    "tabOrder": 3000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -38,7 +38,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Date range: inclusive start and end dates using the invoice-date role. Independent of Display by granularity.'"
+                  "Value": "'Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.'"
                 }
               }
             }
@@ -65,14 +65,14 @@
             "left": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "0D"
                 }
               }
             },
             "right": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "0D"
                 }
               }
             }
@@ -141,16 +141,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date"
+                      "Entity": "Time Granularity"
                     }
                   },
-                  "Property": "Date"
+                  "Property": "Granularity"
                 }
               },
-              "queryRef": "Date.Date",
-              "nativeQueryRef": "Invoice date",
-              "active": true,
-              "displayName": "Date range"
+              "queryRef": "Time Granularity.Granularity",
+              "nativeQueryRef": "Display by",
+              "displayName": "Display by",
+              "active": true
             }
           ]
         }
@@ -162,10 +162,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Date"
+                    "Entity": "Time Granularity"
                   }
                 },
-                "Property": "Date"
+                "Property": "Granularity"
               }
             },
             "direction": "Ascending"
@@ -180,7 +180,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Between'"
+                  "Value": "'HorizontalList'"
                 }
               }
             }
@@ -200,20 +200,122 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Date range'"
+                  "Value": "'Display by'"
                 }
               }
             }
           }
         }
       ],
-      "slider": [
+      "selection": [
         {
           "properties": {
-            "show": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "g",
+                    "Entity": "Time Granularity",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "g"
+                                }
+                              },
+                              "Property": "Granularity"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Month'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "responsive": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "items": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "padding": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
                 }
               }
             }

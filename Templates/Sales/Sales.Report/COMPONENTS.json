@@ -1,0 +1,553 @@
+{
+  "version": "1.4.1",
+  "status": "Sales implementation - runtime and source-data validation pending",
+  "deployToCustomers": true,
+  "report": "Templates/Sales/Sales.Report",
+  "page": "ReportSection",
+  "semanticModel": "Templates/TopEvoAnalytics.SemanticModel",
+  "theme": "Templates/Theme/TopEvo.json",
+  "components": [
+    {
+      "role": "header.title",
+      "id": "d5eafabc9a22487ab761",
+      "type": "textbox",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 24,
+        "y": 24,
+        "z": 0,
+        "width": 608,
+        "height": 32,
+        "tabOrder": 0
+      },
+      "bindings": {},
+      "sourceGoldenSampleId": "3a5ca5c0fdc8424c93f4"
+    },
+    {
+      "role": "navigation.pages",
+      "id": "8eedc44eb7424924b051",
+      "type": "pageNavigator",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 648,
+        "y": 24,
+        "z": 2000,
+        "width": 608,
+        "height": 32,
+        "tabOrder": 1000
+      },
+      "bindings": {},
+      "sourceGoldenSampleId": "d8f5a9bed09924c8f6f5"
+    },
+    {
+      "role": "filter.branch",
+      "id": "180c9822021860e112cb",
+      "type": "slicer",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 24,
+        "y": 72,
+        "z": 4000,
+        "width": 192,
+        "height": 56,
+        "tabOrder": 2000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a9002"
+                    }
+                  },
+                  "Property": "Bezeichnung [102]"
+                }
+              },
+              "queryRef": "a9002.Bezeichnung [102]",
+              "nativeQueryRef": "Branch",
+              "active": true,
+              "displayName": "Branch"
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "9e43bef062079b54db6a"
+    },
+    {
+      "role": "filter.period",
+      "id": "fdce3d4398dea1000cb5",
+      "type": "slicer",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 232,
+        "y": 72,
+        "z": 3000,
+        "width": 280,
+        "height": 56,
+        "tabOrder": 3000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "Date.Date",
+              "nativeQueryRef": "Invoice date",
+              "active": true,
+              "displayName": "Date range"
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "5ddcb2a5d4d5d4b8fc09"
+    },
+    {
+      "role": "control.granularity",
+      "id": "83289b6c6dda4d7292bf",
+      "type": "slicer",
+      "title": "",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 512,
+        "y": 72,
+        "z": 13000,
+        "width": 536,
+        "height": 56,
+        "tabOrder": 4000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Time Granularity"
+                    }
+                  },
+                  "Property": "Granularity"
+                }
+              },
+              "queryRef": "Time Granularity.Granularity",
+              "nativeQueryRef": "Display by",
+              "displayName": "Display by",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "831422ecad4944eea626"
+    },
+    {
+      "role": "filter.customer",
+      "id": "e61b9b4c725baec66b1d",
+      "type": "slicer",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 1064,
+        "y": 72,
+        "z": 5000,
+        "width": 192,
+        "height": 56,
+        "tabOrder": 5000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "92863660e33e39bf2329"
+    },
+    {
+      "role": "kpi.netRevenue",
+      "id": "0aa8e8393114177d073d",
+      "type": "cardVisual",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 24,
+        "y": 144,
+        "z": 6000,
+        "width": 296,
+        "height": 96,
+        "tabOrder": 6000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "queryRef": "a42001.Net Revenue",
+              "nativeQueryRef": "Net Revenue",
+              "displayName": "Net Revenue"
+            }
+          ]
+        }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
+      },
+      "sourceGoldenSampleId": "153e904422493224e572"
+    },
+    {
+      "role": "kpi.invoiceCount",
+      "id": "c85dcd65ae5d7a09692d",
+      "type": "cardVisual",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 336,
+        "y": 144,
+        "z": 7000,
+        "width": 296,
+        "height": 96,
+        "tabOrder": 7000
+      },
+      "bindings": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Invoice Count"
+                }
+              },
+              "queryRef": "a42001.Invoice Count",
+              "nativeQueryRef": "Invoice Count",
+              "displayName": "Invoice Count"
+            }
+          ]
+        }
+      },
+      "variant": "value-only",
+      "optionalComparison": {
+        "enabled": false,
+        "requires": "Existing approved shared-model measure; no report calculations",
+        "variantHeight": 112,
+        "textSizePt": 9,
+        "placement": "Below primary value"
+      },
+      "sourceGoldenSampleId": "a267601474d5703ee78e"
+    },
+    {
+      "role": "placeholder.averageInvoiceValue",
+      "id": "4147a08e764043acbe6d",
+      "type": "textbox",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 648,
+        "y": 144,
+        "z": 8000,
+        "width": 296,
+        "height": 96,
+        "tabOrder": 8000
+      },
+      "bindings": {},
+      "variant": "missing-measure-placeholder",
+      "sourceGoldenSampleId": "44bde52db62b1cce7f88"
+    },
+    {
+      "role": "placeholder.additionalSalesKpi",
+      "id": "f600a358f6b04952b55a",
+      "type": "textbox",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 960,
+        "y": 144,
+        "z": 9000,
+        "width": 296,
+        "height": 96,
+        "tabOrder": 9000
+      },
+      "bindings": {},
+      "variant": "missing-measure-placeholder",
+      "sourceGoldenSampleId": "369387969e38ec6613f3"
+    },
+    {
+      "role": "chart.trend",
+      "id": "077d31a04274ad85ed05",
+      "type": "lineChart",
+      "title": "Net revenue over time · EUR",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 24,
+        "y": 256,
+        "z": 10000,
+        "width": 816,
+        "height": 224,
+        "tabOrder": 10000
+      },
+      "bindings": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "YearMonth"
+                }
+              },
+              "queryRef": "Date.YearMonth",
+              "nativeQueryRef": "Month",
+              "displayName": "Month",
+              "active": true
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Time Granularity"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1,
+              "sortDirection": "Ascending"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "queryRef": "a42001.Net Revenue",
+              "nativeQueryRef": "Net Revenue",
+              "displayName": "Net Revenue"
+            }
+          ]
+        }
+      },
+      "parameterDefault": "Month",
+      "axisContract": {
+        "Day": "Date[Date]",
+        "Week": "Date[YearWeek]",
+        "Month": "Date[YearMonth]",
+        "Quarter": "Date[YearQuarter]",
+        "Year": "Date[Year]",
+        "sort": "Ascending selected field with model SortByColumn",
+        "labels": "10 pt; continuous date/numeric axis with automatic ticks; categorical fallback for text period labels; no forced minimum category width"
+      },
+      "sourceGoldenSampleId": "2795845256d49757365f"
+    },
+    {
+      "role": "chart.ranking",
+      "id": "f0f9619e57eeb2b79732",
+      "type": "clusteredBarChart",
+      "title": "Customers by net revenue · EUR",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 856,
+        "y": 256,
+        "z": 11000,
+        "width": 400,
+        "height": 224,
+        "tabOrder": 11000
+      },
+      "bindings": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "queryRef": "a42001.Net Revenue",
+              "nativeQueryRef": "Net Revenue",
+              "displayName": "Net Revenue"
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "9d27b58b00aba43cd948"
+    },
+    {
+      "role": "table.summary",
+      "id": "48080225a009c7816619",
+      "type": "tableEx",
+      "title": "Customer sales summary · EUR",
+      "status": "Implemented - Sales Desktop verification pending",
+      "position": {
+        "x": 24,
+        "y": 496,
+        "z": 12000,
+        "width": 1232,
+        "height": 200,
+        "tabOrder": 12000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "displayName": "Customer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Invoice Count"
+                }
+              },
+              "queryRef": "a42001.Invoice Count",
+              "nativeQueryRef": "Invoice Count",
+              "displayName": "Invoice Count"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "queryRef": "a42001.Net Revenue",
+              "nativeQueryRef": "Net Revenue",
+              "displayName": "Net Revenue"
+            }
+          ]
+        }
+      },
+      "sourceGoldenSampleId": "8fcfab21f72e5ed59047"
+    }
+  ],
+  "componentGroups": [
+    {
+      "role": "control.time",
+      "members": [
+        "fdce3d4398dea1000cb5",
+        "83289b6c6dda4d7292bf"
+      ],
+      "position": {
+        "x": 232,
+        "y": 72,
+        "width": 816,
+        "height": 56
+      },
+      "layout": "Contiguous white surface; date range then horizontal single-select granularity tiles",
+      "primaryOrder": [
+        "filter.branch",
+        "control.time",
+        "filter.customer"
+      ],
+      "name": "TimeControl",
+      "acceptance": [
+        "All five grains visible without selector scrolling or overflow",
+        "Selected grain visibly highlighted",
+        "Date range preserved when grain changes",
+        "Keyboard order: Branch, date range, granularity, business filter"
+      ],
+      "status": "Reused approved layout - Sales runtime pending",
+      "layoutFrozen": true,
+      "approvalEvidence": "Exact Golden Sample layout retained; no independent Sales rendering claimed"
+    }
+  ]
+}

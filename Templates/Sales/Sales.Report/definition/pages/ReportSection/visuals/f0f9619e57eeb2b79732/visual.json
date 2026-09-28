@@ -2,38 +2,55 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f0f9619e57eeb2b79732",
   "position": {
-    "x": 187.72036474164133,
-    "y": 217.87234042553192,
-    "z": 6000,
-    "height": 326.80851063829789,
-    "width": 642.91793313069911,
-    "tabOrder": 5000
+    "x": 856,
+    "y": 256,
+    "z": 11000,
+    "width": 400,
+    "height": 224,
+    "tabOrder": 11000
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "clusteredBarChart",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customers by net revenue · EUR'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Net revenue from the existing shared Sales measure, in EUR.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "a42001"
-                        }
-                      },
-                      "Property": "Rechnung"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(a42001.Rechnung)",
-              "nativeQueryRef": "Sum of Rechnung"
-            },
             {
               "field": {
                 "Column": {
@@ -46,163 +63,94 @@
                 }
               },
               "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Suchbegriff [101]"
-            },
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "a420011"
-                        }
-                      },
-                      "Property": "Quantity"
+                    "SourceRef": {
+                      "Entity": "a42001"
                     }
                   },
-                  "Function": 0
+                  "Property": "Net Revenue"
                 }
               },
-              "queryRef": "Sum(a420011.Quantity)",
-              "nativeQueryRef": "Sum of Quantity"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "a420011"
-                        }
-                      },
-                      "Property": "UnitPrice"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(a420011.UnitPrice)",
-              "nativeQueryRef": "Sum of UnitPrice"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "a420011"
-                        }
-                      },
-                      "Property": "NetAmount"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(a420011.NetAmount)",
-              "nativeQueryRef": "Sum of NetAmount"
+              "queryRef": "a42001.Net Revenue",
+              "nativeQueryRef": "Net Revenue",
+              "displayName": "Net Revenue"
             }
           ]
         }
-      }
-    },
-    "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "699d5bf07c0790c4cc79",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
                     "Entity": "a42001"
                   }
                 },
-                "Property": "Rechnung"
+                "Property": "Net Revenue"
               }
             },
-            "Function": 0
+            "direction": "Descending"
           }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "09e948c457e8c5ce42b0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "a1101"
-              }
-            },
-            "Property": "Suchbegriff [101]"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "06ece330013cd804dac5",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "a420011"
-                  }
-                },
-                "Property": "Quantity"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4353288bd2484b138821",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "a420011"
-                  }
-                },
-                "Property": "UnitPrice"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a0cff71b3974e6830a1a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "a420011"
-                  }
-                },
-                "Property": "NetAmount"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
+        ]
       }
-    ]
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "start": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "defaultColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#2F5D8C'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }
