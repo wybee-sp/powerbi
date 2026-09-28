@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.2.1 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.3.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
 
 ## 1. Purpose and required inputs
 
@@ -83,9 +83,9 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | Page title | 24 | 24 | 608 | 32 |
 | Page navigation | 648 | 24 | 608 | 32 |
 | Branch filter | 24 | 72 | 296 | 56 |
-| Date range | 336 | 72 | 296 | 56 |
-| Customer filter | 648 | 72 | 296 | 56 |
-| Display by | 960 | 72 | 296 | 56 |
+| Time control: date range | 336 | 72 | 280 | 56 |
+| Time control: granularity | 616 | 72 | 328 | 56 |
+| Customer filter | 960 | 72 | 296 | 56 |
 | KPI 1 | 24 | 144 | 296 | 96 |
 | KPI 2 | 336 | 144 | 296 | 96 |
 | KPI 3 | 648 | 144 | 296 | 96 |
@@ -94,7 +94,7 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | Ranking | 856 | 256 | 400 | 224 |
 | Summary table | 24 | 496 | 1232 | 200 |
 
-Navigation shares the header instead of consuming a filter slot. The three filters and Display by each span three grid columns. Date range uses two native date inputs; hide the redundant slider to preserve the compact 56 px height. Verify date-input legibility at embedded scale. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
+Navigation shares the header instead of consuming a filter slot. Branch and Customer each span three grid columns. The combined Time control spans six grid columns (608 px), with contiguous date-range and granularity visuals on a single white surface. Its internal split is 280/328 px, with no canvas gutter or individual borders; standard 16 px gutters separate it from Branch and Customer. Date range uses two native date inputs; hide the redundant slider to preserve the compact 56 px height. Verify date-input legibility at embedded scale. Keep 16 px vertical gaps and the 24 px bottom margin. The table gains 16 px of height compared with the first sample. Its existing style is preserved.
 
 The navigation starts at the seventh grid column (x=648). Its five-slot grid has 4 px internal spacing and a 32 px target height. It supports 3-5 short page names in one row; keep unused slots empty instead of inventing destinations. The current report contains only Overview. Validate both the one-page and five-page render before approving this component. Do not allow a single tab to become a full-width 608 px button.
 
@@ -139,10 +139,10 @@ These specifications are implemented in the Golden Sample where existing fields/
 
 ### Slicers and filters
 
-- Mandatory primary-filter order on all standard pages: **Branch -> Date / Period -> business-specific filters**. Branch is always leftmost; the date/period selector immediately follows it. Keyboard tab order follows the same sequence.
+- Mandatory primary-filter order on all standard pages: **Branch -> Time control -> business-specific filters**. Branch is always leftmost; the combined date/period and granularity group immediately follows it. Keyboard order is Branch -> date range -> granularity -> business filters.
 - Sales/Receivables: Branch -> Invoice date -> Customer. Purchases: Branch -> Purchase date -> Supplier. Inventory: Branch -> Date -> Warehouse. Choose the ERP operating context first, then the period and business dimension.
 - Preserve this order across pages. An exception requires a documented business requirement and its rationale in the affected report documentation.
-- Display by is a separate granularity control after the primary filters. The Golden Sample order is Branch -> Date range -> Customer -> Display by. Day/Week/Month/Quarter/Year changes time grouping, not the selected date range.
+- Display by belongs inside the Time control immediately adjacent to the date inputs. It is a presentation control, not a business filter or separate standard slot. The Golden Sample order is Branch -> [Date range + Day / Week / Month / Quarter / Year] -> Customer. Date range determines WHAT period is analyzed; granularity determines HOW it is grouped.
 - Visible labels, consistent dropdowns and search for long lists.
 - Define selection mode and intentional defaults. Synchronize relevant slicers across related pages.
 - Display active date range and currency. Reset restores documented defaults, not incidental author selections.
@@ -223,7 +223,7 @@ Every analytical trend distinguishes two controls:
 - **Date range** selects the inclusive start/end of the analyzed period, using Date[Date]. It filters data and KPI totals.
 - **Display by** selects Day, Week, Month, Quarter or Year, in that order. It changes only the grouping of the same period in one trend visual.
 
-Use the shared Time Granularity field parameter. Month is the default; native single-select dropdown with strict single selection, no Select all. The chart title is grain-neutral ("Invoice activity"); the visible selector states the grain. Axis fields and sorting come from the shared model, as specified in MODEL.md. Use year-qualified week/month/quarter labels so periods cannot merge across years. The axis stays categorical across the five options and sorts chronologically via parameter sortDirection and the selected column's SortByColumn metadata.
+Use the shared Time Granularity field parameter. Month is the default; native horizontal tile slicer with strict single selection, no Select all. Show Day, Week, Month, Quarter and Year together in one row at 10 pt; preserve visible selected/focus states. The two native visuals form one reusable Time control, not a new model filter. Use a shared white surface, aligned headers and no internal card borders. Avoid dropdowns for the five fixed grains. The chart title is grain-neutral ("Invoice activity"); the visible selector states the grain. Axis fields and sorting come from the shared model, as specified in MODEL.md. Use year-qualified week/month/quarter labels so periods cannot merge across years. The axis stays categorical across the five options and sorts chronologically via parameter sortDirection and the selected column's SortByColumn metadata.
 
 Do not create five separate charts, use weekday names for daily analysis, encode grouping in a report measure or add another calendar table. Explicit Calendar and Calendar Week hierarchies support drill navigation elsewhere; the Display by control selects one standalone grain.
 
@@ -231,4 +231,4 @@ In the Golden Sample, Branch/Date range/Customer filter all seven analytical vis
 
 For a reset component, restore Date range and Display by explicitly and independently (default grain Month). Clearing a native field parameter means all fields, so do not expose a clear/all action for this selector. Test the host's reset and bookmark behavior. The same disconnected parameter can control related trends when intentional, but cross-page slicer synchronization must be explicitly chosen.
 
-The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row now has four 296 px slots. Validate both date inputs at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.
+The compact reference remains 1280 x 720 with 24 px margins, 16 px gutters and an unchanged KPI/chart/table layout. The control row has three conceptual groups: Branch (296 px), Time control (608 px) and Customer (296 px). The Time control occupies two standard slots and their internal gutter, forming a continuous surface. Validate both date inputs and all five grain buttons without wrapping or scrolling at actual scale; do not shrink text below the design standard. All five grain transitions, range retention, ISO boundaries and unchanged KPI totals must pass Desktop/embedded verification before component approval.

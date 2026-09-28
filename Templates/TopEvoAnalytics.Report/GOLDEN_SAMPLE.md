@@ -4,11 +4,11 @@ Permanent internal visual reference. Do not deploy this report to customers.
 
 ## Implementation
 
-Overview uses the canonical TopEvo 1.0.0 theme and compact 1.2.1 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
+Overview uses the canonical TopEvo 1.0.0 theme and compact 1.3.0 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
 
 `COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. All components are Draft until Desktop rendering and embedded verification pass. Existing report identity and shared-model reference are preserved.
 
-The page contains one page-title text box, a native page navigator, one date-range slicer, two dimension dropdowns and a granularity dropdown, four count cards, an invoice-date trend, a customer ranking and a summary table. The navigator currently exposes the single Overview page; there are no placeholder destinations.
+The page contains one page-title text box, a native page navigator, one date-range slicer, two dimension dropdowns and a horizontal granularity tile selector, four count cards, an invoice-date trend, a customer ranking and a summary table. The navigator currently exposes the single Overview page; there are no placeholder destinations.
 
 ## Data and interaction contract
 
@@ -16,7 +16,7 @@ The page contains one page-title text box, a native page navigator, one date-ran
 - Trend: shared Time Granularity field parameter, default Month (`Date[YearMonth]`), ascending chronological sorting, unchanged `_Measures[A8101OP Invoice Count]`. One visual switches between all five grains.
 - Ranking: customer search name and invoice count, descending. Shows all available customer categories with native scrolling; no unsupported Top N filter was invented. Equal search names group together according to the existing model.
 - Summary: customer search name and the four KPI measures; fixed column widths and business-facing captions.
-- Filter and keyboard order: Branch -> Date range -> Customer -> Display by. Branch occupies x=24 and Date range x=336; each control is 296 x 56 px. This implements the mandatory TopEvo primary-filter order.
+- Primary groups: Branch -> Time control -> Customer. Keyboard order: Branch -> Date range -> granularity -> Customer. The Time control is one continuous 608 x 56 px white surface at x=336, y=72: date inputs use 280 px, immediately followed by 328 px of horizontal Day/Week/Month/Quarter/Year tiles. Customer moves to x=960. Component grouping is recorded in COMPONENTS.json; PBIR keeps two native slicers with independent behavior.
 - Filters: Date range uses Date[Date] in Between mode with no saved bounds; Branch and Customer retain multi-select dropdowns. Display by is a separate strict single-select field parameter, default Month.
 - Each data filter targets all seven analytical visuals; Display by targets only the trend. Slicers do not filter each other. Chart/table selections do not change KPIs or other visuals, keeping the reference page stable for component comparison.
 - Payment counts refer to payments associated with the selected invoices through existing relationships; the period filter is invoice date, not payment date. Existing unmatched keys and relationship behavior still need data-level verification.
@@ -49,6 +49,6 @@ The canonical Date dimension now supplies the monthly trend and date slicer. See
 
 ## Time-granularity demonstration (component specification 1.2.0)
 
-Date range and Display by occupy independent control slots. The range uses two date inputs without a slider. Display by supports Day, Week, Month, Quarter and Year, default Month; the shared model owns its NAMEOF targets and chronological sort keys. The chart title is Invoice activity. No measures or relationships changed in this extension. See MODEL.md for explicit hierarchies and the ISO-year rule for Calendar Week.
+Date range and Display by retain independent behavior within the combined Time control (component specification 1.3.0). The range uses two date inputs without a slider. Display by supports Day, Week, Month, Quarter and Year, default Month; the shared model owns its NAMEOF targets and chronological sort keys. The chart title is Invoice activity. No measures or relationships changed in this extension. See MODEL.md for explicit hierarchies and the ISO-year rule for Calendar Week.
 
-The previous three-wide-filter description is historical; the current control row uses four 296 px slots. Before approval, refresh the model and test all five choices against one fixed range, including partial periods and New Year ISO weeks. Verify date-range retention and unchanged KPI/table totals. Static checks do not establish runtime field-parameter behavior.
+The previous three-wide-filter description is historical; the current control row uses Branch (296 px), combined Time control (608 px) and Customer (296 px). Verify all five grain buttons remain visible without wrapping or scrolling before approval. Before approval, refresh the model and test all five choices against one fixed range, including partial periods and New Year ISO weeks. Verify date-range retention and unchanged KPI/table totals. Static checks do not establish runtime field-parameter behavior.

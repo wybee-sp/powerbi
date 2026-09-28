@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.3.0 - 2026-09-28
+
+- Replaces the separate Display by slot with a combined 608 px Time control: adjacent date inputs and horizontal Day/Week/Month/Quarter/Year tiles on one continuous white surface.
+- Mandatory primary order is Branch -> Time control -> business-specific filters, with matching keyboard order. Customer moves after the Time control.
+- Keeps existing model bindings, default Month and filter interactions. Theme and semantic model are unchanged. Desktop verification of tile fit and selection styling remains pending.
+
 ## Component specification 1.2.1 - 2026-09-28
 
 - Makes Branch -> Date / Period -> business-specific filters mandatory across standard pages; business exceptions must be documented.

@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.3.0",
   "status": "Draft - refined after user-reported Desktop rendering; revised rendering pending",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
@@ -82,7 +82,7 @@
         "x": 336,
         "y": 72,
         "z": 3000,
-        "width": 296,
+        "width": 280,
         "height": 56,
         "tabOrder": 3000
       },
@@ -110,54 +110,18 @@
       }
     },
     {
-      "role": "filter.customer",
-      "id": "92863660e33e39bf2329",
-      "type": "slicer",
-      "status": "Draft",
-      "position": {
-        "x": 648,
-        "y": 72,
-        "z": 5000,
-        "width": 296,
-        "height": 56,
-        "tabOrder": 4000
-      },
-      "bindings": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "a1101"
-                    }
-                  },
-                  "Property": "Suchbegriff [101]"
-                }
-              },
-              "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Customer",
-              "active": true,
-              "displayName": "Customer"
-            }
-          ]
-        }
-      }
-    },
-    {
       "role": "control.granularity",
       "id": "831422ecad4944eea626",
       "type": "slicer",
       "title": "Display by",
       "status": "Draft",
       "position": {
-        "x": 960,
+        "x": 616,
         "y": 72,
         "z": 13000,
-        "width": 296,
+        "width": 328,
         "height": 56,
-        "tabOrder": 5000
+        "tabOrder": 4000
       },
       "bindings": {
         "Values": {
@@ -177,6 +141,42 @@
               "nativeQueryRef": "Display by",
               "displayName": "Display by",
               "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "filter.customer",
+      "id": "92863660e33e39bf2329",
+      "type": "slicer",
+      "status": "Draft",
+      "position": {
+        "x": 960,
+        "y": 72,
+        "z": 5000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 5000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "queryRef": "a1101.Suchbegriff [101]",
+              "nativeQueryRef": "Customer",
+              "active": true,
+              "displayName": "Customer"
             }
           ]
         }
@@ -579,6 +579,27 @@
           ]
         }
       }
+    }
+  ],
+  "componentGroups": [
+    {
+      "role": "control.time",
+      "members": [
+        "5ddcb2a5d4d5d4b8fc09",
+        "831422ecad4944eea626"
+      ],
+      "position": {
+        "x": 336,
+        "y": 72,
+        "width": 608,
+        "height": 56
+      },
+      "layout": "Contiguous white surface; date range then horizontal single-select granularity tiles",
+      "primaryOrder": [
+        "filter.branch",
+        "control.time",
+        "filter.customer"
+      ]
     }
   ]
 }
