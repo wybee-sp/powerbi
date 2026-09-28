@@ -1,5 +1,10 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.5.0 - 2026-09-28
+
+- Requires adaptive 1/2/3/4-card KPI rows backed by existing validated measures; no empty cards, filler text or invented metrics. More than four requires an explicit design decision.
+- Sales now has two equal 608 px KPI cards with a 16 px gutter. Removes unavailable placeholders and their interactions. TimeControl layout and semantic model are unchanged.
+
 ## Component specification 1.4.1 - 2026-09-28
 
 - Records user acceptance of the rendered TimeControl as the frozen Golden Sample standard; no layout or visual definitions changed.

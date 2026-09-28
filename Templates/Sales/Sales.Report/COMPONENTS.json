@@ -197,7 +197,7 @@
         "x": 24,
         "y": 144,
         "z": 6000,
-        "width": 296,
+        "width": 608,
         "height": 96,
         "tabOrder": 6000
       },
@@ -238,10 +238,10 @@
       "type": "cardVisual",
       "status": "Implemented - Sales Desktop verification pending",
       "position": {
-        "x": 336,
+        "x": 648,
         "y": 144,
         "z": 7000,
-        "width": 296,
+        "width": 608,
         "height": 96,
         "tabOrder": 7000
       },
@@ -275,40 +275,6 @@
         "placement": "Below primary value"
       },
       "sourceGoldenSampleId": "a267601474d5703ee78e"
-    },
-    {
-      "role": "placeholder.averageInvoiceValue",
-      "id": "4147a08e764043acbe6d",
-      "type": "textbox",
-      "status": "Implemented - Sales Desktop verification pending",
-      "position": {
-        "x": 648,
-        "y": 144,
-        "z": 8000,
-        "width": 296,
-        "height": 96,
-        "tabOrder": 8000
-      },
-      "bindings": {},
-      "variant": "missing-measure-placeholder",
-      "sourceGoldenSampleId": "44bde52db62b1cce7f88"
-    },
-    {
-      "role": "placeholder.additionalSalesKpi",
-      "id": "f600a358f6b04952b55a",
-      "type": "textbox",
-      "status": "Implemented - Sales Desktop verification pending",
-      "position": {
-        "x": 960,
-        "y": 144,
-        "z": 9000,
-        "width": 296,
-        "height": 96,
-        "tabOrder": 9000
-      },
-      "bindings": {},
-      "variant": "missing-measure-placeholder",
-      "sourceGoldenSampleId": "369387969e38ec6613f3"
     },
     {
       "role": "chart.trend",
@@ -549,5 +515,16 @@
       "layoutFrozen": true,
       "approvalEvidence": "Exact Golden Sample layout retained; no independent Sales rendering claimed"
     }
-  ]
+  ],
+  "kpiLayout": {
+    "count": 2,
+    "width": 608,
+    "gutter": 16,
+    "x": [
+      24,
+      648
+    ],
+    "y": 144,
+    "height": 96
+  }
 }

@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.4.1 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
+Component specification: 1.5.0 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
 
 ## 1. Purpose and required inputs
 
@@ -106,7 +106,18 @@ These specifications are implemented in the Golden Sample where existing fields/
 
 ### KPI cards
 
-- Four 296 px cards form a consistent row. Value-only variant: 96 px high, 12 px vertical and 16 px horizontal padding.
+- KPI slots are optional. Render only KPIs backed by existing, validated semantic-model measures. Never render empty cards, Not available, N/A, placeholder text or invented KPIs merely to fill the grid. Document missing measures outside the report canvas. With zero suitable measures, omit the KPI row.
+- Adapt the row to the available KPIs; the four-card geometry above is the Golden Sample variant, not a required slot count. On the standard 1232 px content width, use the following equal-width layouts with 16 px gutters:
+
+| KPI count | Card width | X positions | Grid span per card |
+| --- | --- | --- | --- |
+| 1 | 1232 px where appropriate | 24 | 12 columns |
+| 2 | 608 px | 24, 648 | 6 columns |
+| 3 | 400 px | 24, 440, 856 | 4 columns |
+| 4 | 296 px | 24, 336, 648, 960 | 3 columns |
+
+- More than four KPIs requires an explicit page-design decision; never automatically add another row. The row adapts to authored, approved measure availability, not transient blank results for a particular filter selection; handle valid measures with no data using their defined empty-state behavior.
+- Value-only variant: y=144, 96 px high, 12 px vertical and 16 px horizontal padding. Sales Overview uses the two-card variant. Preserve the charts below at y=256.
 - Label first: 10 pt regular secondary text, single line, left aligned. Primary value: 28 pt semibold primary text, left aligned. Do not duplicate the label as a container title.
 - Optional comparison/status appears below the value at 9-10 pt with a named period or explicit status meaning. It requires an existing approved shared-model measure and an appropriate native reference-label binding; no static sample delta, report calculation or decorative status badge.
 - With no comparison/status binding, omit that row entirely. The current four cards use this value-only variant. Do not display four repetitive "No comparison" placeholders.
