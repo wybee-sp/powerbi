@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.2.0 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
+Component specification: 1.2.1 | Canonical theme: 1.0.0 | Status: refined Golden Sample; revised rendering pending
 
 ## 1. Purpose and required inputs
 
@@ -82,8 +82,8 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 | --- | ---: | ---: | ---: | ---: |
 | Page title | 24 | 24 | 608 | 32 |
 | Page navigation | 648 | 24 | 608 | 32 |
-| Date range | 24 | 72 | 296 | 56 |
-| Branch filter | 336 | 72 | 296 | 56 |
+| Branch filter | 24 | 72 | 296 | 56 |
+| Date range | 336 | 72 | 296 | 56 |
 | Customer filter | 648 | 72 | 296 | 56 |
 | Display by | 960 | 72 | 296 | 56 |
 | KPI 1 | 24 | 144 | 296 | 96 |
@@ -139,7 +139,11 @@ These specifications are implemented in the Golden Sample where existing fields/
 
 ### Slicers and filters
 
-- Visible labels, consistent dropdowns and search for long lists. Primary filters: period, branch, business entity.
+- Mandatory primary-filter order on all standard pages: **Branch -> Date / Period -> business-specific filters**. Branch is always leftmost; the date/period selector immediately follows it. Keyboard tab order follows the same sequence.
+- Sales/Receivables: Branch -> Invoice date -> Customer. Purchases: Branch -> Purchase date -> Supplier. Inventory: Branch -> Date -> Warehouse. Choose the ERP operating context first, then the period and business dimension.
+- Preserve this order across pages. An exception requires a documented business requirement and its rationale in the affected report documentation.
+- Display by is a separate granularity control after the primary filters. The Golden Sample order is Branch -> Date range -> Customer -> Display by. Day/Week/Month/Quarter/Year changes time grouping, not the selected date range.
+- Visible labels, consistent dropdowns and search for long lists.
 - Define selection mode and intentional defaults. Synchronize relevant slicers across related pages.
 - Display active date range and currency. Reset restores documented defaults, not incidental author selections.
 - Advanced filters use a secondary panel. Validate date-input width.
@@ -223,7 +227,7 @@ Use the shared Time Granularity field parameter. Month is the default; native si
 
 Do not create five separate charts, use weekday names for daily analysis, encode grouping in a report measure or add another calendar table. Explicit Calendar and Calendar Week hierarchies support drill navigation elsewhere; the Display by control selects one standalone grain.
 
-In the Golden Sample, Date range/Branch/Customer filter all seven analytical visuals. Display by targets only the trend, not KPIs, rankings, the table or other slicers. All incoming interactions to Display by are disabled. Selection of Week does not extend the range to complete weeks: edge buckets remain partial. Show no fabricated zero values or blank-exclusion filters.
+In the Golden Sample, Branch/Date range/Customer filter all seven analytical visuals. Display by targets only the trend, not KPIs, rankings, the table or other slicers. All incoming interactions to Display by are disabled. Selection of Week does not extend the range to complete weeks: edge buckets remain partial. Show no fabricated zero values or blank-exclusion filters.
 
 For a reset component, restore Date range and Display by explicitly and independently (default grain Month). Clearing a native field parameter means all fields, so do not expose a clear/all action for this selector. Test the host's reset and bookmark behavior. The same disconnected parameter can control related trends when intentional, but cross-page slicer synchronization must be explicitly chosen.
 

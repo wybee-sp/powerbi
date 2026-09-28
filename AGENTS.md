@@ -11,6 +11,7 @@
 
 - Read `Templates/Theme/DESIGN_SYSTEM.md` before creating or styling pages. Use canonical `Templates/Theme/TopEvo.json`; record foundation changes in `Templates/Theme/CHANGELOG.md`.
 - Every generated page must use the shared model, canonical theme, 1280 x 720 TopEvo grid, approved Golden Sample components and business measures from `_Measures`.
+- Primary filters must follow Branch -> Date / Period -> business-specific filters on every standard page. Branch is always leftmost; the date-range selector is immediately next. Examples: Sales/Receivables: Branch -> Invoice date -> Customer; Purchases: Branch -> Purchase date -> Supplier; Inventory: Branch -> Date -> Warehouse. Match keyboard order to visual order. Exceptions require a documented business requirement in the affected report documentation. Day/Week/Month/Quarter/Year is a separate granularity control, placed after primary filters; it does not replace the date-range selector.
 - Standard pages use 24 px margins, 16 px gutters and documented slots. Tooltip/mobile layouts need a documented variant.
 - Components must be implemented, rendered and approved in the Golden Sample before generation. An empty report or written specification is not an approved visual template.
 - Prefer native visuals. Specify business titles, units, empty states, tab order, alternative text and interactions. Never communicate status by color alone.

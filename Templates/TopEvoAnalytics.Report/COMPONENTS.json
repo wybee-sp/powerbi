@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "status": "Draft - refined after user-reported Desktop rendering; revised rendering pending",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
@@ -38,53 +38,17 @@
       "bindings": {}
     },
     {
-      "role": "filter.period",
-      "id": "5ddcb2a5d4d5d4b8fc09",
-      "type": "slicer",
-      "status": "Draft",
-      "position": {
-        "x": 24,
-        "y": 72,
-        "z": 3000,
-        "width": 296,
-        "height": 56,
-        "tabOrder": 2000
-      },
-      "bindings": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Date"
-                    }
-                  },
-                  "Property": "Date"
-                }
-              },
-              "queryRef": "Date.Date",
-              "nativeQueryRef": "Invoice date",
-              "active": true,
-              "displayName": "Date range"
-            }
-          ]
-        }
-      }
-    },
-    {
       "role": "filter.branch",
       "id": "9e43bef062079b54db6a",
       "type": "slicer",
       "status": "Draft",
       "position": {
-        "x": 336,
+        "x": 24,
         "y": 72,
         "z": 4000,
         "width": 296,
         "height": 56,
-        "tabOrder": 3000
+        "tabOrder": 2000
       },
       "bindings": {
         "Values": {
@@ -104,6 +68,42 @@
               "nativeQueryRef": "Branch",
               "active": true,
               "displayName": "Branch"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "role": "filter.period",
+      "id": "5ddcb2a5d4d5d4b8fc09",
+      "type": "slicer",
+      "status": "Draft",
+      "position": {
+        "x": 336,
+        "y": 72,
+        "z": 3000,
+        "width": 296,
+        "height": 56,
+        "tabOrder": 3000
+      },
+      "bindings": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "Date.Date",
+              "nativeQueryRef": "Invoice date",
+              "active": true,
+              "displayName": "Date range"
             }
           ]
         }

@@ -4,7 +4,7 @@ Permanent internal visual reference. Do not deploy this report to customers.
 
 ## Implementation
 
-Overview uses the canonical TopEvo 1.0.0 theme and compact 1.1.0 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
+Overview uses the canonical TopEvo 1.0.0 theme and compact 1.2.1 component layout on the 1280 x 720 grid. Theme resource `StaticResources/RegisteredResources/TopEvo-1.0.0.json` is a synchronized copy; edit only the canonical source and then synchronize it.
 
 `COMPONENTS.json` records the thirteen visual IDs (twelve retained, one new granularity selector), slots, geometry and existing model bindings. It is external authoring metadata, not a Power BI definition. All components are Draft until Desktop rendering and embedded verification pass. Existing report identity and shared-model reference are preserved.
 
@@ -16,6 +16,7 @@ The page contains one page-title text box, a native page navigator, one date-ran
 - Trend: shared Time Granularity field parameter, default Month (`Date[YearMonth]`), ascending chronological sorting, unchanged `_Measures[A8101OP Invoice Count]`. One visual switches between all five grains.
 - Ranking: customer search name and invoice count, descending. Shows all available customer categories with native scrolling; no unsupported Top N filter was invented. Equal search names group together according to the existing model.
 - Summary: customer search name and the four KPI measures; fixed column widths and business-facing captions.
+- Filter and keyboard order: Branch -> Date range -> Customer -> Display by. Branch occupies x=24 and Date range x=336; each control is 296 x 56 px. This implements the mandatory TopEvo primary-filter order.
 - Filters: Date range uses Date[Date] in Between mode with no saved bounds; Branch and Customer retain multi-select dropdowns. Display by is a separate strict single-select field parameter, default Month.
 - Each data filter targets all seven analytical visuals; Display by targets only the trend. Slicers do not filter each other. Chart/table selections do not change KPIs or other visuals, keeping the reference page stable for component comparison.
 - Payment counts refer to payments associated with the selected invoices through existing relationships; the period filter is invoice date, not payment date. Existing unmatched keys and relationship behavior still need data-level verification.

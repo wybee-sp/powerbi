@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.2.1 - 2026-09-28
+
+- Makes Branch -> Date / Period -> business-specific filters mandatory across standard pages; business exceptions must be documented.
+- Swaps Golden Sample Branch and Date range positions and keyboard order; Display by remains a separate control after Customer.
+- Synchronizes component metadata and authoring rules. Theme and model remain unchanged; Desktop rendering is pending.
+
 ## Component specification 1.2.0 - 2026-09-28
 
 - Adds shared time-granularity selector and independent Date range control to the Golden Sample; one trend supports Day/Week/Month/Quarter/Year.
