@@ -1,0 +1,749 @@
+{
+  "entries": [
+    {
+      "table": "a42001",
+      "kind": "table",
+      "name": "a42001",
+      "captions": {
+        "en-US": "Sales invoices",
+        "de-DE": "Verkaufsrechnungen",
+        "ro-RO": "Facturi de vânzare"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "table",
+      "name": "a420011",
+      "captions": {
+        "en-US": "Sales invoice lines",
+        "de-DE": "Verkaufsrechnungspositionen",
+        "ro-RO": "Poziții facturi de vânzare"
+      }
+    },
+    {
+      "table": "a1101",
+      "kind": "table",
+      "name": "a1101",
+      "captions": {
+        "en-US": "Customers",
+        "de-DE": "Kunden",
+        "ro-RO": "Clienți"
+      }
+    },
+    {
+      "table": "a9002",
+      "kind": "table",
+      "name": "a9002",
+      "captions": {
+        "en-US": "Branches",
+        "de-DE": "Betriebe",
+        "ro-RO": "Unități"
+      }
+    },
+    {
+      "table": "a9001",
+      "kind": "table",
+      "name": "a9001",
+      "captions": {
+        "en-US": "ERP configuration",
+        "de-DE": "ERP-Konfiguration",
+        "ro-RO": "Configurare ERP"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "table",
+      "name": "a8101op_invoices",
+      "captions": {
+        "en-US": "Receivables",
+        "de-DE": "Forderungen",
+        "ro-RO": "Creanțe"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "table",
+      "name": "a8101op_payments",
+      "captions": {
+        "en-US": "Payments",
+        "de-DE": "Zahlungen",
+        "ro-RO": "Plăți"
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "table",
+      "name": "_Measures",
+      "captions": {
+        "en-US": "Business measures",
+        "de-DE": "Geschäftskennzahlen",
+        "ro-RO": "Indicatori comerciali"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "table",
+      "name": "Date",
+      "captions": {
+        "en-US": "Calendar",
+        "de-DE": "Kalender",
+        "ro-RO": "Calendar"
+      },
+      "descriptions": {
+        "en-US": "Shared calendar with one row per day.",
+        "de-DE": "Gemeinsamer Kalender mit einer Zeile pro Tag.",
+        "ro-RO": "Calendar comun cu un rând pentru fiecare zi."
+      }
+    },
+    {
+      "table": "Time Granularity",
+      "kind": "table",
+      "name": "Time Granularity",
+      "captions": {
+        "en-US": "Time granularity",
+        "de-DE": "Zeitauflösung",
+        "ro-RO": "Granularitate temporală"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "measure",
+      "name": "Net Revenue",
+      "captions": {
+        "en-US": "Net revenue",
+        "de-DE": "Nettoumsatz",
+        "ro-RO": "Venituri nete"
+      },
+      "descriptions": {
+        "en-US": "Sum of the existing sales-line net amounts.",
+        "de-DE": "Summe der vorhandenen Nettobeträge der Verkaufspositionen.",
+        "ro-RO": "Suma valorilor nete existente ale pozițiilor de vânzare."
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "measure",
+      "name": "Invoice Count",
+      "captions": {
+        "en-US": "Invoice count",
+        "de-DE": "Rechnungsanzahl",
+        "ro-RO": "Număr de facturi"
+      },
+      "descriptions": {
+        "en-US": "Number of rows in the sales invoice header table.",
+        "de-DE": "Anzahl der Zeilen in der Verkaufsrechnungskopftabelle.",
+        "ro-RO": "Numărul de rânduri din tabelul antetelor facturilor de vânzare."
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "measure",
+      "name": "A8101OP Invoice Count",
+      "captions": {
+        "en-US": "Invoice count",
+        "de-DE": "Rechnungsanzahl",
+        "ro-RO": "Număr de facturi"
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "measure",
+      "name": "A8101OP Open Invoice Count",
+      "captions": {
+        "en-US": "Open invoices",
+        "de-DE": "Offene Rechnungen",
+        "ro-RO": "Facturi deschise"
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "measure",
+      "name": "A8101OP Closed Invoice Count",
+      "captions": {
+        "en-US": "Closed invoices",
+        "de-DE": "Erledigte Rechnungen",
+        "ro-RO": "Facturi închise"
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "measure",
+      "name": "A8101OP Payment Count",
+      "captions": {
+        "en-US": "Payments",
+        "de-DE": "Zahlungen",
+        "ro-RO": "Plăți"
+      }
+    },
+    {
+      "table": "_Measures",
+      "kind": "measure",
+      "name": "A8101OP Payment Amount",
+      "captions": {
+        "en-US": "Payment amount",
+        "de-DE": "Zahlungsbetrag",
+        "ro-RO": "Sumă plăți"
+      }
+    },
+    {
+      "table": "a9002",
+      "kind": "column",
+      "name": "Bezeichnung [102]",
+      "captions": {
+        "en-US": "Branch",
+        "de-DE": "Betrieb",
+        "ro-RO": "Unitate"
+      }
+    },
+    {
+      "table": "a1101",
+      "kind": "column",
+      "name": "Suchbegriff [101]",
+      "captions": {
+        "en-US": "Customer",
+        "de-DE": "Kunde",
+        "ro-RO": "Client"
+      }
+    },
+    {
+      "table": "Time Granularity",
+      "kind": "column",
+      "name": "Granularity",
+      "captions": {
+        "en-US": "Display by",
+        "de-DE": "Zeitauflösung",
+        "ro-RO": "Grupare"
+      }
+    },
+    {
+      "table": "a1101",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a1101",
+      "kind": "column",
+      "name": "Kundennummer",
+      "captions": {
+        "en-US": "Customer number",
+        "de-DE": "Kundennummer",
+        "ro-RO": "Număr client"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Betrieb",
+      "captions": {
+        "en-US": "Branch number",
+        "de-DE": "Betriebsnummer",
+        "ro-RO": "Număr unitate"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Auftrag",
+      "captions": {
+        "en-US": "Order number",
+        "de-DE": "Auftragsnummer",
+        "ro-RO": "Număr comandă"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Rechnung",
+      "captions": {
+        "en-US": "Invoice number",
+        "de-DE": "Rechnungsnummer",
+        "ro-RO": "Număr factură"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Status [101]",
+      "captions": {
+        "en-US": "Status",
+        "de-DE": "Status",
+        "ro-RO": "Stare"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Auftragsart [102]",
+      "captions": {
+        "en-US": "Order type",
+        "de-DE": "Auftragsart",
+        "ro-RO": "Tip comandă"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "Kunde [103]",
+      "captions": {
+        "en-US": "Customer number",
+        "de-DE": "Kundennummer",
+        "ro-RO": "Număr client"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "OrderDate",
+      "captions": {
+        "en-US": "Order date",
+        "de-DE": "Auftragsdatum",
+        "ro-RO": "Data comenzii"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "ServiceDate",
+      "captions": {
+        "en-US": "Service date",
+        "de-DE": "Leistungsdatum",
+        "ro-RO": "Data prestării"
+      }
+    },
+    {
+      "table": "a42001",
+      "kind": "column",
+      "name": "InvoiceDate",
+      "captions": {
+        "en-US": "Invoice date",
+        "de-DE": "Rechnungsdatum",
+        "ro-RO": "Data facturii"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Betrieb",
+      "captions": {
+        "en-US": "Branch number",
+        "de-DE": "Betriebsnummer",
+        "ro-RO": "Număr unitate"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Auftrag",
+      "captions": {
+        "en-US": "Order number",
+        "de-DE": "Auftragsnummer",
+        "ro-RO": "Număr comandă"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Rechnung",
+      "captions": {
+        "en-US": "Invoice number",
+        "de-DE": "Rechnungsnummer",
+        "ro-RO": "Număr factură"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Artikel [102]",
+      "captions": {
+        "en-US": "Item code",
+        "de-DE": "Artikelnummer",
+        "ro-RO": "Cod articol"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "Quantity",
+      "captions": {
+        "en-US": "Quantity",
+        "de-DE": "Menge",
+        "ro-RO": "Cantitate"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "UnitPrice",
+      "captions": {
+        "en-US": "Unit price",
+        "de-DE": "Einzelpreis",
+        "ro-RO": "Preț unitar"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "NetAmount",
+      "captions": {
+        "en-US": "Net amount",
+        "de-DE": "Nettobetrag",
+        "ro-RO": "Sumă netă"
+      }
+    },
+    {
+      "table": "a420011",
+      "kind": "column",
+      "name": "VatRate",
+      "captions": {
+        "en-US": "VAT rate",
+        "de-DE": "Mehrwertsteuersatz",
+        "ro-RO": "Cotă TVA"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "Betrieb",
+      "captions": {
+        "en-US": "Branch number",
+        "de-DE": "Betriebsnummer",
+        "ro-RO": "Număr unitate"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "Kunde",
+      "captions": {
+        "en-US": "Customer number",
+        "de-DE": "Kundennummer",
+        "ro-RO": "Număr client"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "Rechnung",
+      "captions": {
+        "en-US": "Invoice number",
+        "de-DE": "Rechnungsnummer",
+        "ro-RO": "Număr factură"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "ValueDate",
+      "captions": {
+        "en-US": "Value date",
+        "de-DE": "Valutadatum",
+        "ro-RO": "Data valutei"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "InvoiceDate",
+      "captions": {
+        "en-US": "Invoice date",
+        "de-DE": "Rechnungsdatum",
+        "ro-RO": "Data facturii"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "EntryDate",
+      "captions": {
+        "en-US": "Entry date",
+        "de-DE": "Erfassungsdatum",
+        "ro-RO": "Data înregistrării"
+      }
+    },
+    {
+      "table": "a8101op_invoices",
+      "kind": "column",
+      "name": "DueDate",
+      "captions": {
+        "en-US": "Due date",
+        "de-DE": "Fälligkeitsdatum",
+        "ro-RO": "Data scadenței"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "Betrieb",
+      "captions": {
+        "en-US": "Branch number",
+        "de-DE": "Betriebsnummer",
+        "ro-RO": "Număr unitate"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "Kunde",
+      "captions": {
+        "en-US": "Customer number",
+        "de-DE": "Kundennummer",
+        "ro-RO": "Număr client"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "Rechnung",
+      "captions": {
+        "en-US": "Invoice number",
+        "de-DE": "Rechnungsnummer",
+        "ro-RO": "Număr factură"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "ValueDate",
+      "captions": {
+        "en-US": "Value date",
+        "de-DE": "Valutadatum",
+        "ro-RO": "Data valutei"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "InvoiceDate",
+      "captions": {
+        "en-US": "Invoice date",
+        "de-DE": "Rechnungsdatum",
+        "ro-RO": "Data facturii"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "EntryDate",
+      "captions": {
+        "en-US": "Entry date",
+        "de-DE": "Erfassungsdatum",
+        "ro-RO": "Data înregistrării"
+      }
+    },
+    {
+      "table": "a8101op_payments",
+      "kind": "column",
+      "name": "DueDate",
+      "captions": {
+        "en-US": "Due date",
+        "de-DE": "Fälligkeitsdatum",
+        "ro-RO": "Data scadenței"
+      }
+    },
+    {
+      "table": "a9001",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a9002",
+      "kind": "column",
+      "name": "Firma",
+      "captions": {
+        "en-US": "Company",
+        "de-DE": "Firma",
+        "ro-RO": "Companie"
+      }
+    },
+    {
+      "table": "a9002",
+      "kind": "column",
+      "name": "Betrieb",
+      "captions": {
+        "en-US": "Branch number",
+        "de-DE": "Betriebsnummer",
+        "ro-RO": "Număr unitate"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Date",
+      "captions": {
+        "en-US": "Date",
+        "de-DE": "Datum",
+        "ro-RO": "Dată"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Year",
+      "captions": {
+        "en-US": "Year",
+        "de-DE": "Jahr",
+        "ro-RO": "An"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Quarter",
+      "captions": {
+        "en-US": "Quarter",
+        "de-DE": "Quartal",
+        "ro-RO": "Trimestru"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Month",
+      "captions": {
+        "en-US": "Month",
+        "de-DE": "Monat",
+        "ro-RO": "Lună"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Day",
+      "captions": {
+        "en-US": "Day",
+        "de-DE": "Tag",
+        "ro-RO": "Zi"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "Week",
+      "captions": {
+        "en-US": "Week",
+        "de-DE": "Woche",
+        "ro-RO": "Săptămână"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "YearMonth",
+      "captions": {
+        "en-US": "Year-month",
+        "de-DE": "Jahr-Monat",
+        "ro-RO": "An-lună"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "YearQuarter",
+      "captions": {
+        "en-US": "Year-quarter",
+        "de-DE": "Jahr-Quartal",
+        "ro-RO": "An-trimestru"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "YearWeek",
+      "captions": {
+        "en-US": "Year-week",
+        "de-DE": "Jahr-Woche",
+        "ro-RO": "An-săptămână"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "DayOfWeek",
+      "captions": {
+        "en-US": "Weekday",
+        "de-DE": "Wochentag",
+        "ro-RO": "Zi a săptămânii"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "column",
+      "name": "ISOYear",
+      "captions": {
+        "en-US": "ISO week-year",
+        "de-DE": "ISO-Wochenjahr",
+        "ro-RO": "An săptămânal ISO"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "hierarchy",
+      "name": "Calendar",
+      "captions": {
+        "en-US": "Calendar",
+        "de-DE": "Kalender",
+        "ro-RO": "Calendar"
+      }
+    },
+    {
+      "table": "Date",
+      "kind": "hierarchy",
+      "name": "Calendar Week",
+      "captions": {
+        "en-US": "Calendar week",
+        "de-DE": "Kalenderwoche",
+        "ro-RO": "Săptămână calendaristică"
+      }
+    }
+  ]
+}

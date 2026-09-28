@@ -10,7 +10,7 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "textbox",
+    "visualType": "cardVisual",
     "visualContainerObjects": {
       "title": [
         {
@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'header.title'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "HeaderReceivablesOverview"
                 }
               }
             }
@@ -82,26 +87,85 @@
     },
     "drillFilterOtherVisuals": true,
     "objects": {
-      "general": [
+      "label": [
         {
           "properties": {
-            "paragraphs": [
-              {
-                "textRuns": [
-                  {
-                    "value": "TopEvo | Receivables overview",
-                    "textStyle": {
-                      "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "20pt",
-                      "color": "#182230"
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#182230'"
                     }
                   }
-                ]
+                }
               }
-            ]
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]
+    },
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "HeaderReceivablesOverview"
+                }
+              },
+              "queryRef": "_ReportLabels.HeaderReceivablesOverview"
+            }
+          ]
+        }
+      }
     }
   }
 }

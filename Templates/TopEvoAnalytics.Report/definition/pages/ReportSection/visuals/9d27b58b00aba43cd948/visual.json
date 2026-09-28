@@ -24,8 +24,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customers by invoice count'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "CustomerInvoiceRanking"
                 }
               }
             }
@@ -37,8 +42,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customers by invoice count'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "CustomerInvoiceRanking"
                 }
               }
             }
@@ -63,9 +73,7 @@
                 }
               },
               "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Customer",
-              "active": true,
-              "displayName": "Customer"
+              "active": true
             }
           ]
         },
@@ -82,9 +90,7 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count",
-              "nativeQueryRef": "Invoices",
-              "displayName": "Invoices"
+              "queryRef": "_Measures.A8101OP Invoice Count"
             }
           ]
         }

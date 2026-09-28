@@ -1,0 +1,28 @@
+{
+  "Templates/TopEvoAnalytics.Report": {
+    "pages": {
+      "ReportSection": {
+        "labelKey": "Overview",
+        "hidden": false
+      }
+    },
+    "nativeNavigatorIds": [
+      "d8f5a9bed09924c8f6f5"
+    ]
+  },
+  "Templates/Sales/Sales.Report": {
+    "pages": {
+      "cc2566e279b27d3608e1": {
+        "labelKey": "Receivables",
+        "hidden": true
+      },
+      "ReportSection": {
+        "labelKey": "Overview",
+        "hidden": false
+      }
+    },
+    "nativeNavigatorIds": [
+      "8eedc44eb7424924b051"
+    ]
+  }
+}

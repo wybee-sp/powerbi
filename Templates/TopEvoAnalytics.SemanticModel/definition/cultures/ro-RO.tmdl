@@ -1,0 +1,166 @@
+cultureInfo ro-RO
+	translations
+		model Model
+			table a1101
+				caption: Clienți
+				column Firma
+					caption: Companie
+				column Kundennummer
+					caption: Număr client
+				column 'Suchbegriff [101]'
+					caption: Client
+			table a9002
+				caption: Unități
+				column Firma
+					caption: Companie
+				column Betrieb
+					caption: Număr unitate
+				column 'Bezeichnung [102]'
+					caption: Unitate
+			table a42001
+				caption: Facturi de vânzare
+				column Firma
+					caption: Companie
+				column Betrieb
+					caption: Număr unitate
+				column Auftrag
+					caption: Număr comandă
+				column Rechnung
+					caption: Număr factură
+				column 'Status [101]'
+					caption: Stare
+				column 'Auftragsart [102]'
+					caption: Tip comandă
+				column 'Kunde [103]'
+					caption: Număr client
+				column OrderDate
+					caption: Data comenzii
+				column ServiceDate
+					caption: Data prestării
+				column InvoiceDate
+					caption: Data facturii
+				measure 'Invoice Count'
+					caption: Număr de facturi
+					description: Numărul de rânduri din tabelul antetelor facturilor de vânzare.
+				measure 'Net Revenue'
+					caption: Venituri nete
+					description: Suma valorilor nete existente ale pozițiilor de vânzare.
+			table a420011
+				caption: Poziții facturi de vânzare
+				column Firma
+					caption: Companie
+				column Betrieb
+					caption: Număr unitate
+				column Auftrag
+					caption: Număr comandă
+				column Rechnung
+					caption: Număr factură
+				column 'Artikel [102]'
+					caption: Cod articol
+				column Quantity
+					caption: Cantitate
+				column UnitPrice
+					caption: Preț unitar
+				column NetAmount
+					caption: Sumă netă
+				column VatRate
+					caption: Cotă TVA
+			table a9001
+				caption: Configurare ERP
+				column Firma
+					caption: Companie
+			table a8101op_invoices
+				caption: Creanțe
+				column Firma
+					caption: Companie
+				column Betrieb
+					caption: Număr unitate
+				column Kunde
+					caption: Număr client
+				column Rechnung
+					caption: Număr factură
+				column ValueDate
+					caption: Data valutei
+				column InvoiceDate
+					caption: Data facturii
+				column EntryDate
+					caption: Data înregistrării
+				column DueDate
+					caption: Data scadenței
+			table a8101op_payments
+				caption: Plăți
+				column Firma
+					caption: Companie
+				column Betrieb
+					caption: Număr unitate
+				column Kunde
+					caption: Număr client
+				column Rechnung
+					caption: Număr factură
+				column ValueDate
+					caption: Data valutei
+				column InvoiceDate
+					caption: Data facturii
+				column EntryDate
+					caption: Data înregistrării
+				column DueDate
+					caption: Data scadenței
+			table _Measures
+				caption: Indicatori comerciali
+				measure 'A8101OP Invoice Count'
+					caption: Număr de facturi
+				measure 'A8101OP Payment Count'
+					caption: Plăți
+				measure 'A8101OP Payment Amount'
+					caption: Sumă plăți
+				measure 'A8101OP Closed Invoice Count'
+					caption: Facturi închise
+				measure 'A8101OP Open Invoice Count'
+					caption: Facturi deschise
+			table Date
+				caption: Calendar
+				description: Calendar comun cu un rând pentru fiecare zi.
+				column Date
+					caption: Dată
+				column Year
+					caption: An
+				column Quarter
+					caption: Trimestru
+				column Month
+					caption: Lună
+				column YearMonth
+					caption: An-lună
+				column Day
+					caption: Zi
+				column DayOfWeek
+					caption: Zi a săptămânii
+				column Week
+					caption: Săptămână
+				column ISOYear
+					caption: An săptămânal ISO
+				column YearWeek
+					caption: An-săptămână
+				column YearQuarter
+					caption: An-trimestru
+				hierarchy Calendar
+					caption: Calendar
+					level Year
+						caption: An
+					level Quarter
+						caption: Trimestru
+					level Month
+						caption: Lună
+					level Date
+						caption: Dată
+				hierarchy 'Calendar Week'
+					caption: Săptămână calendaristică
+					level Year
+						caption: An
+					level Week
+						caption: Săptămână
+					level Date
+						caption: Dată
+			table 'Time Granularity'
+				caption: Granularitate temporală
+				column Granularity
+					caption: Grupare

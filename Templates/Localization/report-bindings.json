@@ -1,0 +1,202 @@
+[
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "kind": "visual-title",
+    "key": "InvoiceActivity"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json",
+    "kind": "header",
+    "key": "HeaderReceivablesOverview"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "kind": "visual-title",
+    "key": "DateRange"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "kind": "visual-title",
+    "key": "DisplayBy"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "kind": "visual-title",
+    "key": "CustomerCounts"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "kind": "visual-title",
+    "key": "Customer"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "kind": "visual-title",
+    "key": "CustomerInvoiceRanking"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "kind": "visual-title",
+    "key": "Branch"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "kind": "visual-title",
+    "key": "RevenueTrend"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "kind": "visual-title",
+    "key": "Branch"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "kind": "visual-title",
+    "key": "SalesSummary"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "kind": "visual-title",
+    "key": "DisplayBy"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/d5eafabc9a22487ab761/visual.json",
+    "kind": "header",
+    "key": "HeaderSalesOverview"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "kind": "visual-title",
+    "key": "Customer"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "kind": "visual-title",
+    "key": "RevenueRanking"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "kind": "visual-title",
+    "key": "DateRange"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json",
+    "kind": "alt-text",
+    "key": "HeaderReceivablesOverview"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "kind": "alt-text",
+    "key": "AltNavigation"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "kind": "alt-text",
+    "key": "AltBranch"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "kind": "alt-text",
+    "key": "AltDateRange"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "kind": "alt-text",
+    "key": "AltGranularity"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "kind": "alt-text",
+    "key": "AltCustomer"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "kind": "alt-text",
+    "key": "InvoiceCount"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "kind": "alt-text",
+    "key": "OpenInvoices"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "kind": "alt-text",
+    "key": "ClosedInvoices"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "kind": "alt-text",
+    "key": "Payments"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "kind": "alt-text",
+    "key": "AltInvoiceTrend"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "kind": "alt-text",
+    "key": "CustomerInvoiceRanking"
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "kind": "alt-text",
+    "key": "CustomerCounts"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/d5eafabc9a22487ab761/visual.json",
+    "kind": "alt-text",
+    "key": "HeaderSalesOverview"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "kind": "alt-text",
+    "key": "AltNavigation"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "kind": "alt-text",
+    "key": "AltBranch"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "kind": "alt-text",
+    "key": "AltDateRange"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "kind": "alt-text",
+    "key": "AltGranularity"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "kind": "alt-text",
+    "key": "AltCustomer"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "kind": "alt-text",
+    "key": "NetRevenue"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "kind": "alt-text",
+    "key": "InvoiceCount"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "kind": "alt-text",
+    "key": "AltSalesTrend"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "kind": "alt-text",
+    "key": "RevenueRanking"
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "kind": "alt-text",
+    "key": "SalesSummary"
+  }
+]

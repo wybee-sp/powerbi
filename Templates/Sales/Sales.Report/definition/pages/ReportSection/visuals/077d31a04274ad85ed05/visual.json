@@ -24,8 +24,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Net revenue over time · EUR'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "RevenueTrend"
                 }
               }
             }
@@ -37,8 +42,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Net revenue from the existing shared Sales measure, in EUR.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "AltSalesTrend"
                 }
               }
             }
@@ -63,8 +73,6 @@
                 }
               },
               "queryRef": "Date.YearMonth",
-              "nativeQueryRef": "Month",
-              "displayName": "Month",
               "active": true
             }
           ],
@@ -99,9 +107,7 @@
                   "Property": "Net Revenue"
                 }
               },
-              "queryRef": "a42001.Net Revenue",
-              "nativeQueryRef": "Net Revenue",
-              "displayName": "Net Revenue"
+              "queryRef": "a42001.Net Revenue"
             }
           ]
         }

@@ -33,14 +33,30 @@ table 'Time Granularity'
 		summarizeBy: none
 		sourceColumn: [Value3]
 
+	column Locale
+		dataType: string
+		isHidden
+		lineageTag: c0005447-381c-4214-9f96-fe265b9eaf70
+		summarizeBy: none
+		sourceColumn: [Value4]
+
 	partition 'Time Granularity' = calculated
 		mode: import
 		source =
 				{
-				    ("Day", NAMEOF('Date'[Date]), 0),
-				    ("Week", NAMEOF('Date'[YearWeek]), 1),
-				    ("Month", NAMEOF('Date'[YearMonth]), 2),
-				    ("Quarter", NAMEOF('Date'[YearQuarter]), 3),
-				    ("Year", NAMEOF('Date'[Year]), 4)
+				("Day", NAMEOF('Date'[Date]), 0, "en-US"),
+				("Week", NAMEOF('Date'[YearWeek]), 1, "en-US"),
+				("Month", NAMEOF('Date'[YearMonth]), 2, "en-US"),
+				("Quarter", NAMEOF('Date'[YearQuarter]), 3, "en-US"),
+				("Year", NAMEOF('Date'[Year]), 4, "en-US"),
+				("Tag", NAMEOF('Date'[Date]), 0, "de-DE"),
+				("Woche", NAMEOF('Date'[YearWeek]), 1, "de-DE"),
+				("Monat", NAMEOF('Date'[YearMonth]), 2, "de-DE"),
+				("Quartal", NAMEOF('Date'[YearQuarter]), 3, "de-DE"),
+				("Jahr", NAMEOF('Date'[Year]), 4, "de-DE"),
+				("Zi", NAMEOF('Date'[Date]), 0, "ro-RO"),
+				("Săptămână", NAMEOF('Date'[YearWeek]), 1, "ro-RO"),
+				("Lună", NAMEOF('Date'[YearMonth]), 2, "ro-RO"),
+				("Trimestru", NAMEOF('Date'[YearQuarter]), 3, "ro-RO"),
+				("An", NAMEOF('Date'[Year]), 4, "ro-RO")
 				}
-

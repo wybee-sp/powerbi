@@ -24,8 +24,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customers by net revenue · EUR'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "RevenueRanking"
                 }
               }
             }
@@ -37,8 +42,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Net revenue from the existing shared Sales measure, in EUR.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "RevenueRanking"
                 }
               }
             }
@@ -63,9 +73,7 @@
                 }
               },
               "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Customer",
-              "active": true,
-              "displayName": "Customer"
+              "active": true
             }
           ]
         },
@@ -82,9 +90,7 @@
                   "Property": "Net Revenue"
                 }
               },
-              "queryRef": "a42001.Net Revenue",
-              "nativeQueryRef": "Net Revenue",
-              "displayName": "Net Revenue"
+              "queryRef": "a42001.Net Revenue"
             }
           ]
         }

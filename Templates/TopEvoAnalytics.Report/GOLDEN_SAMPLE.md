@@ -74,3 +74,7 @@ Verify all five options are simultaneously visible without arrows, the active op
 ## Accepted rendered reference (1.4.1)
 
 The user has finalized the current TimeControl as the TopEvo standard. Its current visual layout, member IDs, active-state styling and field bindings are frozen. COMPONENTS.json records user-confirmed acceptance, not agent-executed Desktop testing; the Desktop build and independent per-state test evidence remain unrecorded. This supersedes earlier TimeControl pending-approval statements and does not retroactively turn the historical test matrix into executed tests. The reported date lower bound 01.01.0106 is tracked separately in docs/DATE_VALIDITY.md; no source cause is claimed without row evidence.
+
+## Localization integration
+
+This report remains a single definition for de-DE, en-US and ro-RO. Shared model captions and _ReportLabels measures supply translated UI text; Time Granularity.Locale is a hidden host-controlled filter with English default. Numeric Order=2 preserves the initial Month selection across languages. Geometry and business bindings remain stable, but text-measure headers and native visual titles replace literal header text. The localized render is not yet approved: verify all languages and screen-reader text in Desktop/embedding. Native page-navigation captions still use English until the host navigation contract in docs/LOCALIZATION.md is integrated.

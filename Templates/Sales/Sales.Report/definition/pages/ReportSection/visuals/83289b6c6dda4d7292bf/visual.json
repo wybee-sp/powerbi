@@ -18,14 +18,51 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "text": {
               "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "DisplayBy"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#526174'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
                 }
               }
             }
@@ -37,8 +74,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "AltGranularity"
                 }
               }
             }
@@ -148,8 +190,6 @@
                 }
               },
               "queryRef": "Time Granularity.Granularity",
-              "nativeQueryRef": "Display by",
-              "displayName": "Display by",
               "active": true
             }
           ]
@@ -193,14 +233,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Display by'"
+                  "Value": "false"
                 }
               }
             }
@@ -259,7 +292,7 @@
                                   "Source": "g"
                                 }
                               },
-                              "Property": "Granularity"
+                              "Property": "Order"
                             }
                           }
                         ],
@@ -267,7 +300,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Month'"
+                                "Value": "2L"
                               }
                             }
                           ]

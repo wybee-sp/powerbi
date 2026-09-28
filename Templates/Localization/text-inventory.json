@@ -1,0 +1,1745 @@
+[
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/page.json",
+    "pointer": "/displayName",
+    "text": "Overview",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Invoices for the selected invoice dates, branch and customer. Count; no comparison baseline.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/nativeQueryRef",
+    "text": "Year",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/displayName",
+    "text": "Year",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/nativeQueryRef",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/displayName",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Invoice activity",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Invoice activity over the selected date range. Display by changes only the time grouping: day, ISO week, month, quarter or year.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Payments for the selected invoice dates, branch and customer. Count; no comparison baseline.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Payments",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Payments",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Payments",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "header.title",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json",
+    "pointer": "/visual/objects/general/0/properties/paragraphs/0/textRuns/0/value",
+    "text": "TopEvo | Receivables overview",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Closed invoices for the selected invoice dates, branch and customer. Count; no comparison baseline.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Closed invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Closed invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Closed invoices",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Date range: inclusive start and end dates using the invoice-date role. Independent of Display by granularity.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Invoice date",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Date range",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Date range",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/1/nativeQueryRef",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/1/displayName",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/2/nativeQueryRef",
+    "text": "Open invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/2/displayName",
+    "text": "Open invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/3/nativeQueryRef",
+    "text": "Closed invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/3/displayName",
+    "text": "Closed invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/4/nativeQueryRef",
+    "text": "Payments",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/4/displayName",
+    "text": "Payments",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/objects/total/0/properties/label/expr/Literal/Value",
+    "text": "Total",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Customer summary · counts",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Customer summary · counts",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "filter.customer",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Customers by invoice count",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Customers by invoice count",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/nativeQueryRef",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/displayName",
+    "text": "Invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "filter.branch",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Open invoices for the selected invoice dates, branch and customer. Count; no comparison baseline.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Open invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Open invoices",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Open invoices",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Report pages. The selected tab identifies the current page.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "center",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/topMargin/expr/Literal/Value",
+    "text": "0D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/0/properties/bottomMargin/expr/Literal/Value",
+    "text": "0D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/1/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#2F5D8C",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/1/properties/bold/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json",
+    "pointer": "/visual/objects/text/2/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#2F5D8C",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/cc2566e279b27d3608e1/page.json",
+    "pointer": "/displayName",
+    "text": "Receivables",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/page.json",
+    "pointer": "/displayName",
+    "text": "Overview",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Net revenue over time · EUR",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Net revenue from the existing shared Sales measure, in EUR.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/nativeQueryRef",
+    "text": "Month",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/displayName",
+    "text": "Month",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/nativeQueryRef",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/displayName",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Net revenue from the existing shared Sales measure, in EUR.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "filter.branch",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Branch",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Customer sales summary · EUR",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Customer sales summary: invoice count and net revenue in EUR. Sorted by net revenue descending.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/1/nativeQueryRef",
+    "text": "Invoice Count",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/1/displayName",
+    "text": "Invoice Count",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/2/nativeQueryRef",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/2/displayName",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json",
+    "pointer": "/visual/objects/total/0/properties/label/expr/Literal/Value",
+    "text": "Total",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Display by",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Report pages. The selected tab identifies the current page.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "center",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/topMargin/expr/Literal/Value",
+    "text": "0D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/0/properties/bottomMargin/expr/Literal/Value",
+    "text": "0D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/1/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#2F5D8C",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/1/properties/bold/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json",
+    "pointer": "/visual/objects/text/2/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#2F5D8C",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Invoice count from existing Sales header measure.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/nativeQueryRef",
+    "text": "Invoice Count",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/query/queryState/Data/projections/0/displayName",
+    "text": "Invoice Count",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/show/expr/Literal/Value",
+    "text": "true",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/text/expr/Literal/Value",
+    "text": "Invoice Count",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/position/expr/Literal/Value",
+    "text": "aboveValue",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/horizontalAlignment/expr/Literal/Value",
+    "text": "left",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontSize/expr/Literal/Value",
+    "text": "10D",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontFamily/expr/Literal/Value",
+    "text": "Segoe UI",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/fontColor/solid/color/expr/Literal/Value",
+    "text": "#526174",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json",
+    "pointer": "/visual/objects/label/0/properties/textWrap/expr/Literal/Value",
+    "text": "false",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/d5eafabc9a22487ab761/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "header.title",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/d5eafabc9a22487ab761/visual.json",
+    "pointer": "/visual/objects/general/0/properties/paragraphs/0/textRuns/0/value",
+    "text": "TopEvo | Sales overview",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "filter.customer",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/visualContainerObjects/title/0/properties/text/expr/Literal/Value",
+    "text": "Customers by net revenue · EUR",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Net revenue from the existing shared Sales measure, in EUR.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/nativeQueryRef",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/query/queryState/Category/projections/0/displayName",
+    "text": "Customer",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/nativeQueryRef",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json",
+    "pointer": "/visual/query/queryState/Y/projections/0/displayName",
+    "text": "Net Revenue",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "pointer": "/visual/visualContainerObjects/general/0/properties/altText/expr/Literal/Value",
+    "text": "Date range: inclusive start and end dates using the invoice-date role. Independent of Display by granularity.",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/nativeQueryRef",
+    "text": "Invoice date",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "pointer": "/visual/query/queryState/Values/projections/0/displayName",
+    "text": "Date range",
+    "category": 2,
+    "resolution": "Report-local caption override removed; use translated model metadata for its bound field."
+  },
+  {
+    "file": "Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json",
+    "pointer": "/visual/objects/header/0/properties/text/expr/Literal/Value",
+    "text": "Date range",
+    "category": 2,
+    "resolution": "Shared label measure where bound in report-bindings.json; native page/navigation retain English fallback pending documented integration; alt text uses localized measures."
+  },
+  {
+    "file": "shared model",
+    "pointer": "a1101.Suchbegriff [101]",
+    "text": "Customer names from ERP",
+    "category": 3,
+    "resolution": "Source/business-data localization; metadata translations cannot translate row values."
+  },
+  {
+    "file": "shared model",
+    "pointer": "a9002.Bezeichnung [102]",
+    "text": "Branch names from ERP",
+    "category": 3,
+    "resolution": "Source/business-data localization; metadata translations cannot translate row values."
+  },
+  {
+    "file": "shared model",
+    "pointer": "a420011.Artikel [102]",
+    "text": "Item codes from ERP",
+    "category": 3,
+    "resolution": "Source/business-data localization; metadata translations cannot translate row values."
+  },
+  {
+    "file": "shared model",
+    "pointer": "Date.Month / Date.DayOfWeek",
+    "text": "Calculated English calendar names",
+    "category": 3,
+    "resolution": "Source/business-data localization; metadata translations cannot translate row values."
+  },
+  {
+    "file": "shared model",
+    "pointer": "Time Granularity.Granularity",
+    "text": "Presentation-domain data: five grain labels",
+    "category": 3,
+    "resolution": "Source/business-data localization; metadata translations cannot translate row values."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/table/a42001",
+    "text": "Sales invoices",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/table/a420011",
+    "text": "Sales invoice lines",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a1101/table/a1101",
+    "text": "Customers",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9002/table/a9002",
+    "text": "Branches",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9001/table/a9001",
+    "text": "ERP configuration",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/table/a8101op_invoices",
+    "text": "Receivables",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/table/a8101op_payments",
+    "text": "Payments",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/table/_Measures",
+    "text": "Business measures",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/table/Date",
+    "text": "Calendar",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Time Granularity/table/Time Granularity",
+    "text": "Time granularity",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/measure/Net Revenue",
+    "text": "Net revenue",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/measure/Invoice Count",
+    "text": "Invoice count",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/measure/A8101OP Invoice Count",
+    "text": "Invoice count",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/measure/A8101OP Open Invoice Count",
+    "text": "Open invoices",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/measure/A8101OP Closed Invoice Count",
+    "text": "Closed invoices",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/measure/A8101OP Payment Count",
+    "text": "Payments",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "_Measures/measure/A8101OP Payment Amount",
+    "text": "Payment amount",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9002/column/Bezeichnung [102]",
+    "text": "Branch",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a1101/column/Suchbegriff [101]",
+    "text": "Customer",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Time Granularity/column/Granularity",
+    "text": "Display by",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a1101/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a1101/column/Kundennummer",
+    "text": "Customer number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Betrieb",
+    "text": "Branch number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Auftrag",
+    "text": "Order number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Rechnung",
+    "text": "Invoice number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Status [101]",
+    "text": "Status",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Auftragsart [102]",
+    "text": "Order type",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/Kunde [103]",
+    "text": "Customer number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/OrderDate",
+    "text": "Order date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/ServiceDate",
+    "text": "Service date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a42001/column/InvoiceDate",
+    "text": "Invoice date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Betrieb",
+    "text": "Branch number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Auftrag",
+    "text": "Order number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Rechnung",
+    "text": "Invoice number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Artikel [102]",
+    "text": "Item code",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/Quantity",
+    "text": "Quantity",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/UnitPrice",
+    "text": "Unit price",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/NetAmount",
+    "text": "Net amount",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a420011/column/VatRate",
+    "text": "VAT rate",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/Betrieb",
+    "text": "Branch number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/Kunde",
+    "text": "Customer number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/Rechnung",
+    "text": "Invoice number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/ValueDate",
+    "text": "Value date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/InvoiceDate",
+    "text": "Invoice date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/EntryDate",
+    "text": "Entry date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_invoices/column/DueDate",
+    "text": "Due date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/Betrieb",
+    "text": "Branch number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/Kunde",
+    "text": "Customer number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/Rechnung",
+    "text": "Invoice number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/ValueDate",
+    "text": "Value date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/InvoiceDate",
+    "text": "Invoice date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/EntryDate",
+    "text": "Entry date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a8101op_payments/column/DueDate",
+    "text": "Due date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9001/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9002/column/Firma",
+    "text": "Company",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "a9002/column/Betrieb",
+    "text": "Branch number",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Date",
+    "text": "Date",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Year",
+    "text": "Year",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Quarter",
+    "text": "Quarter",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Month",
+    "text": "Month",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Day",
+    "text": "Day",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/Week",
+    "text": "Week",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/YearMonth",
+    "text": "Year-month",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/YearQuarter",
+    "text": "Year-quarter",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/YearWeek",
+    "text": "Year-week",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/DayOfWeek",
+    "text": "Weekday",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/column/ISOYear",
+    "text": "ISO week-year",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/hierarchy/Calendar",
+    "text": "Calendar",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  },
+  {
+    "file": "shared semantic model",
+    "pointer": "Date/hierarchy/Calendar Week",
+    "text": "Calendar week",
+    "category": 1,
+    "resolution": "Native TMDL culture caption; optional description translations from metadata.json."
+  }
+]

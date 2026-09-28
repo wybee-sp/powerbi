@@ -26,9 +26,7 @@
                   "Property": "Suchbegriff [101]"
                 }
               },
-              "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Customer",
-              "displayName": "Customer"
+              "queryRef": "a1101.Suchbegriff [101]"
             },
             {
               "field": {
@@ -41,9 +39,7 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count",
-              "nativeQueryRef": "Invoices",
-              "displayName": "Invoices"
+              "queryRef": "_Measures.A8101OP Invoice Count"
             },
             {
               "field": {
@@ -56,9 +52,7 @@
                   "Property": "A8101OP Open Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Open Invoice Count",
-              "nativeQueryRef": "Open invoices",
-              "displayName": "Open invoices"
+              "queryRef": "_Measures.A8101OP Open Invoice Count"
             },
             {
               "field": {
@@ -71,9 +65,7 @@
                   "Property": "A8101OP Closed Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Closed Invoice Count",
-              "nativeQueryRef": "Closed invoices",
-              "displayName": "Closed invoices"
+              "queryRef": "_Measures.A8101OP Closed Invoice Count"
             },
             {
               "field": {
@@ -86,9 +78,7 @@
                   "Property": "A8101OP Payment Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Payment Count",
-              "nativeQueryRef": "Payments",
-              "displayName": "Payments"
+              "queryRef": "_Measures.A8101OP Payment Count"
             }
           ]
         }
@@ -119,13 +109,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "label": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Total'"
                 }
               }
             }
@@ -231,8 +214,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customer summary · counts'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "CustomerCounts"
                 }
               }
             }
@@ -244,8 +232,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customer summary · counts'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "CustomerCounts"
                 }
               }
             }

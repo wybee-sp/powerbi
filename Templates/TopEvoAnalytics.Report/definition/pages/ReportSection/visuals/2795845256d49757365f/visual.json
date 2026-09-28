@@ -23,13 +23,11 @@
                       "Entity": "Date"
                     }
                   },
-                  "Property": "Year"
+                  "Property": "YearMonth"
                 }
               },
-              "queryRef": "Date.Year",
-              "nativeQueryRef": "Year",
-              "active": true,
-              "displayName": "Year"
+              "queryRef": "Date.YearMonth",
+              "active": true
             }
           ],
           "fieldParameters": [
@@ -63,9 +61,7 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count",
-              "nativeQueryRef": "Invoices",
-              "displayName": "Invoices"
+              "queryRef": "_Measures.A8101OP Invoice Count"
             }
           ]
         }
@@ -80,7 +76,7 @@
                     "Entity": "Date"
                   }
                 },
-                "Property": "Year"
+                "Property": "YearMonth"
               }
             },
             "direction": "Ascending"
@@ -188,8 +184,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Invoice activity'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "InvoiceActivity"
                 }
               }
             }
@@ -201,8 +202,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Invoice activity over the selected date range. Display by changes only the time grouping: day, ISO week, month, quarter or year.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "AltInvoiceTrend"
                 }
               }
             }

@@ -1,0 +1,53 @@
+# Localization changed files
+
+49 created or modified files. No report/page copies were created.
+
+- `AGENTS.md`
+- `Templates/Localization/labels.json`
+- `Templates/Localization/metadata.json`
+- `Templates/Localization/navigation.json`
+- `Templates/Localization/report-bindings.json`
+- `Templates/Localization/text-inventory.json`
+- `Templates/Sales/Sales.Report/COMPONENTS.json`
+- `Templates/Sales/Sales.Report/SALES_OVERVIEW.md`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/077d31a04274ad85ed05/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/0aa8e8393114177d073d/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/180c9822021860e112cb/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/48080225a009c7816619/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/83289b6c6dda4d7292bf/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/8eedc44eb7424924b051/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/c85dcd65ae5d7a09692d/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/d5eafabc9a22487ab761/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/e61b9b4c725baec66b1d/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/f0f9619e57eeb2b79732/visual.json`
+- `Templates/Sales/Sales.Report/definition/pages/ReportSection/visuals/fdce3d4398dea1000cb5/visual.json`
+- `Templates/Sales/Sales.Report/definition/report.json`
+- `Templates/Theme/CHANGELOG.md`
+- `Templates/Theme/DESIGN_SYSTEM.md`
+- `Templates/TopEvoAnalytics.Report/COMPONENTS.json`
+- `Templates/TopEvoAnalytics.Report/GOLDEN_SAMPLE.md`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/153e904422493224e572/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/2795845256d49757365f/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/369387969e38ec6613f3/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/44bde52db62b1cce7f88/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/8fcfab21f72e5ed59047/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/92863660e33e39bf2329/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9d27b58b00aba43cd948/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/9e43bef062079b54db6a/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/a267601474d5703ee78e/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/d8f5a9bed09924c8f6f5/visual.json`
+- `Templates/TopEvoAnalytics.Report/definition/report.json`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/cultures/de-DE.tmdl`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/cultures/en-US.tmdl`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/cultures/ro-RO.tmdl`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/model.tmdl`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/tables/Time Granularity.tmdl`
+- `Templates/TopEvoAnalytics.SemanticModel/definition/tables/_ReportLabels.tmdl`
+- `docs/LOCALIZATION.md`
+- `docs/LOCALIZATION_FILES.md`
+- `docs/MODEL.md`
+- `tools/localization/Build-Localization.ps1`
+- `tools/localization/Validate-Localization.ps1`

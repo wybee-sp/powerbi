@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Payments for the selected invoice dates, branch and customer. Count; no comparison baseline.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "Payments"
                 }
               }
             }
@@ -96,9 +101,7 @@
                   "Property": "A8101OP Payment Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Payment Count",
-              "nativeQueryRef": "Payments",
-              "displayName": "Payments"
+              "queryRef": "_Measures.A8101OP Payment Count"
             }
           ]
         }
@@ -112,13 +115,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Payments'"
                 }
               }
             },

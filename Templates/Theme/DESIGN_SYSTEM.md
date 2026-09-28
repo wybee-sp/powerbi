@@ -272,3 +272,9 @@ Before approval, test all five selections over a fixed range, an ISO year bounda
 ## Accepted TimeControl reference (1.4.1)
 
 The user finalized the current rendered implementation as the standard. Freeze the existing 1280 x 720 layout: Branch x24/w192; TimeControl x232/w816 with date range w280 and granularity x512/w536; Customer x1064/w192; all y72/h56. Preserve the active-grain styling and parameter bindings. No PBIR layout change accompanies this acceptance. Earlier pending-render notes describe the development history; this acceptance supersedes the TimeControl visual approval status, but does not claim agent-operated tests or a recorded Desktop build. Date validity is a separate open model investigation in docs/DATE_VALIDITY.md.
+
+## Localization standard
+
+Use one layout for de-DE, en-US and ro-RO. Metadata captions belong in the shared model; report titles belong in Templates/Localization/labels.json and _ReportLabels measures. The current headers use text-measure cards at the same coordinates; slicer captions use native visual titles. No geometry or theme palette changes are required. Validate the 536 px TimeControl selector with Tag/Woche/Monat/Quartal/Jahr and Zi/Săptămână/Lună/Trimestru/An as well as English; do not shrink fonts or duplicate pages to accommodate a language.
+
+Missing translations fall back to approved English text. Native navigation currently retains English pending the documented host integration; alt text uses shared localized measures; model translations alone cannot translate them. See docs/LOCALIZATION.md for the support assessment, embed contract and release checklist. Presentation label cards are headers, not KPI fillers.

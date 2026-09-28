@@ -1,0 +1,190 @@
+{
+  "locales": [
+    "de-DE",
+    "en-US",
+    "ro-RO"
+  ],
+  "fallback": "en-US",
+  "labels": {
+    "SalesOverview": {
+      "en-US": "Sales overview",
+      "de-DE": "Verkaufsübersicht",
+      "ro-RO": "Prezentare vânzări"
+    },
+    "ReceivablesOverview": {
+      "en-US": "Receivables overview",
+      "de-DE": "Forderungsübersicht",
+      "ro-RO": "Prezentare creanțe"
+    },
+    "Overview": {
+      "en-US": "Overview",
+      "de-DE": "Übersicht",
+      "ro-RO": "Prezentare generală"
+    },
+    "Receivables": {
+      "en-US": "Receivables",
+      "de-DE": "Forderungen",
+      "ro-RO": "Creanțe"
+    },
+    "Branch": {
+      "en-US": "Branch",
+      "de-DE": "Betrieb",
+      "ro-RO": "Unitate"
+    },
+    "DateRange": {
+      "en-US": "Date range",
+      "de-DE": "Zeitraum",
+      "ro-RO": "Interval de date"
+    },
+    "DisplayBy": {
+      "en-US": "Display by",
+      "de-DE": "Zeitauflösung",
+      "ro-RO": "Grupare"
+    },
+    "Customer": {
+      "en-US": "Customer",
+      "de-DE": "Kunde",
+      "ro-RO": "Client"
+    },
+    "Day": {
+      "en-US": "Day",
+      "de-DE": "Tag",
+      "ro-RO": "Zi"
+    },
+    "Week": {
+      "en-US": "Week",
+      "de-DE": "Woche",
+      "ro-RO": "Săptămână"
+    },
+    "Month": {
+      "en-US": "Month",
+      "de-DE": "Monat",
+      "ro-RO": "Lună"
+    },
+    "Quarter": {
+      "en-US": "Quarter",
+      "de-DE": "Quartal",
+      "ro-RO": "Trimestru"
+    },
+    "Year": {
+      "en-US": "Year",
+      "de-DE": "Jahr",
+      "ro-RO": "An"
+    },
+    "InvoiceActivity": {
+      "en-US": "Invoice activity",
+      "de-DE": "Rechnungsaktivität",
+      "ro-RO": "Activitate facturi"
+    },
+    "CustomerInvoiceRanking": {
+      "en-US": "Customers by invoice count",
+      "de-DE": "Kunden nach Rechnungsanzahl",
+      "ro-RO": "Clienți după numărul de facturi"
+    },
+    "CustomerCounts": {
+      "en-US": "Customer summary · counts",
+      "de-DE": "Kundenübersicht · Anzahl",
+      "ro-RO": "Rezumat clienți · număr"
+    },
+    "RevenueTrend": {
+      "en-US": "Net revenue over time · EUR",
+      "de-DE": "Nettoumsatz im Zeitverlauf · EUR",
+      "ro-RO": "Evoluția veniturilor nete · EUR"
+    },
+    "RevenueRanking": {
+      "en-US": "Customers by net revenue · EUR",
+      "de-DE": "Kunden nach Nettoumsatz · EUR",
+      "ro-RO": "Clienți după venituri nete · EUR"
+    },
+    "SalesSummary": {
+      "en-US": "Customer sales summary · EUR",
+      "de-DE": "Umsatzübersicht nach Kunden · EUR",
+      "ro-RO": "Rezumat vânzări pe clienți · EUR"
+    },
+    "NetRevenue": {
+      "en-US": "Net revenue",
+      "de-DE": "Nettoumsatz",
+      "ro-RO": "Venituri nete"
+    },
+    "InvoiceCount": {
+      "en-US": "Invoice count",
+      "de-DE": "Rechnungsanzahl",
+      "ro-RO": "Număr de facturi"
+    },
+    "OpenInvoices": {
+      "en-US": "Open invoices",
+      "de-DE": "Offene Rechnungen",
+      "ro-RO": "Facturi deschise"
+    },
+    "ClosedInvoices": {
+      "en-US": "Closed invoices",
+      "de-DE": "Erledigte Rechnungen",
+      "ro-RO": "Facturi închise"
+    },
+    "Payments": {
+      "en-US": "Payments",
+      "de-DE": "Zahlungen",
+      "ro-RO": "Plăți"
+    },
+    "Total": {
+      "en-US": "Total",
+      "de-DE": "Gesamt",
+      "ro-RO": "Total"
+    },
+    "NoData": {
+      "en-US": "No data for the selected period",
+      "de-DE": "Keine Daten für den gewählten Zeitraum",
+      "ro-RO": "Nu există date pentru perioada selectată"
+    },
+    "HeaderSalesOverview": {
+      "en-US": "TopEvo | Sales overview",
+      "de-DE": "TopEvo | Verkaufsübersicht",
+      "ro-RO": "TopEvo | Prezentare vânzări"
+    },
+    "HeaderReceivablesOverview": {
+      "en-US": "TopEvo | Receivables overview",
+      "de-DE": "TopEvo | Forderungsübersicht",
+      "ro-RO": "TopEvo | Prezentare creanțe"
+    },
+    "Date": {
+      "en-US": "Date",
+      "de-DE": "Datum",
+      "ro-RO": "Dată"
+    },
+    "AltBranch": {
+      "en-US": "Filter by branch.",
+      "de-DE": "Nach Betrieb filtern.",
+      "ro-RO": "Filtrare după unitate."
+    },
+    "AltDateRange": {
+      "en-US": "Select the analyzed date range. Independent of time grouping.",
+      "de-DE": "Analysezeitraum auswählen. Unabhängig von der Zeitauflösung.",
+      "ro-RO": "Selectați intervalul analizat, independent de gruparea temporală."
+    },
+    "AltGranularity": {
+      "en-US": "Group the trend by day, week, month, quarter or year without changing the date range.",
+      "de-DE": "Zeitverlauf nach Tag, Woche, Monat, Quartal oder Jahr gruppieren, ohne den Zeitraum zu ändern.",
+      "ro-RO": "Grupați evoluția pe zi, săptămână, lună, trimestru sau an fără a schimba intervalul."
+    },
+    "AltCustomer": {
+      "en-US": "Filter by customer.",
+      "de-DE": "Nach Kunde filtern.",
+      "ro-RO": "Filtrare după client."
+    },
+    "AltNavigation": {
+      "en-US": "Navigate between report pages.",
+      "de-DE": "Zwischen Berichtsseiten wechseln.",
+      "ro-RO": "Navigare între paginile raportului."
+    },
+    "AltSalesTrend": {
+      "en-US": "Net revenue over the selected period, grouped by the selected time grain, in EUR.",
+      "de-DE": "Nettoumsatz im gewählten Zeitraum und Zeitraster, in EUR.",
+      "ro-RO": "Venituri nete în perioada selectată, după gruparea temporală aleasă, în EUR."
+    },
+    "AltInvoiceTrend": {
+      "en-US": "Invoice activity over the selected period and time grain.",
+      "de-DE": "Rechnungsaktivität im gewählten Zeitraum und Zeitraster.",
+      "ro-RO": "Activitatea facturilor în perioada și gruparea temporală selectate."
+    }
+  }
+}

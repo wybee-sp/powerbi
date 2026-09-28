@@ -24,8 +24,13 @@
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customer sales summary · EUR'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "SalesSummary"
                 }
               }
             }
@@ -37,8 +42,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Customer sales summary: invoice count and net revenue in EUR. Sorted by net revenue descending.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "SalesSummary"
                 }
               }
             }
@@ -62,9 +72,7 @@
                   "Property": "Suchbegriff [101]"
                 }
               },
-              "queryRef": "a1101.Suchbegriff [101]",
-              "nativeQueryRef": "Customer",
-              "displayName": "Customer"
+              "queryRef": "a1101.Suchbegriff [101]"
             },
             {
               "field": {
@@ -77,9 +85,7 @@
                   "Property": "Invoice Count"
                 }
               },
-              "queryRef": "a42001.Invoice Count",
-              "nativeQueryRef": "Invoice Count",
-              "displayName": "Invoice Count"
+              "queryRef": "a42001.Invoice Count"
             },
             {
               "field": {
@@ -92,9 +98,7 @@
                   "Property": "Net Revenue"
                 }
               },
-              "queryRef": "a42001.Net Revenue",
-              "nativeQueryRef": "Net Revenue",
-              "displayName": "Net Revenue"
+              "queryRef": "a42001.Net Revenue"
             }
           ]
         }
@@ -125,13 +129,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "label": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Total'"
                 }
               }
             }

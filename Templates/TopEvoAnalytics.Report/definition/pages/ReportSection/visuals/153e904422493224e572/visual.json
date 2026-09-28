@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Invoices for the selected invoice dates, branch and customer. Count; no comparison baseline.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "InvoiceCount"
                 }
               }
             }
@@ -96,9 +101,7 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count",
-              "nativeQueryRef": "Invoices",
-              "displayName": "Invoices"
+              "queryRef": "_Measures.A8101OP Invoice Count"
             }
           ]
         }
@@ -112,13 +115,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Invoices'"
                 }
               }
             },

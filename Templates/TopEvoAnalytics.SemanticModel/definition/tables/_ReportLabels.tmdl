@@ -1,0 +1,194 @@
+table _ReportLabels
+	isHidden
+	lineageTag: f1581757-d0f0-4048-9130-878ae4012191
+
+	/// Localized presentation label; not a business calculation.
+	measure SalesOverview = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Verkaufsübersicht", "ro-ro", "Prezentare vânzări", "Sales overview" )
+		displayFolder: Report labels
+		lineageTag: 77d9fb7a-cf8f-4242-9071-5d107b4ea060
+
+	/// Localized presentation label; not a business calculation.
+	measure ReceivablesOverview = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Forderungsübersicht", "ro-ro", "Prezentare creanțe", "Receivables overview" )
+		displayFolder: Report labels
+		lineageTag: 6fb713b4-0eac-4903-b32c-6c7125a3b757
+
+	/// Localized presentation label; not a business calculation.
+	measure Overview = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Übersicht", "ro-ro", "Prezentare generală", "Overview" )
+		displayFolder: Report labels
+		lineageTag: 89ee6a3f-7f37-45b6-9be3-cb9dc8b6cc0c
+
+	/// Localized presentation label; not a business calculation.
+	measure Receivables = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Forderungen", "ro-ro", "Creanțe", "Receivables" )
+		displayFolder: Report labels
+		lineageTag: 04454f35-a7b1-4792-9b12-a1fee3e67929
+
+	/// Localized presentation label; not a business calculation.
+	measure Branch = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Betrieb", "ro-ro", "Unitate", "Branch" )
+		displayFolder: Report labels
+		lineageTag: 859a045a-1f52-46d7-8e66-76ebe46ba851
+
+	/// Localized presentation label; not a business calculation.
+	measure DateRange = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Zeitraum", "ro-ro", "Interval de date", "Date range" )
+		displayFolder: Report labels
+		lineageTag: 089d4317-79f2-420a-88eb-04e8367612c9
+
+	/// Localized presentation label; not a business calculation.
+	measure DisplayBy = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Zeitauflösung", "ro-ro", "Grupare", "Display by" )
+		displayFolder: Report labels
+		lineageTag: 1c8e5088-0746-4af2-ab2b-ed996654288e
+
+	/// Localized presentation label; not a business calculation.
+	measure Customer = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Kunde", "ro-ro", "Client", "Customer" )
+		displayFolder: Report labels
+		lineageTag: 4c65c4f2-789b-4075-8ed5-9853c050aff6
+
+	/// Localized presentation label; not a business calculation.
+	measure Day = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Tag", "ro-ro", "Zi", "Day" )
+		displayFolder: Report labels
+		lineageTag: 4db2815d-4cec-4b45-87e9-38e913e0e687
+
+	/// Localized presentation label; not a business calculation.
+	measure Week = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Woche", "ro-ro", "Săptămână", "Week" )
+		displayFolder: Report labels
+		lineageTag: f20c0fb1-ed3a-40f2-8e57-c6694ebd47aa
+
+	/// Localized presentation label; not a business calculation.
+	measure Month = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Monat", "ro-ro", "Lună", "Month" )
+		displayFolder: Report labels
+		lineageTag: e5d8d87b-3d6f-4170-b1c6-8ec1a96f1c66
+
+	/// Localized presentation label; not a business calculation.
+	measure Quarter = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Quartal", "ro-ro", "Trimestru", "Quarter" )
+		displayFolder: Report labels
+		lineageTag: af3474ac-aacc-4cb4-8602-2f10336daa8d
+
+	/// Localized presentation label; not a business calculation.
+	measure Year = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Jahr", "ro-ro", "An", "Year" )
+		displayFolder: Report labels
+		lineageTag: dd9cf213-262b-48f1-bbac-e7b061b59adb
+
+	/// Localized presentation label; not a business calculation.
+	measure InvoiceActivity = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Rechnungsaktivität", "ro-ro", "Activitate facturi", "Invoice activity" )
+		displayFolder: Report labels
+		lineageTag: cd6ebde2-d35b-4fc7-b162-0e1f4a993b6a
+
+	/// Localized presentation label; not a business calculation.
+	measure CustomerInvoiceRanking = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Kunden nach Rechnungsanzahl", "ro-ro", "Clienți după numărul de facturi", "Customers by invoice count" )
+		displayFolder: Report labels
+		lineageTag: ab0a95d7-88fd-4acf-be3b-0eff7f6d31a4
+
+	/// Localized presentation label; not a business calculation.
+	measure CustomerCounts = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Kundenübersicht · Anzahl", "ro-ro", "Rezumat clienți · număr", "Customer summary · counts" )
+		displayFolder: Report labels
+		lineageTag: f9878203-198d-43b2-80a8-fe0d389bd54e
+
+	/// Localized presentation label; not a business calculation.
+	measure RevenueTrend = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Nettoumsatz im Zeitverlauf · EUR", "ro-ro", "Evoluția veniturilor nete · EUR", "Net revenue over time · EUR" )
+		displayFolder: Report labels
+		lineageTag: 9b7660b9-4ca7-454e-a536-92110c0040da
+
+	/// Localized presentation label; not a business calculation.
+	measure RevenueRanking = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Kunden nach Nettoumsatz · EUR", "ro-ro", "Clienți după venituri nete · EUR", "Customers by net revenue · EUR" )
+		displayFolder: Report labels
+		lineageTag: addc1a58-34dc-42aa-8f7b-ccbf687c9d44
+
+	/// Localized presentation label; not a business calculation.
+	measure SalesSummary = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Umsatzübersicht nach Kunden · EUR", "ro-ro", "Rezumat vânzări pe clienți · EUR", "Customer sales summary · EUR" )
+		displayFolder: Report labels
+		lineageTag: 595d337b-7eaa-459f-ab73-6c5d4a6931f1
+
+	/// Localized presentation label; not a business calculation.
+	measure NetRevenue = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Nettoumsatz", "ro-ro", "Venituri nete", "Net revenue" )
+		displayFolder: Report labels
+		lineageTag: 6ab66077-eb2b-45bd-86ac-97bc8b0f090c
+
+	/// Localized presentation label; not a business calculation.
+	measure InvoiceCount = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Rechnungsanzahl", "ro-ro", "Număr de facturi", "Invoice count" )
+		displayFolder: Report labels
+		lineageTag: 7524e451-23a9-483b-aee3-ad2fcd1db7b8
+
+	/// Localized presentation label; not a business calculation.
+	measure OpenInvoices = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Offene Rechnungen", "ro-ro", "Facturi deschise", "Open invoices" )
+		displayFolder: Report labels
+		lineageTag: c140498c-ae4f-45d7-a2b7-3c1bf35138fb
+
+	/// Localized presentation label; not a business calculation.
+	measure ClosedInvoices = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Erledigte Rechnungen", "ro-ro", "Facturi închise", "Closed invoices" )
+		displayFolder: Report labels
+		lineageTag: a1660e21-fd2d-4ff4-bcf7-6b47f95f837b
+
+	/// Localized presentation label; not a business calculation.
+	measure Payments = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Zahlungen", "ro-ro", "Plăți", "Payments" )
+		displayFolder: Report labels
+		lineageTag: c3c617d9-fedb-4e09-bf48-da4051b6181c
+
+	/// Localized presentation label; not a business calculation.
+	measure Total = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Gesamt", "ro-ro", "Total", "Total" )
+		displayFolder: Report labels
+		lineageTag: aa4ef677-00d7-4a34-828f-45e01f8c3622
+
+	/// Localized presentation label; not a business calculation.
+	measure NoData = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Keine Daten für den gewählten Zeitraum", "ro-ro", "Nu există date pentru perioada selectată", "No data for the selected period" )
+		displayFolder: Report labels
+		lineageTag: c5f75302-b529-431d-8872-e030f4216520
+
+	/// Localized presentation label; not a business calculation.
+	measure HeaderSalesOverview = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "TopEvo | Verkaufsübersicht", "ro-ro", "TopEvo | Prezentare vânzări", "TopEvo | Sales overview" )
+		displayFolder: Report labels
+		lineageTag: 886081cb-3cab-4b02-b7d8-7ab02e8ba5c3
+
+	/// Localized presentation label; not a business calculation.
+	measure HeaderReceivablesOverview = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "TopEvo | Forderungsübersicht", "ro-ro", "TopEvo | Prezentare creanțe", "TopEvo | Receivables overview" )
+		displayFolder: Report labels
+		lineageTag: 5c602129-bf7b-4fe1-910d-f7e52f46ed59
+
+	/// Localized presentation label; not a business calculation.
+	measure Date = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Datum", "ro-ro", "Dată", "Date" )
+		displayFolder: Report labels
+		lineageTag: 440f2203-66cf-4ef6-8d40-7ec19e0acf21
+
+	/// Localized presentation label; not a business calculation.
+	measure AltBranch = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Nach Betrieb filtern.", "ro-ro", "Filtrare după unitate.", "Filter by branch." )
+		displayFolder: Report labels
+		lineageTag: 283bf8dd-4152-4d44-81a1-8040c12e831b
+
+	/// Localized presentation label; not a business calculation.
+	measure AltDateRange = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Analysezeitraum auswählen. Unabhängig von der Zeitauflösung.", "ro-ro", "Selectați intervalul analizat, independent de gruparea temporală.", "Select the analyzed date range. Independent of time grouping." )
+		displayFolder: Report labels
+		lineageTag: 16b43cef-b929-44d5-ad03-e35cb13fac23
+
+	/// Localized presentation label; not a business calculation.
+	measure AltGranularity = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Zeitverlauf nach Tag, Woche, Monat, Quartal oder Jahr gruppieren, ohne den Zeitraum zu ändern.", "ro-ro", "Grupați evoluția pe zi, săptămână, lună, trimestru sau an fără a schimba intervalul.", "Group the trend by day, week, month, quarter or year without changing the date range." )
+		displayFolder: Report labels
+		lineageTag: 598d447f-b0e9-4d0a-970e-6a7b327f9b23
+
+	/// Localized presentation label; not a business calculation.
+	measure AltCustomer = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Nach Kunde filtern.", "ro-ro", "Filtrare după client.", "Filter by customer." )
+		displayFolder: Report labels
+		lineageTag: 84fb88e5-36cf-4dca-adf8-bd68a9642cea
+
+	/// Localized presentation label; not a business calculation.
+	measure AltNavigation = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Zwischen Berichtsseiten wechseln.", "ro-ro", "Navigare între paginile raportului.", "Navigate between report pages." )
+		displayFolder: Report labels
+		lineageTag: f2be0575-6a12-4909-a5fe-8e04ee9f3dfe
+
+	/// Localized presentation label; not a business calculation.
+	measure AltSalesTrend = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Nettoumsatz im gewählten Zeitraum und Zeitraster, in EUR.", "ro-ro", "Venituri nete în perioada selectată, după gruparea temporală aleasă, în EUR.", "Net revenue over the selected period, grouped by the selected time grain, in EUR." )
+		displayFolder: Report labels
+		lineageTag: 742483cd-b7e3-4827-90ee-7c9700a0a137
+
+	/// Localized presentation label; not a business calculation.
+	measure AltInvoiceTrend = SWITCH ( LOWER ( USERCULTURE() ), "de-de", "Rechnungsaktivität im gewählten Zeitraum und Zeitraster.", "ro-ro", "Activitatea facturilor în perioada și gruparea temporală selectate.", "Invoice activity over the selected period and time grain." )
+		displayFolder: Report labels
+		lineageTag: f750d1c3-7811-4101-a04a-356f5789f149
+
+	column Value
+		dataType: int64
+		isHidden
+		lineageTag: c48f5437-3265-4557-bc3c-e6b084f9f194
+		summarizeBy: none
+		sourceColumn: [Value]
+
+	partition _ReportLabels = calculated
+		mode: import
+		source = { 1 }

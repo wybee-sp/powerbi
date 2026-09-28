@@ -1,4 +1,169 @@
 cultureInfo en-US
+	translations
+		model Model
+			table a1101
+				caption: Customers
+				column Firma
+					caption: Company
+				column Kundennummer
+					caption: Customer number
+				column 'Suchbegriff [101]'
+					caption: Customer
+			table a9002
+				caption: Branches
+				column Firma
+					caption: Company
+				column Betrieb
+					caption: Branch number
+				column 'Bezeichnung [102]'
+					caption: Branch
+			table a42001
+				caption: Sales invoices
+				column Firma
+					caption: Company
+				column Betrieb
+					caption: Branch number
+				column Auftrag
+					caption: Order number
+				column Rechnung
+					caption: Invoice number
+				column 'Status [101]'
+					caption: Status
+				column 'Auftragsart [102]'
+					caption: Order type
+				column 'Kunde [103]'
+					caption: Customer number
+				column OrderDate
+					caption: Order date
+				column ServiceDate
+					caption: Service date
+				column InvoiceDate
+					caption: Invoice date
+				measure 'Invoice Count'
+					caption: Invoice count
+					description: Number of rows in the sales invoice header table.
+				measure 'Net Revenue'
+					caption: Net revenue
+					description: Sum of the existing sales-line net amounts.
+			table a420011
+				caption: Sales invoice lines
+				column Firma
+					caption: Company
+				column Betrieb
+					caption: Branch number
+				column Auftrag
+					caption: Order number
+				column Rechnung
+					caption: Invoice number
+				column 'Artikel [102]'
+					caption: Item code
+				column Quantity
+					caption: Quantity
+				column UnitPrice
+					caption: Unit price
+				column NetAmount
+					caption: Net amount
+				column VatRate
+					caption: VAT rate
+			table a9001
+				caption: ERP configuration
+				column Firma
+					caption: Company
+			table a8101op_invoices
+				caption: Receivables
+				column Firma
+					caption: Company
+				column Betrieb
+					caption: Branch number
+				column Kunde
+					caption: Customer number
+				column Rechnung
+					caption: Invoice number
+				column ValueDate
+					caption: Value date
+				column InvoiceDate
+					caption: Invoice date
+				column EntryDate
+					caption: Entry date
+				column DueDate
+					caption: Due date
+			table a8101op_payments
+				caption: Payments
+				column Firma
+					caption: Company
+				column Betrieb
+					caption: Branch number
+				column Kunde
+					caption: Customer number
+				column Rechnung
+					caption: Invoice number
+				column ValueDate
+					caption: Value date
+				column InvoiceDate
+					caption: Invoice date
+				column EntryDate
+					caption: Entry date
+				column DueDate
+					caption: Due date
+			table _Measures
+				caption: Business measures
+				measure 'A8101OP Invoice Count'
+					caption: Invoice count
+				measure 'A8101OP Payment Count'
+					caption: Payments
+				measure 'A8101OP Payment Amount'
+					caption: Payment amount
+				measure 'A8101OP Closed Invoice Count'
+					caption: Closed invoices
+				measure 'A8101OP Open Invoice Count'
+					caption: Open invoices
+			table Date
+				caption: Calendar
+				description: Shared calendar with one row per day.
+				column Date
+					caption: Date
+				column Year
+					caption: Year
+				column Quarter
+					caption: Quarter
+				column Month
+					caption: Month
+				column YearMonth
+					caption: Year-month
+				column Day
+					caption: Day
+				column DayOfWeek
+					caption: Weekday
+				column Week
+					caption: Week
+				column ISOYear
+					caption: ISO week-year
+				column YearWeek
+					caption: Year-week
+				column YearQuarter
+					caption: Year-quarter
+				hierarchy Calendar
+					caption: Calendar
+					level Year
+						caption: Year
+					level Quarter
+						caption: Quarter
+					level Month
+						caption: Month
+					level Date
+						caption: Date
+				hierarchy 'Calendar Week'
+					caption: Calendar week
+					level Year
+						caption: Year
+					level Week
+						caption: Week
+					level Date
+						caption: Date
+			table 'Time Granularity'
+				caption: Time granularity
+				column Granularity
+					caption: Display by
 
 	linguisticMetadata =
 			{
@@ -197,4 +362,3 @@ cultureInfo en-US
 			  }
 			}
 		contentType: json
-

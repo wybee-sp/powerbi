@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Invoice count from existing Sales header measure.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "InvoiceCount"
                 }
               }
             }
@@ -96,9 +101,7 @@
                   "Property": "Invoice Count"
                 }
               },
-              "queryRef": "a42001.Invoice Count",
-              "nativeQueryRef": "Invoice Count",
-              "displayName": "Invoice Count"
+              "queryRef": "a42001.Invoice Count"
             }
           ]
         }
@@ -112,13 +115,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Invoice Count'"
                 }
               }
             },

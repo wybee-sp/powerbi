@@ -27,9 +27,7 @@
                 }
               },
               "queryRef": "Time Granularity.Granularity",
-              "nativeQueryRef": "Display by",
-              "active": true,
-              "displayName": "Display by"
+              "active": true
             }
           ]
         }
@@ -72,14 +70,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Display by'"
+                  "Value": "false"
                 }
               }
             }
@@ -121,7 +112,7 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "t",
+                    "Name": "g",
                     "Entity": "Time Granularity",
                     "Type": 0
                   }
@@ -135,10 +126,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "t"
+                                  "Source": "g"
                                 }
                               },
-                              "Property": "Fields"
+                              "Property": "Order"
                             }
                           }
                         ],
@@ -146,60 +137,10 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Date''[Year]'"
+                                "Value": "2L"
                               }
                             }
                           ]
-                        ]
-                      }
-                    },
-                    "Annotations": {
-                      "filterExpressionMetadata": {
-                        "expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Time Granularity"
-                                }
-                              },
-                              "Property": "Granularity"
-                            }
-                          }
-                        ],
-                        "decomposedIdentities": {
-                          "values": [
-                            [
-                              {
-                                "0": [
-                                  {
-                                    "Literal": {
-                                      "Value": "'''Date''[Year]'"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          ],
-                          "columns": [
-                            {
-                              "value": {
-                                "Column": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Time Granularity"
-                                    }
-                                  },
-                                  "Property": "Fields"
-                                }
-                              }
-                            }
-                          ]
-                        },
-                        "valueMap": [
-                          {
-                            "0": "Year"
-                          }
                         ]
                       }
                     }
@@ -259,14 +200,51 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "text": {
               "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "DisplayBy"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#526174'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
                 }
               }
             }
@@ -278,8 +256,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Display by: select Day, Week, Month, Quarter or Year. Changes only the trend axis, not dates or KPI totals.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "AltGranularity"
                 }
               }
             }

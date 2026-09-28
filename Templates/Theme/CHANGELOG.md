@@ -68,3 +68,9 @@
 - Theme defaults cannot enforce layout, bindings, business rules or interactions. Local visual formatting may override them.
 - New-card typography uses `cardVisual.label` and `cardVisual.value` from the schema.
 - Synchronize report-local custom theme resources from the canonical source when adopting the foundation.
+
+## Localization architecture - 2026-09-28
+
+- Adds en-US/de-DE/ro-RO model captions, shared label measures/catalogues and locale-filtered grain presentation rows.
+- Golden Sample and Sales use metadata captions and expression-based titles without language-specific pages or geometry changes. Accessibility text uses localized measures; native navigation remains a documented host integration item.
+- Business calculations, relationships, source transformations, Purchases and Inventory remain unchanged. Desktop/embedded language validation remains required.

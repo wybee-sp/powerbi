@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Open invoices for the selected invoice dates, branch and customer. Count; no comparison baseline.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "OpenInvoices"
                 }
               }
             }
@@ -96,9 +101,7 @@
                   "Property": "A8101OP Open Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Open Invoice Count",
-              "nativeQueryRef": "Open invoices",
-              "displayName": "Open invoices"
+              "queryRef": "_Measures.A8101OP Open Invoice Count"
             }
           ]
         }
@@ -112,13 +115,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Open invoices'"
                 }
               }
             },

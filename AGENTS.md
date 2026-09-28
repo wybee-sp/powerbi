@@ -58,3 +58,11 @@
 - For report changes, open/save in the supported Desktop build and review renders. Test embedded sizing, long labels, empty states, filters, reset, drillthrough, keyboard navigation and contrast before component approval.
 - Verify deployment excludes the Golden Sample and uses the intended shared model.
 - Report exact changed files, checks and limitations. Do not claim Desktop/embedded validation when only static checks ran.
+
+## Localization
+
+- One report/page definition per business module; never create copies per language. Follow docs/LOCALIZATION.md and the canonical Templates/Localization catalogues for de-DE, en-US and ro-RO.
+- Preserve internal identifiers, lineage, business expressions and source parsing locale. Use TMDL culture translations for curated metadata and _ReportLabels measures for presentation text. Remove local field-caption overrides that mask metadata translations.
+- English is the mandatory fallback; missing English entries fail generation. Never expose translation keys or technical ERP names as fallback. Add catalogue entries before exposing new business fields.
+- Angular owns language selection. Pass matching embed language/formatLocale and Time Granularity.Locale filter; no report language selector. Keep grain selection on stable numeric Order and date filtering independent.
+- Native navigation and business-data descriptions require the documented separate mechanisms. Bind accessibility text to shared label measures. Do not invent unsupported PBIR translation properties or claim locale translates ERP values. Preserve approved geometry; render every supported locale before release.

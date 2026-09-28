@@ -30,3 +30,9 @@ ref table 'Time Granularity'
 
 ref cultureInfo en-US
 
+
+ref table _ReportLabels
+
+ref cultureInfo de-DE
+
+ref cultureInfo ro-RO

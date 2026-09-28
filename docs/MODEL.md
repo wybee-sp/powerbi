@@ -137,3 +137,7 @@ The 1.4.0 correction removes the forced categorical axis and minimum category wi
 ## Date validity investigation
 
 The current TimeControl rendering is accepted by the user as the visual standard; its layout is frozen. The reported 01.01.0106 lower bound remains an open data/model investigation. See [DATE_VALIDITY.md](DATE_VALIDITY.md) for confirmed parser risks, the source-field mapping, a read-only row diagnostic and a proposed validity policy. Responsible source rows cannot be identified until the local CSV exports are available. No transformation or calendar-bound change has been made.
+
+## Localization
+
+Native en-US/de-DE/ro-RO culture captions and selected descriptions preserve all model identifiers and business definitions. Hidden _ReportLabels contains presentation-only USERCULTURE measures. Time Granularity has five static rows per locale and a hidden Locale column; the embed host selects exactly one locale, with English default. Numeric Order preserves the chosen grain independently of language and date range. No relationships or business measures change. See LOCALIZATION.md and Templates/Localization for catalogues, fallback rules and unsupported report-text categories. This supersedes the earlier five-row parameter description: there are now 15 rows, with exactly five visible per host locale.

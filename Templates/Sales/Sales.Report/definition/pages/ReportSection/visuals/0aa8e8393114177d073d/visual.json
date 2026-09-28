@@ -37,8 +37,13 @@
           "properties": {
             "altText": {
               "expr": {
-                "Literal": {
-                  "Value": "'Net revenue from the existing shared Sales measure, in EUR.'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_ReportLabels"
+                    }
+                  },
+                  "Property": "NetRevenue"
                 }
               }
             }
@@ -96,9 +101,7 @@
                   "Property": "Net Revenue"
                 }
               },
-              "queryRef": "a42001.Net Revenue",
-              "nativeQueryRef": "Net Revenue",
-              "displayName": "Net Revenue"
+              "queryRef": "a42001.Net Revenue"
             }
           ]
         }
@@ -112,13 +115,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Net Revenue'"
                 }
               }
             },

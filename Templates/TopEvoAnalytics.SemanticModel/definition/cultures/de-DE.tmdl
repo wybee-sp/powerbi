@@ -1,0 +1,166 @@
+cultureInfo de-DE
+	translations
+		model Model
+			table a1101
+				caption: Kunden
+				column Firma
+					caption: Firma
+				column Kundennummer
+					caption: Kundennummer
+				column 'Suchbegriff [101]'
+					caption: Kunde
+			table a9002
+				caption: Betriebe
+				column Firma
+					caption: Firma
+				column Betrieb
+					caption: Betriebsnummer
+				column 'Bezeichnung [102]'
+					caption: Betrieb
+			table a42001
+				caption: Verkaufsrechnungen
+				column Firma
+					caption: Firma
+				column Betrieb
+					caption: Betriebsnummer
+				column Auftrag
+					caption: Auftragsnummer
+				column Rechnung
+					caption: Rechnungsnummer
+				column 'Status [101]'
+					caption: Status
+				column 'Auftragsart [102]'
+					caption: Auftragsart
+				column 'Kunde [103]'
+					caption: Kundennummer
+				column OrderDate
+					caption: Auftragsdatum
+				column ServiceDate
+					caption: Leistungsdatum
+				column InvoiceDate
+					caption: Rechnungsdatum
+				measure 'Invoice Count'
+					caption: Rechnungsanzahl
+					description: Anzahl der Zeilen in der Verkaufsrechnungskopftabelle.
+				measure 'Net Revenue'
+					caption: Nettoumsatz
+					description: Summe der vorhandenen Nettobeträge der Verkaufspositionen.
+			table a420011
+				caption: Verkaufsrechnungspositionen
+				column Firma
+					caption: Firma
+				column Betrieb
+					caption: Betriebsnummer
+				column Auftrag
+					caption: Auftragsnummer
+				column Rechnung
+					caption: Rechnungsnummer
+				column 'Artikel [102]'
+					caption: Artikelnummer
+				column Quantity
+					caption: Menge
+				column UnitPrice
+					caption: Einzelpreis
+				column NetAmount
+					caption: Nettobetrag
+				column VatRate
+					caption: Mehrwertsteuersatz
+			table a9001
+				caption: ERP-Konfiguration
+				column Firma
+					caption: Firma
+			table a8101op_invoices
+				caption: Forderungen
+				column Firma
+					caption: Firma
+				column Betrieb
+					caption: Betriebsnummer
+				column Kunde
+					caption: Kundennummer
+				column Rechnung
+					caption: Rechnungsnummer
+				column ValueDate
+					caption: Valutadatum
+				column InvoiceDate
+					caption: Rechnungsdatum
+				column EntryDate
+					caption: Erfassungsdatum
+				column DueDate
+					caption: Fälligkeitsdatum
+			table a8101op_payments
+				caption: Zahlungen
+				column Firma
+					caption: Firma
+				column Betrieb
+					caption: Betriebsnummer
+				column Kunde
+					caption: Kundennummer
+				column Rechnung
+					caption: Rechnungsnummer
+				column ValueDate
+					caption: Valutadatum
+				column InvoiceDate
+					caption: Rechnungsdatum
+				column EntryDate
+					caption: Erfassungsdatum
+				column DueDate
+					caption: Fälligkeitsdatum
+			table _Measures
+				caption: Geschäftskennzahlen
+				measure 'A8101OP Invoice Count'
+					caption: Rechnungsanzahl
+				measure 'A8101OP Payment Count'
+					caption: Zahlungen
+				measure 'A8101OP Payment Amount'
+					caption: Zahlungsbetrag
+				measure 'A8101OP Closed Invoice Count'
+					caption: Erledigte Rechnungen
+				measure 'A8101OP Open Invoice Count'
+					caption: Offene Rechnungen
+			table Date
+				caption: Kalender
+				description: Gemeinsamer Kalender mit einer Zeile pro Tag.
+				column Date
+					caption: Datum
+				column Year
+					caption: Jahr
+				column Quarter
+					caption: Quartal
+				column Month
+					caption: Monat
+				column YearMonth
+					caption: Jahr-Monat
+				column Day
+					caption: Tag
+				column DayOfWeek
+					caption: Wochentag
+				column Week
+					caption: Woche
+				column ISOYear
+					caption: ISO-Wochenjahr
+				column YearWeek
+					caption: Jahr-Woche
+				column YearQuarter
+					caption: Jahr-Quartal
+				hierarchy Calendar
+					caption: Kalender
+					level Year
+						caption: Jahr
+					level Quarter
+						caption: Quartal
+					level Month
+						caption: Monat
+					level Date
+						caption: Datum
+				hierarchy 'Calendar Week'
+					caption: Kalenderwoche
+					level Year
+						caption: Jahr
+					level Week
+						caption: Woche
+					level Date
+						caption: Datum
+			table 'Time Granularity'
+				caption: Zeitauflösung
+				column Granularity
+					caption: Zeitauflösung

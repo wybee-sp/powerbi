@@ -45,3 +45,7 @@ Static validation covers model bindings, parameter targets, report resources, id
 ## Adaptive KPI revision
 
 Removed both unavailable KPI placeholder visuals and their interaction references. Net Revenue and Invoice Count retain their IDs, bindings and styles, with two equal 608 px cards. The manifest is synchronized. TimeControl and all other visual geometry are unchanged. The two deleted placeholder files in the historical inventory above no longer exist.
+
+## Localization integration
+
+This report remains a single definition for de-DE, en-US and ro-RO. Shared model captions and _ReportLabels measures supply translated UI text; Time Granularity.Locale is a hidden host-controlled filter with English default. Numeric Order=2 preserves the initial Month selection across languages. Geometry and business bindings remain stable, but text-measure headers and native visual titles replace literal header text. The localized render is not yet approved: verify all languages and screen-reader text in Desktop/embedding. Native page-navigation captions still use English until the host navigation contract in docs/LOCALIZATION.md is integrated.
