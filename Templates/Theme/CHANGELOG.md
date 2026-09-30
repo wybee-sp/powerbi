@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.5.2 - 2026-09-30
+
+- Replaces the still-clipped Golden Sample title card with a dynamic textbox at x20/y16/w600/h48, retaining 20 pt. Navigation moves to y16/h40; filters remain at y72.
+- Restores the native date-slicer header and disables responsive icon collapse without changing TimeControl geometry, Date binding or range semantics. Native date caption currently uses English fallback.
+- Records the user-rendered failure of 1.5.1. The new correction requires Desktop rendering verification; static validation is not acceptance.
+
 ## Component specification 1.5.1 - 2026-09-30
 
 - Corrects Golden Sample header insets and reserves a 48 px title container without moving TimeControl or the body; title stays 20 pt.

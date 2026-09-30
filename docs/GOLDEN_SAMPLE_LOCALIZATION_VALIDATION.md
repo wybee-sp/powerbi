@@ -1,6 +1,6 @@
 # Golden Sample localization correction — 2026-09-30
 
-Status: implemented and statically checked; Desktop/embedded rendering remains pending. This correction is not a new visual approval.
+Status: historical 1.5.1 evidence. The user subsequently rendered this implementation and reported that the header still clips and date inputs remain hidden. Static checks below did not establish correctness. See [the superseding repair](HEADER_DATE_SLICER_REPAIR.md).
 
 ## Causes and correction
 

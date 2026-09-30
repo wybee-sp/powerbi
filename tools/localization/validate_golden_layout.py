@@ -41,7 +41,28 @@ def main():
             assert not intersects, f"Overlap: {role_a}, {role_b}"
     header = visuals["header.title"]
     assert header["position"]["height"] == 48
-    assert header["visual"]["objects"]["value"][0]["properties"]["fontSize"]["expr"]["Literal"]["Value"] == "20D"
+    assert header["position"]["x"] == 20 and header["position"]["width"] == 600
+    assert header["visual"]["visualType"] == "textbox"
+    paragraphs = header["visual"]["objects"]["general"][0]["properties"]["paragraphs"]
+    assert len(paragraphs) == 1 and len(paragraphs[0]["textRuns"]) == 1
+    run = paragraphs[0]["textRuns"][0]
+    assert run["textStyle"]["fontSize"] == "20pt"
+    assert run["textStyle"]["fontFamily"] == "Segoe UI Semibold"
+    assert paragraphs[0]["horizontalTextAlignment"] == "left"
+    value = header["visual"]["objects"]["values"][0]
+    assert run["value"]["selector"] == value["selector"]
+    assert run["value"]["propertyIdentifier"] == {"objectName": "values", "propertyName": "expr"}
+    query = value["properties"]["expr"]["expr"]["Min"]["Expression"]["Column"]["Expression"]["Subquery"]["Query"]
+    assert query["From"][0]["Entity"] == "_ReportLabels"
+    assert query["Select"][0]["Measure"]["Property"] == "HeaderReceivablesOverview"
+    nav = visuals["navigation.pages"]["position"]
+    assert nav["y"] == 16 and nav["height"] == 40
+    date = visuals["filter.period"]
+    assert {k: date["position"][k] for k in ("x", "y", "width", "height")} == {"x": 232, "y": 72, "width": 280, "height": 56}
+    literal = lambda obj: obj["expr"]["Literal"]["Value"]
+    assert literal(date["visual"]["objects"]["general"][0]["properties"]["responsive"]) == "false"
+    assert literal(date["visual"]["objects"]["header"][0]["properties"]["show"]) == "true"
+    assert literal(date["visual"]["visualContainerObjects"]["title"][0]["properties"]["show"]) == "false"
     boundary = header["position"]["y"] + header["position"]["height"]
     assert boundary == 64
     for role, visual in visuals.items():
@@ -64,9 +85,9 @@ def main():
     widths = [400, 190, 190, 190, 190]
     assert sum(widths) + 32 <= 1232
     for locale in ("en-US", "de-DE", "ro-RO"):
-        title_width = fit(labels["HeaderReceivablesOverview"][locale], 20, 608, True)
+        title_width = fit(labels["HeaderReceivablesOverview"][locale], 20, 600, True)
         for key, width in (("Branch", 168), ("DateRange", 256), ("DisplayBy", 536), ("Customer", 168)):
-            fit(labels[key][locale], 10, width)
+            fit(labels[key]["en-US" if key == "DateRange" else locale], 10, width)
         widest_caption = 0
         for i, field in enumerate(caption_config["fields"]):
             entry = next(e for e in metadata if e["kind"] == field["kind"] and e["table"] == field["table"] and e.get("name") == field["name"])

@@ -69,6 +69,8 @@
 
 ## Localized header and visual captions
 
-- Follow the DESIGN_SYSTEM.md header rule: Golden Sample title x24/y16/w608/h48, unchanged 20 pt font, 4 px vertical container padding and zero internal card/callout/layout padding. The header ends at y64; primary filters start at y72. This header-only top-margin exception preserves the approved body layout. Never shrink text or overlap the next component to conceal clipping.
+- Follow the DESIGN_SYSTEM.md header rule: Golden Sample dynamic textbox title x20/y16/w600/h48, unchanged 20 pt text run and 4 px vertical container padding; one left-aligned paragraph, no card layout objects. The header ends at y64; primary filters start at y72. This header-only top-margin exception preserves the approved body layout. Never shrink text or overlap the next component to conceal clipping.
 - End-user KPI/table captions must come from approved business translations, never technical ERP names. Preserve internal fields and measures; use the shared presentation parameter `_VisualCaptions` for the Golden Sample, generated from metadata.json and visual-captions.json. Keep fixed KPI Order filters and table column order. No report-local business measures, translated model-object renames or unsupported dynamic displayName expressions.
 - Validate all three locale dictionaries, caption targets, geometry and text fit. Record actual Desktop/embedded rendering separately; font measurements and schema validation do not establish runtime fit or translation behavior. Do not propagate unrendered component changes as approved.
+
+- Golden Sample date slicer stays x232/y72/w280/h56 with native header, Between mode, hidden slider and responsive=false. Its native header currently uses the English catalogue fallback; do not reintroduce the extra container title or claim full header localization/render approval. See docs/HEADER_DATE_SLICER_REPAIR.md.

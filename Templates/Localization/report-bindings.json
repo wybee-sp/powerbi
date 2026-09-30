@@ -6,13 +6,14 @@
   },
   {
     "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/3a5ca5c0fdc8424c93f4/visual.json",
-    "kind": "header",
+    "kind": "dynamic-textbox",
     "key": "HeaderReceivablesOverview"
   },
   {
     "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/5ddcb2a5d4d5d4b8fc09/visual.json",
-    "kind": "visual-title",
-    "key": "DateRange"
+    "kind": "native-slicer-header-fallback",
+    "key": "DateRange",
+    "locale": "en-US"
   },
   {
     "file": "Templates/TopEvoAnalytics.Report/definition/pages/ReportSection/visuals/831422ecad4944eea626/visual.json",

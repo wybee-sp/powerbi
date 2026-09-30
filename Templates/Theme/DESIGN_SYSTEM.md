@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.5.1 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
+Component specification: 1.5.2 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
 
 ## 1. Purpose and required inputs
 
@@ -80,8 +80,8 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 
 | Compact Overview region | X | Y | Width | Height |
 | --- | ---: | ---: | ---: | ---: |
-| Page title | 24 | 16 | 608 | 48 |
-| Page navigation | 648 | 24 | 608 | 32 |
+| Page title | 20 | 16 | 600 | 48 |
+| Page navigation | 648 | 16 | 608 | 40 |
 | Branch filter | 24 | 72 | 192 | 56 |
 | Time control: date range | 232 | 72 | 280 | 56 |
 | Time control: granularity | 512 | 72 | 536 | 56 |
@@ -275,15 +275,15 @@ The user finalized the current rendered implementation as the standard. Freeze t
 
 ## Localization standard
 
-Use one layout for de-DE, en-US and ro-RO. Metadata captions belong in the shared model; report titles belong in Templates/Localization/labels.json and _ReportLabels measures. Headers use text-measure cards; slicer captions use native visual titles. The Golden Sample header follows the 48 px container rule below; Sales migration is separate. The theme palette is unchanged. Validate the 536 px TimeControl selector with Tag/Woche/Monat/Quartal/Jahr and Zi/Săptămână/Lună/Trimestru/An as well as English; do not shrink fonts or duplicate pages to accommodate a language.
+Use one layout for de-DE, en-US and ro-RO. Metadata captions belong in the shared model; report titles belong in Templates/Localization/labels.json and _ReportLabels measures. The Golden Sample uses a dynamic textbox header; Sales retains its text-measure card. The Golden Sample date slicer uses its approved native header with English fallback; other slicer captions use native visual titles. The Golden Sample header follows the 48 px container rule below; Sales migration is separate. The theme palette is unchanged. Validate the 536 px TimeControl selector with Tag/Woche/Monat/Quartal/Jahr and Zi/Săptămână/Lună/Trimestru/An as well as English; do not shrink fonts or duplicate pages to accommodate a language.
 
 Missing translations fall back to approved English text. Native navigation currently retains English pending the documented host integration; alt text uses shared localized measures; model translations alone cannot translate them. See docs/LOCALIZATION.md for the support assessment, embed contract and release checklist. Presentation label cards are headers, not KPI fillers.
 
 ### Header and caption regression correction (1.5.1)
 
-The Golden Sample title card is x24/y16/w608/h48, at 20 pt Segoe UI Semibold. Its transparent container extends 8 px above the usual container margin to accommodate font ascent/descent; the visible title remains inside the page margin. This is a header-only exception. Keep 4 px top/bottom container padding and 0 px horizontal padding. Explicitly set card padding, callout-area padding and layout outer margins to zero; inherited card insets must not consume the title height. Hide card fill and outline. Do not reduce title font size to compensate for clipping.
+The Golden Sample title is a native dynamic textbox at x20/y16/w600/h48, at 20 pt Segoe UI Semibold. The earlier card-based implementation still clipped in the user's Desktop rendering and is superseded. Keep one left-aligned paragraph with one dynamic text run; `objects.general[].properties.paragraphs` is an array, and the run's value selector references `objects.values` evaluating `_ReportLabels[HeaderReceivablesOverview]`. Preserve 20pt in the textStyle; do not replace it with 20px. Do not add empty paragraphs, list indentation, or card layout objects. Keep 4 px top/bottom container padding and 0 px horizontal padding, with transparent background and no border. This is a header-only geometry exception to the usual 24 px margin. Do not use negative padding or overflow, and do not reduce the title font size.
 
-Reserve at least 40 px usable height for a single 20 pt title line (48 px including padding). Measure the longest supported translation in the actual font. Do not enable a second line inside this single-line slot: a future longer title needs an explicitly reviewed larger header/layout variant. The title ends at y64; every filter/body component starts at or below y72, leaving at least 8 px clear space. Navigation remains x648/y24/w608/h32. The 16 px gutters between body rows, approved TimeControl geometry and all KPI/chart/table rectangles remain unchanged. Never fix clipping by extending a visual over the next row.
+Reserve at least 40 px usable height for a single 20 pt title line (48 px including padding). Measure the longest supported translation in the actual font. Do not enable a second line inside this single-line slot: a future longer title needs an explicitly reviewed larger header/layout variant. The title ends at y64; every filter/body component starts at or below y72, leaving at least 8 px clear space. Navigation is x648/y16/w608/h40 in the same header band. The 16 px gutters between body rows, approved TimeControl geometry and all KPI/chart/table rectangles remain unchanged. Never fix clipping by extending a visual over the next row.
 
 For KPI cards, retain label-above-value, 10 pt caption and 28 pt value. Clear redundant internal card/callout padding; outer padding remains 12 px vertical and 16 px horizontal, with 4 px between label and value. Use the localized caption parameter below rather than a raw technical name. Summary columns retain 400/190/190/190/190 px widths with automatic resizing disabled, so longer translated headings cannot push columns outside the table.
 
@@ -292,3 +292,10 @@ The Golden Sample uses the hidden shared `_VisualCaptions` field parameter for i
 The host sets `_VisualCaptions[Locale]` together with `Time Granularity[Locale]` and the matching embed locale. Metadata translations remain necessary for model authoring and other visuals; they are insufficient evidence that Desktop captions are safe. English fallback must be supplied by the catalog before generation. Native navigation still uses its documented English fallback; do not claim translated navigation until host integration is verified.
 
 See `docs/GOLDEN_SAMPLE_LOCALIZATION_VALIDATION.md` for the three-locale static checks and outstanding runtime checks. Passing text measurements is not Power BI rendering approval.
+
+
+### Date input restoration and runtime gate (1.5.2)
+
+The Golden Sample date slicer retains x232/y72/w280/h56. Restore its native slicer header and hide the added visual-container title; preserve Between mode, Date[Date], slider hidden and all existing interactions. Set `objects.general.responsive=false` explicitly so the date inputs do not turn into a filter icon. The native header currently uses the catalog's English `Date range` fallback. Do not assume the container-title measure expression can be moved to the native header without a Desktop test; complete native-header localization is pending. Display by and the remaining TimeControl geometry are unchanged.
+
+The user rejected the previous card-header correction after rendering. Static schema and font tests did not detect its runtime clipping. The replacement textbox and restored slicer are **pending Desktop verification**, not approved components. Review `docs/HEADER_DATE_SLICER_REPAIR.md` before generation or release.

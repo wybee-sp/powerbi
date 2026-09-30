@@ -1,5 +1,5 @@
 {
-  "version": "1.5.1",
+  "version": "1.5.2",
   "status": "TimeControl accepted by user as rendered standard; other components retain individual status",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
@@ -10,55 +10,41 @@
     {
       "role": "header.title",
       "id": "3a5ca5c0fdc8424c93f4",
-      "type": "cardVisual",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
+      "type": "textbox",
+      "status": "Correction implemented; Desktop rendering verification required",
       "position": {
-        "x": 24,
+        "x": 20,
         "y": 16,
         "z": 0,
-        "width": 608,
+        "width": 600,
         "height": 48,
         "tabOrder": 0
       },
-      "bindings": {
-        "Data": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_ReportLabels"
-                    }
-                  },
-                  "Property": "HeaderReceivablesOverview"
-                }
-              },
-              "queryRef": "_ReportLabels.HeaderReceivablesOverview"
-            }
-          ]
-        }
-      },
+      "bindings": {},
       "headerContract": {
         "heightPx": 48,
         "fontSizePt": 20,
         "verticalPaddingPx": 4,
-        "innerCardPaddingPx": 0,
         "bottomBoundaryPx": 64,
-        "clearanceToFiltersPx": 8
+        "clearanceToFiltersPx": 8,
+        "textRun": "20pt Segoe UI Semibold; single left-aligned paragraph, dynamic values selector TopEvoHeader"
+      },
+      "textBinding": {
+        "measure": "_ReportLabels[HeaderReceivablesOverview]",
+        "mechanism": "textbox paragraph value reference to objects.values subquery"
       }
     },
     {
       "role": "navigation.pages",
       "id": "d8f5a9bed09924c8f6f5",
       "type": "pageNavigator",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
+      "status": "Correction implemented; Desktop rendering verification required",
       "position": {
         "x": 648,
-        "y": 24,
+        "y": 16,
         "z": 2000,
         "width": 608,
-        "height": 32,
+        "height": 40,
         "tabOrder": 1000
       },
       "bindings": {}
@@ -101,7 +87,7 @@
       "role": "filter.period",
       "id": "5ddcb2a5d4d5d4b8fc09",
       "type": "slicer",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
+      "status": "Correction implemented; Desktop rendering verification required",
       "position": {
         "x": 232,
         "y": 72,
@@ -129,6 +115,12 @@
             }
           ]
         }
+      },
+      "appearance": {
+        "header": "native slicer header; English catalogue fallback",
+        "responsive": false,
+        "mode": "Between",
+        "sliderVisible": false
       }
     },
     {
@@ -711,7 +703,7 @@
     "default": "en-US",
     "localeFilter": "Time Granularity.Locale",
     "catalog": "Templates/Localization/labels.json",
-    "runtimeValidation": "Pending Desktop/embedded render in en-US, de-DE, ro-RO; static checks are separate evidence.",
+    "runtimeValidation": "Previous card-header correction failed user render. Current textbox/date-slicer correction requires Desktop render; native date header and navigation use English fallback.",
     "captionParameter": "_VisualCaptions",
     "captionLocaleFilter": "_VisualCaptions.Locale"
   }
