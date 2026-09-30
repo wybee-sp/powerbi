@@ -141,3 +141,8 @@ The current TimeControl rendering is accepted by the user as the visual standard
 ## Localization
 
 Native en-US/de-DE/ro-RO culture captions and selected descriptions preserve all model identifiers and business definitions. Hidden _ReportLabels contains presentation-only USERCULTURE measures. Time Granularity has five static rows per locale and a hidden Locale column; the embed host selects exactly one locale, with English default. Numeric Order preserves the chosen grain independently of language and date range. No relationships or business measures change. See LOCALIZATION.md and Templates/Localization for catalogues, fallback rules and unsupported report-text categories. This supersedes the earlier five-row parameter description: there are now 15 rows, with exactly five visible per host locale.
+
+
+### Localized visual captions
+
+The hidden disconnected `_VisualCaptions` table is presentation metadata for the Golden Sample, not a new business dimension. It maps stable Order values to the existing customer column and four `_Measures` count measures. Each field has en-US/de-DE/ro-RO captions generated from the canonical metadata catalogue. A hidden host-controlled Locale filter resolves one caption per field. No relationships, source transformations or business measure expressions change. See `docs/LOCALIZATION.md` for bindings and the matching embed locale contract. Keep technical names and lineage stable; never copy business expressions into translated wrapper measures merely to obtain a caption.

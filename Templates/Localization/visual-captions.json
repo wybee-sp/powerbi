@@ -1,0 +1,11 @@
+{
+  "parameterTable": "_VisualCaptions",
+  "description": "Presentation-only field parameter; captions come from metadata.json. Stable Order selects the original business field, Locale selects its caption.",
+  "fields": [
+    { "order": 0, "kind": "column", "table": "a1101", "name": "Suchbegriff [101]" },
+    { "order": 1, "kind": "measure", "table": "_Measures", "name": "A8101OP Invoice Count" },
+    { "order": 2, "kind": "measure", "table": "_Measures", "name": "A8101OP Open Invoice Count" },
+    { "order": 3, "kind": "measure", "table": "_Measures", "name": "A8101OP Closed Invoice Count" },
+    { "order": 4, "kind": "measure", "table": "_Measures", "name": "A8101OP Payment Count" }
+  ]
+}

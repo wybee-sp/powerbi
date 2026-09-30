@@ -31,10 +31,10 @@ For each configured metadata/message key, missing German/Romanian text uses the 
 
 ## Report bindings in Golden Sample and Sales
 
-- Headers now use an existing native cardVisual pattern with a text measure, replacing literal textbox contents in the same rectangle and with the same visual ID. These are presentation labels, not new business KPIs.
+- Headers now use an existing native cardVisual pattern with a text measure, with the original visual IDs. The Golden Sample now uses a 48 px header container and explicit card insets; Sales retains its earlier geometry pending a separately scoped change. These are presentation labels, not new business KPIs.
 - Charts and table titles use field-value expressions referring to _ReportLabels measures.
 - Slicer captions use the same native visual-title mechanism; literal slicer headers are disabled. Rectangle geometry, grid positions, data bindings, single-selection behavior and interactions are preserved. Title/header spacing and clipping must be rendered in all three languages before approval.
-- KPI labels and table column headings defer to model captions. Local displayName/nativeQueryRef overrides and KPI custom label text were removed so they do not mask translations. Default total captions are left to the native locale-aware visual.
+- Golden Sample KPI labels and summary headings use the shared `_VisualCaptions` field parameter. Its caption rows come from metadata.json and its stable field mapping from visual-captions.json. English displayName values are the initial resolved state; runtime parameter expansion supplies the selected language. Fixed Order filters keep each KPI bound to its original measure. Sales still uses metadata captions and has not been migrated in this correction. Default total captions remain native.
 - Default tooltips inherit translated field captions and original business values; they do not translate customer names.
 - The shared Date columns keep existing values and formats. Month/weekday row strings generated in English remain English if explicitly used; the approved trend uses date/year-qualified period keys, so it does not depend on those names.
 
@@ -59,6 +59,12 @@ const localeFilter = {
   filterType: models.FilterType.Basic,
   requireSingleSelection: true
 };
+// Golden Sample consumes both presentation parameters.
+// For other reports, use only the parameter tables that report consumes.
+const localeFilters = [localeFilter, {
+  ...localeFilter,
+  target: { table: "_VisualCaptions", column: "Locale" }
+}];
 const config = {
   type: "report",
   id: reportId,
@@ -73,7 +79,7 @@ const config = {
 // Phased embedding: apply the hidden data-language filter before first render.
 const report = powerbi.load(container, config);
 report.on("loaded", async () => {
-  await report.updateFilters(models.FiltersOperations.Replace, [localeFilter]);
+  await report.updateFilters(models.FiltersOperations.Replace, localeFilters);
   await report.render();
 });
 ```
@@ -112,3 +118,15 @@ Sources: [dynamic accessibility text](https://learn.microsoft.com/en-us/power-bi
 Run tools/localization/Validate-Localization.ps1 with -TomLibraryPath and -SchemaDirectory pointing to the pinned TOM runtime and bundled Microsoft report/visual schemas. The schema directory currently expects topevo-report-bundle.json and topevo-visual-bundle.json. These external validation dependencies are not shipped as product assets.
 
 See [LOCALIZATION_FILES.md](LOCALIZATION_FILES.md) for the exact created/modified file inventory.
+
+## Golden Sample caption correction
+
+`_VisualCaptions` is a hidden, disconnected presentation field parameter with 15 rows: five existing business fields in each of three locales. It contains no fact data and has no relationships. The generator uses `metadata.json` captions, with English fallback, and `visual-captions.json` stable Order/field mappings. The four KPI Data buckets resolve exactly one measure using visual-level Order filters; the summary Values bucket resolves all five fields. Existing field references, numeric formats, business expressions and sort expressions remain unchanged. Table widths are explicit and keyed to the existing query references.
+
+This addresses the observed failure of metadata-only captions in Desktop without renaming technical objects or duplicating business measures. It follows the existing parameter binding pattern used by TimeControl. The cached English projection displayName is intentional for this parameter pattern; it must be regenerated when a business caption changes. Do not add arbitrary localized strings or a measure expression to displayName. Parameter captions are static catalog data filtered at query time, not refresh-time USERCULTURE results.
+
+The Golden Sample requires both hidden report locale filters to match the embed language: `Time Granularity.Locale` and `_VisualCaptions.Locale`. Update both before render and after reset/bookmark operations. A locale filter changes parameter captions but not USERCULTURE title measures. Desktop locale previews and the embedded session must therefore use matching label/model language as well. The report saves English defaults; no language selector or locale-specific page was added. Existing Sales embed behavior is unchanged because Sales does not consume `_VisualCaptions` yet.
+
+The dynamic parameter-caption behavior still requires Desktop/embedded verification. See [validation evidence and open checks](GOLDEN_SAMPLE_LOCALIZATION_VALIDATION.md). An inability to run that verification is not approval to release a new component. Native navigation remains English; metadata translations and this caption parameter do not translate page names.
+
+Reference: [Microsoft field parameters](https://learn.microsoft.com/en-us/power-bi/create-reports/power-bi-field-parameters) supports display names and original field references in a single parameter; the existing locale-column extension requires runtime validation in the supported Desktop build.

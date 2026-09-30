@@ -1,6 +1,6 @@
 # TopEvo analytics design system
 
-Component specification: 1.5.0 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
+Component specification: 1.5.1 | Canonical theme: 1.0.0 | Status: TimeControl accepted as rendered Golden Sample reference
 
 ## 1. Purpose and required inputs
 
@@ -80,7 +80,7 @@ Content width is 1232 px: twelve 88 px columns plus eleven 16 px gutters. A span
 
 | Compact Overview region | X | Y | Width | Height |
 | --- | ---: | ---: | ---: | ---: |
-| Page title | 24 | 24 | 608 | 32 |
+| Page title | 24 | 16 | 608 | 48 |
 | Page navigation | 648 | 24 | 608 | 32 |
 | Branch filter | 24 | 72 | 192 | 56 |
 | Time control: date range | 232 | 72 | 280 | 56 |
@@ -275,6 +275,20 @@ The user finalized the current rendered implementation as the standard. Freeze t
 
 ## Localization standard
 
-Use one layout for de-DE, en-US and ro-RO. Metadata captions belong in the shared model; report titles belong in Templates/Localization/labels.json and _ReportLabels measures. The current headers use text-measure cards at the same coordinates; slicer captions use native visual titles. No geometry or theme palette changes are required. Validate the 536 px TimeControl selector with Tag/Woche/Monat/Quartal/Jahr and Zi/Săptămână/Lună/Trimestru/An as well as English; do not shrink fonts or duplicate pages to accommodate a language.
+Use one layout for de-DE, en-US and ro-RO. Metadata captions belong in the shared model; report titles belong in Templates/Localization/labels.json and _ReportLabels measures. Headers use text-measure cards; slicer captions use native visual titles. The Golden Sample header follows the 48 px container rule below; Sales migration is separate. The theme palette is unchanged. Validate the 536 px TimeControl selector with Tag/Woche/Monat/Quartal/Jahr and Zi/Săptămână/Lună/Trimestru/An as well as English; do not shrink fonts or duplicate pages to accommodate a language.
 
 Missing translations fall back to approved English text. Native navigation currently retains English pending the documented host integration; alt text uses shared localized measures; model translations alone cannot translate them. See docs/LOCALIZATION.md for the support assessment, embed contract and release checklist. Presentation label cards are headers, not KPI fillers.
+
+### Header and caption regression correction (1.5.1)
+
+The Golden Sample title card is x24/y16/w608/h48, at 20 pt Segoe UI Semibold. Its transparent container extends 8 px above the usual container margin to accommodate font ascent/descent; the visible title remains inside the page margin. This is a header-only exception. Keep 4 px top/bottom container padding and 0 px horizontal padding. Explicitly set card padding, callout-area padding and layout outer margins to zero; inherited card insets must not consume the title height. Hide card fill and outline. Do not reduce title font size to compensate for clipping.
+
+Reserve at least 40 px usable height for a single 20 pt title line (48 px including padding). Measure the longest supported translation in the actual font. Do not enable a second line inside this single-line slot: a future longer title needs an explicitly reviewed larger header/layout variant. The title ends at y64; every filter/body component starts at or below y72, leaving at least 8 px clear space. Navigation remains x648/y24/w608/h32. The 16 px gutters between body rows, approved TimeControl geometry and all KPI/chart/table rectangles remain unchanged. Never fix clipping by extending a visual over the next row.
+
+For KPI cards, retain label-above-value, 10 pt caption and 28 pt value. Clear redundant internal card/callout padding; outer padding remains 12 px vertical and 16 px horizontal, with 4 px between label and value. Use the localized caption parameter below rather than a raw technical name. Summary columns retain 400/190/190/190/190 px widths with automatic resizing disabled, so longer translated headings cannot push columns outside the table.
+
+The Golden Sample uses the hidden shared `_VisualCaptions` field parameter for its four KPI captions and five summary columns. It supplies translated business captions from `Templates/Localization/metadata.json` without changing business expressions or identifiers. `visual-captions.json` maps stable numeric Order to each original field. Saved projections carry English business captions; Power BI resolves the parameter caption for the host-selected locale. Each KPI has a fixed hidden Order filter; the table resolves all five fields in their defined order. These are caption bindings, not selectable business metrics. Do not remove these bindings or replace them with technical field names. Do not freeze parameter-resolved captions with independent custom card-label text.
+
+The host sets `_VisualCaptions[Locale]` together with `Time Granularity[Locale]` and the matching embed locale. Metadata translations remain necessary for model authoring and other visuals; they are insufficient evidence that Desktop captions are safe. English fallback must be supplied by the catalog before generation. Native navigation still uses its documented English fallback; do not claim translated navigation until host integration is verified.
+
+See `docs/GOLDEN_SAMPLE_LOCALIZATION_VALIDATION.md` for the three-locale static checks and outstanding runtime checks. Passing text measurements is not Power BI rendering approval.

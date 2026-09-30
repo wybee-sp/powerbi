@@ -36,3 +36,5 @@ ref table _ReportLabels
 ref cultureInfo de-DE
 
 ref cultureInfo ro-RO
+
+ref table _VisualCaptions

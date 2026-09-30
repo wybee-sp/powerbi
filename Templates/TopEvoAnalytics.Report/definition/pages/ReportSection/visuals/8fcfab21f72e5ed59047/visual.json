@@ -26,7 +26,8 @@
                   "Property": "Suchbegriff [101]"
                 }
               },
-              "queryRef": "a1101.Suchbegriff [101]"
+              "queryRef": "a1101.Suchbegriff [101]",
+              "displayName": "Customer"
             },
             {
               "field": {
@@ -39,7 +40,8 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count"
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "displayName": "Invoice count"
             },
             {
               "field": {
@@ -52,7 +54,8 @@
                   "Property": "A8101OP Open Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Open Invoice Count"
+              "queryRef": "_Measures.A8101OP Open Invoice Count",
+              "displayName": "Open invoices"
             },
             {
               "field": {
@@ -65,7 +68,8 @@
                   "Property": "A8101OP Closed Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Closed Invoice Count"
+              "queryRef": "_Measures.A8101OP Closed Invoice Count",
+              "displayName": "Closed invoices"
             },
             {
               "field": {
@@ -78,7 +82,24 @@
                   "Property": "A8101OP Payment Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Payment Count"
+              "queryRef": "_Measures.A8101OP Payment Count",
+              "displayName": "Payments"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 5
             }
           ]
         }
@@ -193,7 +214,7 @@
             "autoSizeColumnWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

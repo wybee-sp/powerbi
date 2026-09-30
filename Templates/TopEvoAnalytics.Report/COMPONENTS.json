@@ -1,5 +1,5 @@
 {
-  "version": "1.4.1",
+  "version": "1.5.1",
   "status": "TimeControl accepted by user as rendered standard; other components retain individual status",
   "deployToCustomers": false,
   "report": "Templates/TopEvoAnalytics.Report",
@@ -14,10 +14,10 @@
       "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 24,
-        "y": 24,
+        "y": 16,
         "z": 0,
         "width": 608,
-        "height": 32,
+        "height": 48,
         "tabOrder": 0
       },
       "bindings": {
@@ -38,6 +38,14 @@
             }
           ]
         }
+      },
+      "headerContract": {
+        "heightPx": 48,
+        "fontSizePt": 20,
+        "verticalPaddingPx": 4,
+        "innerCardPaddingPx": 0,
+        "bottomBoundaryPx": 64,
+        "clearanceToFiltersPx": 8
       }
     },
     {
@@ -133,8 +141,8 @@
         "x": 512,
         "y": 72,
         "z": 13000,
-        "width": 536,
         "height": 56,
+        "width": 536,
         "tabOrder": 4000
       },
       "bindings": {
@@ -219,7 +227,24 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count"
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "displayName": "Invoice count"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -260,7 +285,24 @@
                   "Property": "A8101OP Open Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Open Invoice Count"
+              "queryRef": "_Measures.A8101OP Open Invoice Count",
+              "displayName": "Open invoices"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -301,7 +343,24 @@
                   "Property": "A8101OP Closed Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Closed Invoice Count"
+              "queryRef": "_Measures.A8101OP Closed Invoice Count",
+              "displayName": "Closed invoices"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -342,7 +401,24 @@
                   "Property": "A8101OP Payment Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Payment Count"
+              "queryRef": "_Measures.A8101OP Payment Count",
+              "displayName": "Payments"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 1
             }
           ]
         }
@@ -366,8 +442,8 @@
         "x": 24,
         "y": 256,
         "z": 10000,
-        "width": 816,
         "height": 224,
+        "width": 816,
         "tabOrder": 10000
       },
       "bindings": {
@@ -497,8 +573,8 @@
         "x": 24,
         "y": 496,
         "z": 12000,
-        "width": 1232,
         "height": 200,
+        "width": 1232,
         "tabOrder": 12000
       },
       "bindings": {
@@ -515,7 +591,8 @@
                   "Property": "Suchbegriff [101]"
                 }
               },
-              "queryRef": "a1101.Suchbegriff [101]"
+              "queryRef": "a1101.Suchbegriff [101]",
+              "displayName": "Customer"
             },
             {
               "field": {
@@ -528,7 +605,8 @@
                   "Property": "A8101OP Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Invoice Count"
+              "queryRef": "_Measures.A8101OP Invoice Count",
+              "displayName": "Invoice count"
             },
             {
               "field": {
@@ -541,7 +619,8 @@
                   "Property": "A8101OP Open Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Open Invoice Count"
+              "queryRef": "_Measures.A8101OP Open Invoice Count",
+              "displayName": "Open invoices"
             },
             {
               "field": {
@@ -554,7 +633,8 @@
                   "Property": "A8101OP Closed Invoice Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Closed Invoice Count"
+              "queryRef": "_Measures.A8101OP Closed Invoice Count",
+              "displayName": "Closed invoices"
             },
             {
               "field": {
@@ -567,7 +647,24 @@
                   "Property": "A8101OP Payment Count"
                 }
               },
-              "queryRef": "_Measures.A8101OP Payment Count"
+              "queryRef": "_Measures.A8101OP Payment Count",
+              "displayName": "Payments"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_VisualCaptions"
+                    }
+                  },
+                  "Property": "Fields"
+                }
+              },
+              "index": 0,
+              "length": 5
             }
           ]
         }
@@ -614,6 +711,8 @@
     "default": "en-US",
     "localeFilter": "Time Granularity.Locale",
     "catalog": "Templates/Localization/labels.json",
-    "runtimeValidation": "Pending; native navigation remains English pending host integration"
+    "runtimeValidation": "Pending Desktop/embedded render in en-US, de-DE, ro-RO; static checks are separate evidence.",
+    "captionParameter": "_VisualCaptions",
+    "captionLocaleFilter": "_VisualCaptions.Locale"
   }
 }

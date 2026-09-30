@@ -62,7 +62,13 @@
 ## Localization
 
 - One report/page definition per business module; never create copies per language. Follow docs/LOCALIZATION.md and the canonical Templates/Localization catalogues for de-DE, en-US and ro-RO.
-- Preserve internal identifiers, lineage, business expressions and source parsing locale. Use TMDL culture translations for curated metadata and _ReportLabels measures for presentation text. Remove local field-caption overrides that mask metadata translations.
+- Preserve internal identifiers, lineage, business expressions and source parsing locale. Use TMDL culture translations for curated metadata and _ReportLabels measures for presentation text. Do not remove business caption fallbacks without a verified localized replacement. In Golden Sample KPI/table bindings, preserve the shared _VisualCaptions field parameter and its generated English initial captions; metadata translation alone does not guarantee safe Desktop captions.
 - English is the mandatory fallback; missing English entries fail generation. Never expose translation keys or technical ERP names as fallback. Add catalogue entries before exposing new business fields.
-- Angular owns language selection. Pass matching embed language/formatLocale and Time Granularity.Locale filter; no report language selector. Keep grain selection on stable numeric Order and date filtering independent.
+- Angular owns language selection. Pass matching embed language/formatLocale, Time Granularity.Locale and (for caption-parameter consumers) _VisualCaptions.Locale filters; no report language selector. Keep grain selection on stable numeric Order and date filtering independent.
 - Native navigation and business-data descriptions require the documented separate mechanisms. Bind accessibility text to shared label measures. Do not invent unsupported PBIR translation properties or claim locale translates ERP values. Preserve approved geometry; render every supported locale before release.
+
+## Localized header and visual captions
+
+- Follow the DESIGN_SYSTEM.md header rule: Golden Sample title x24/y16/w608/h48, unchanged 20 pt font, 4 px vertical container padding and zero internal card/callout/layout padding. The header ends at y64; primary filters start at y72. This header-only top-margin exception preserves the approved body layout. Never shrink text or overlap the next component to conceal clipping.
+- End-user KPI/table captions must come from approved business translations, never technical ERP names. Preserve internal fields and measures; use the shared presentation parameter `_VisualCaptions` for the Golden Sample, generated from metadata.json and visual-captions.json. Keep fixed KPI Order filters and table column order. No report-local business measures, translated model-object renames or unsupported dynamic displayName expressions.
+- Validate all three locale dictionaries, caption targets, geometry and text fit. Record actual Desktop/embedded rendering separately; font measurements and schema validation do not establish runtime fit or translation behavior. Do not propagate unrendered component changes as approved.

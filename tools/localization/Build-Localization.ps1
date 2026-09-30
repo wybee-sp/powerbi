@@ -48,10 +48,31 @@ $rows=@();$keys=@('Day','Week','Month','Quarter','Year');$fields=@('Date','YearW
 foreach($locale in @('en-US','de-DE','ro-RO')){for($i=0;$i -lt 5;$i++){$label=$catalog.labels[$keys[$i]][$locale];if(!$label){$label=$catalog.labels[$keys[$i]]['en-US']};$rows+='("'+$label+'", NAMEOF(''Date''['+$fields[$i]+']), '+$i+', "'+$locale+'")'}}
 $parameter.Partitions[0].Source.Expression="{`n"+($rows -join ",`n")+"`n}"
 [Microsoft.AnalysisServices.Tabular.TmdlSerializer]::SerializeObject($parameter) | Set-Content (Join-Path $definition 'tables/Time Granularity.tmdl') -Encoding utf8
+$captionConfig=Get-Content (Join-Path $root 'Templates/Localization/visual-captions.json') -Raw | ConvertFrom-Json
+$captions=$m.Tables.Find($captionConfig.parameterTable)
+if(!$captions){
+ # Reuse the existing field-parameter metadata, with distinct identities.
+ $captions=$parameter.Clone();$captions.Name=$captionConfig.parameterTable;$captions.IsHidden=$true
+ $captions.LineageTag=[guid]::NewGuid().ToString()
+ foreach($column in $captions.Columns){$column.LineageTag=[guid]::NewGuid().ToString()}
+ $captions.Columns['Granularity'].Name='Caption'
+ $captions.Partitions[0].Name=$captionConfig.parameterTable
+ $m.Tables.Add($captions)
+}
+$captions.Description='Presentation-only localized captions for existing fields. No business calculation or relationship.'
+$rows=@()
+foreach($locale in @('en-US','de-DE','ro-RO')){foreach($field in $captionConfig.fields){
+ $entry=@($metadata.entries|Where-Object {$_.table -eq $field.table -and $_.name -eq $field.name -and $_.kind -eq $field.kind})
+ if($entry.Count -ne 1 -or !$entry[0].captions.'en-US'){throw "Missing business caption: $($field.table).$($field.name)"}
+ $label=$entry[0].captions.$locale;if(!$label){$label=$entry[0].captions.'en-US'}
+ $rows+='("'+$label.Replace('"','""')+'", NAMEOF('''+$field.table.Replace("'","''")+'''['+$field.name.Replace(']',']]')+']), '+$field.order+', "'+$locale+'")'
+}}
+$captions.Partitions[0].Source.Expression="{`n"+($rows -join ",`n")+"`n}"
+[Microsoft.AnalysisServices.Tabular.TmdlSerializer]::SerializeObject($captions) | Set-Content (Join-Path $definition 'tables/_VisualCaptions.tmdl') -Encoding utf8
 $modelFile=Join-Path $definition 'model.tmdl';$text=Get-Content $modelFile -Raw
-foreach($line in @('ref table _ReportLabels','ref cultureInfo de-DE','ref cultureInfo ro-RO')){if(!$text.Contains($line)){$text+="`n$line`n"}}
+foreach($line in @('ref table _ReportLabels','ref table _VisualCaptions','ref cultureInfo de-DE','ref cultureInfo ro-RO')){if(!$text.Contains($line)){$text+="`n$line`n"}}
 Set-Content $modelFile $text -Encoding utf8
-foreach($file in @((Join-Path $definition 'model.tmdl'),(Join-Path $definition 'tables/_ReportLabels.tmdl'),(Join-Path $definition 'tables/Time Granularity.tmdl')) + @(Get-ChildItem (Join-Path $definition 'cultures') -Filter '*.tmdl' | ForEach-Object FullName)) {
+foreach($file in @((Join-Path $definition 'model.tmdl'),(Join-Path $definition 'tables/_ReportLabels.tmdl'),(Join-Path $definition 'tables/Time Granularity.tmdl'),(Join-Path $definition 'tables/_VisualCaptions.tmdl')) + @(Get-ChildItem (Join-Path $definition 'cultures') -Filter '*.tmdl' | ForEach-Object FullName)) {
  [System.IO.File]::WriteAllText($file, (Get-Content $file -Raw).TrimEnd()+"`n", [System.Text.UTF8Encoding]::new($false))
 }
 'Generated cultures, presentation measures and localized grain rows; existing business objects unchanged.'

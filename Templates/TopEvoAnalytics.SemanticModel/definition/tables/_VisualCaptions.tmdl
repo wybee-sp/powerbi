@@ -1,0 +1,63 @@
+/// Presentation-only localized captions for existing fields. No business calculation or relationship.
+table _VisualCaptions
+	isHidden
+	lineageTag: a0c1ef0f-431f-4911-a9f6-6c872f8ee7f3
+
+	column Caption
+		dataType: string
+		lineageTag: 760f8604-4408-4c21-b150-4265ebad5640
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: Order
+
+		relatedColumnDetails
+			groupByColumn: Fields
+
+	column Fields
+		dataType: string
+		isHidden
+		lineageTag: a47a64ef-0fa9-420e-a23f-1cc967ebe167
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: Order
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+	column Order
+		dataType: int64
+		isHidden
+		lineageTag: e9f02142-b59e-4bb9-8788-7a2c8a811d0e
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+	column Locale
+		dataType: string
+		isHidden
+		lineageTag: afe12247-2975-4c34-8c97-38ecff601ce3
+		summarizeBy: none
+		sourceColumn: [Value4]
+
+	partition _VisualCaptions = calculated
+		mode: import
+		source =
+				{
+				("Customer", NAMEOF('a1101'[Suchbegriff [101]]]), 0, "en-US"),
+				("Invoice count", NAMEOF('_Measures'[A8101OP Invoice Count]), 1, "en-US"),
+				("Open invoices", NAMEOF('_Measures'[A8101OP Open Invoice Count]), 2, "en-US"),
+				("Closed invoices", NAMEOF('_Measures'[A8101OP Closed Invoice Count]), 3, "en-US"),
+				("Payments", NAMEOF('_Measures'[A8101OP Payment Count]), 4, "en-US"),
+				("Kunde", NAMEOF('a1101'[Suchbegriff [101]]]), 0, "de-DE"),
+				("Rechnungsanzahl", NAMEOF('_Measures'[A8101OP Invoice Count]), 1, "de-DE"),
+				("Offene Rechnungen", NAMEOF('_Measures'[A8101OP Open Invoice Count]), 2, "de-DE"),
+				("Erledigte Rechnungen", NAMEOF('_Measures'[A8101OP Closed Invoice Count]), 3, "de-DE"),
+				("Zahlungen", NAMEOF('_Measures'[A8101OP Payment Count]), 4, "de-DE"),
+				("Client", NAMEOF('a1101'[Suchbegriff [101]]]), 0, "ro-RO"),
+				("Număr de facturi", NAMEOF('_Measures'[A8101OP Invoice Count]), 1, "ro-RO"),
+				("Facturi deschise", NAMEOF('_Measures'[A8101OP Open Invoice Count]), 2, "ro-RO"),
+				("Facturi închise", NAMEOF('_Measures'[A8101OP Closed Invoice Count]), 3, "ro-RO"),
+				("Plăți", NAMEOF('_Measures'[A8101OP Payment Count]), 4, "ro-RO")
+				}

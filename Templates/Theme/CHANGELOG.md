@@ -1,5 +1,12 @@
 # TopEvo visual foundation changelog
 
+## Component specification 1.5.1 - 2026-09-30
+
+- Corrects Golden Sample header insets and reserves a 48 px title container without moving TimeControl or the body; title stays 20 pt.
+- Adds presentation-only localized caption bindings for the existing four KPI measures and summary columns; preserves business definitions and internal identifiers.
+- Fixes table column widths and removes redundant KPI card insets. Theme JSON, Sales, Purchases and Inventory are unchanged.
+- Adds three-locale static layout/caption checks; Desktop/embedded rendering remains pending.
+
 ## Component specification 1.5.0 - 2026-09-28
 
 - Requires adaptive 1/2/3/4-card KPI rows backed by existing validated measures; no empty cards, filler text or invented metrics. More than four requires an explicit design decision.
