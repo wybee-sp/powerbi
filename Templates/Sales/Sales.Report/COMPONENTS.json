@@ -1,6 +1,6 @@
 {
   "version": "1.4.1",
-  "status": "Sales implementation - runtime and source-data validation pending",
+  "status": "Synchronized; rendering evidence recorded separately",
   "deployToCustomers": true,
   "report": "Templates/Sales/Sales.Report",
   "page": "ReportSection",
@@ -11,7 +11,6 @@
       "role": "header.title",
       "id": "d5eafabc9a22487ab761",
       "type": "cardVisual",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 24,
         "y": 24,
@@ -39,13 +38,12 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "3a5ca5c0fdc8424c93f4"
+      "status": "Synchronized component"
     },
     {
       "role": "navigation.pages",
       "id": "8eedc44eb7424924b051",
       "type": "pageNavigator",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 648,
         "y": 24,
@@ -55,13 +53,12 @@
         "tabOrder": 1000
       },
       "bindings": {},
-      "sourceGoldenSampleId": "d8f5a9bed09924c8f6f5"
+      "status": "Synchronized component"
     },
     {
       "role": "filter.branch",
       "id": "180c9822021860e112cb",
       "type": "slicer",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 24,
         "y": 72,
@@ -90,13 +87,12 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "9e43bef062079b54db6a"
+      "status": "Synchronized component"
     },
     {
       "role": "filter.period",
       "id": "fdce3d4398dea1000cb5",
       "type": "slicer",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 232,
         "y": 72,
@@ -125,20 +121,18 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "5ddcb2a5d4d5d4b8fc09"
+      "status": "Synchronized component"
     },
     {
       "role": "control.granularity",
       "id": "83289b6c6dda4d7292bf",
       "type": "slicer",
-      "title": "",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 512,
         "y": 72,
         "z": 13000,
-        "width": 536,
         "height": 56,
+        "width": 536,
         "tabOrder": 4000
       },
       "bindings": {
@@ -161,13 +155,12 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "831422ecad4944eea626"
+      "status": "Synchronized component"
     },
     {
       "role": "filter.customer",
       "id": "e61b9b4c725baec66b1d",
       "type": "slicer",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 1064,
         "y": 72,
@@ -196,19 +189,18 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "92863660e33e39bf2329"
+      "status": "Synchronized component"
     },
     {
       "role": "kpi.netRevenue",
       "id": "0aa8e8393114177d073d",
       "type": "cardVisual",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
-        "x": 24,
+        "x": 24.0,
         "y": 144,
-        "z": 6000,
-        "width": 608,
+        "width": 608.0,
         "height": 96,
+        "z": 6000,
         "tabOrder": 6000
       },
       "bindings": {
@@ -230,27 +222,18 @@
           ]
         }
       },
-      "variant": "value-only",
-      "optionalComparison": {
-        "enabled": false,
-        "requires": "Existing approved shared-model measure; no report calculations",
-        "variantHeight": 112,
-        "textSizePt": 9,
-        "placement": "Below primary value"
-      },
-      "sourceGoldenSampleId": "153e904422493224e572"
+      "status": "Synchronized component"
     },
     {
       "role": "kpi.invoiceCount",
       "id": "c85dcd65ae5d7a09692d",
       "type": "cardVisual",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
-        "x": 648,
+        "x": 648.0,
         "y": 144,
-        "z": 7000,
-        "width": 608,
+        "width": 608.0,
         "height": 96,
+        "z": 7000,
         "tabOrder": 7000
       },
       "bindings": {
@@ -272,28 +255,18 @@
           ]
         }
       },
-      "variant": "value-only",
-      "optionalComparison": {
-        "enabled": false,
-        "requires": "Existing approved shared-model measure; no report calculations",
-        "variantHeight": 112,
-        "textSizePt": 9,
-        "placement": "Below primary value"
-      },
-      "sourceGoldenSampleId": "a267601474d5703ee78e"
+      "status": "Synchronized component"
     },
     {
       "role": "chart.trend",
       "id": "077d31a04274ad85ed05",
       "type": "lineChart",
-      "title": "Net revenue over time · EUR",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 24,
         "y": 256,
         "z": 10000,
-        "width": 816,
         "height": 224,
+        "width": 816,
         "tabOrder": 10000
       },
       "bindings": {
@@ -350,24 +323,12 @@
           ]
         }
       },
-      "parameterDefault": "Month",
-      "axisContract": {
-        "Day": "Date[Date]",
-        "Week": "Date[YearWeek]",
-        "Month": "Date[YearMonth]",
-        "Quarter": "Date[YearQuarter]",
-        "Year": "Date[Year]",
-        "sort": "Ascending selected field with model SortByColumn",
-        "labels": "10 pt; continuous date/numeric axis with automatic ticks; categorical fallback for text period labels; no forced minimum category width"
-      },
-      "sourceGoldenSampleId": "2795845256d49757365f"
+      "status": "Synchronized component"
     },
     {
       "role": "chart.ranking",
       "id": "f0f9619e57eeb2b79732",
       "type": "clusteredBarChart",
-      "title": "Customers by net revenue · EUR",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 856,
         "y": 256,
@@ -413,20 +374,18 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "9d27b58b00aba43cd948"
+      "status": "Synchronized component"
     },
     {
       "role": "table.summary",
       "id": "48080225a009c7816619",
       "type": "tableEx",
-      "title": "Customer sales summary · EUR",
-      "status": "Localization bindings implemented - Desktop/embedded validation pending",
       "position": {
         "x": 24,
         "y": 496,
         "z": 12000,
-        "width": 1232,
         "height": 200,
+        "width": 1232,
         "tabOrder": 12000
       },
       "bindings": {
@@ -474,7 +433,7 @@
           ]
         }
       },
-      "sourceGoldenSampleId": "8fcfab21f72e5ed59047"
+      "status": "Synchronized component"
     }
   ],
   "componentGroups": [
@@ -503,21 +462,14 @@
         "Date range preserved when grain changes",
         "Keyboard order: Branch, date range, granularity, business filter"
       ],
-      "status": "Reused approved layout - Sales runtime pending",
+      "status": "Synchronized component group",
       "layoutFrozen": true,
       "approvalEvidence": "Exact Golden Sample layout retained; no independent Sales rendering claimed"
     }
   ],
   "kpiLayout": {
     "count": 2,
-    "width": 608,
-    "gutter": 16,
-    "x": [
-      24,
-      648
-    ],
-    "y": 144,
-    "height": 96
+    "gutter": 16
   },
   "localization": {
     "locales": [
@@ -528,6 +480,6 @@
     "default": "en-US",
     "localeFilter": "Time Granularity.Locale",
     "catalog": "Templates/Localization/labels.json",
-    "runtimeValidation": "Pending; native navigation remains English pending host integration"
+    "runtimeValidation": "No runtime validation claimed by generation; see documented Desktop/embedded evidence"
   }
 }

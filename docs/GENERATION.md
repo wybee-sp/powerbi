@@ -12,7 +12,7 @@ The Sales report and Overview are classified STANDARD in the binding manifest. T
 
 ## Commands
 
-Python 3.11+ is sufficient for planning and behavioral tests; no third-party Python package is required. Execute from the repository root:
+Python 3.11+ and PowerShell 7 (`pwsh`) are required for planning and tests. No third-party Python package is required. Every plan validates the layout against the closed JSON Schema `Templates/PageTemplates/overview.layout.schema.json` (Draft 2020-12) using `Test-Json`. Unknown properties, malformed positions, invalid width variants and unsupported policies are rejected. Execute from the repository root:
 
 ```powershell
 python -B tools/generation/generate.py
@@ -32,7 +32,7 @@ Validate the candidate with the existing pinned Microsoft TOM runtime and schema
 
 Validation dependencies are the same Microsoft TOM 19.117.0 DLLs and cached Microsoft schemas used by the localization tooling. Required schema filenames: `topevo-visual-bundle.json`, `topevo-page-bundle.json`, `topevo-report-bundle.json`, `topevo-theme-schema-2.150.json`. The unavailable declared visual 2.12 schema is checked against published 2.9 compatibility without rewriting declarations. This is explicitly not full 2.12 validation or Desktop rendering. No runtime/library/font binaries or machine paths are committed.
 
-After the current Golden Sample implementation has actually been rendered and approved, record `review.status=APPROVED`, the tested Desktop build, review evidence and the exact printed fingerprint in the central layout. The fingerprint covers layout, Golden Sample source definitions, canonical theme and design-system document. Changes invalidate approval. There is no force/skip-review CLI switch. Do not mark a candidate approved merely to make apply run.
+For a change that alters PBIR, after the selected component variant has actually been rendered and approved, record `review.status=APPROVED`, the tested Desktop build, review evidence and the exact printed fingerprint in the central layout. The fingerprint covers layout, Golden Sample source definitions, canonical theme and design-system document. Changes invalidate approval. A content-equivalent synchronization (`pbirEquivalent=true`) needs no new rendering approval because it cannot change any PBIR content. The comparison includes the complete page, every visual and removals; unchanged files are not rewritten. There is no force/skip-review CLI switch. Do not mark a candidate approved merely to make apply run.
 
 ```powershell
 python -B tools/generation/generate.py `
@@ -65,22 +65,39 @@ python -B -m unittest discover -s tools/generation -p test_generation.py -v
 
 Tests cover CUSTOM/unclassified protection; unknown visuals; missing measures and labels; unsafe targets; ID preservation/collisions; 0–4 KPI layouts and unique new IDs; optional-component removal and dependency repair; layout overlap; stale plans/approval; preservation of model, report identity and protected page bytes; and a second apply plan with no changes. Test-only approval fixtures are not Desktop evidence. The separate PowerShell integration check validates the real candidate.
 
-**Current status:** the latest Golden Sample dynamic textbox/date-slicer repair remains pending Desktop verification in the repository. The layout review therefore stays PENDING, and live Sales PBIR has not been synchronized. This follows AGENTS.md: “Components must be implemented, rendered and approved in the Golden Sample before generation” and “Do not propagate unrendered component changes as approved.” Creating a candidate for inspection does not approve or deploy it. See `docs/HEADER_DATE_SLICER_REPAIR.md` for the exact remaining render checks.
+**Current status:** Sales Overview has been adopted with the central `existing-overview` variant. Its PBIR is byte-for-byte unchanged. The variant records only the shared geometry/format differences from the latest Golden Sample: existing title card, navigation geometry, date-slicer appearance, KPI insets and table auto-sizing. Sales queries and label bindings remain in the Sales manifest. No language-specific layout or Receivables business query is introduced. Existing non-template interaction pairs are retained; template-controlled pairs take precedence and removed visuals lose their interaction references.
+
+The latest Golden Sample repairs still have PENDING rendering evidence. Adoption does not approve or propagate those repairs. A later migration to the default variant must be explicit and rendered. Existing limitations of the Sales rendering/localization remain; preserving the report does not fix or independently validate them.
+
+## Propagating a central layout change
+
+1. Edit shared geometry or component formatting in `overview.layout.json`; edit `variants.existing-overview.slots` only for properties that this compatibility variant overrides. Other geometry is inherited from the base slots. Do not edit generated PBIR to implement shared changes.
+2. Run a plan for each explicitly registered STANDARD manifest, starting with `Templates/Sales/overview.bindings.json`. CUSTOM and unclassified targets are refused; there is no wildcard overwrite or automatic customer migration.
+3. Review the candidate and run `Validate-Plan.ps1`. It validates the entire target page, including unchanged visuals, not only the write set. Queries, labels, existing IDs and protected pages must remain intact.
+4. When PBIR changes, verify the candidate variant in Power BI Desktop and record the build, evidence and current fingerprint in `review`. The selected variant participates in that fingerprint. This first workflow records one approval fingerprint at a time; validate/apply each variant explicitly. No-PBIR-change adoption is allowed without marking the newer component approved.
+5. Run `--apply` with the TOM/schema dependencies. Run another plan; its write/remove set must be empty. Review Git diff and perform the documented Desktop/embedded checks for visible changes before release.
+
+Validation in this implementation: 13 behavioral tests, complete Sales page/model-reference/schema compatibility checks, and a post-apply no-op plan. All Sales PBIR files remain byte-identical to the pre-adoption state. No new Desktop rendering was performed.
 
 No Purchases, Inventory, semantic-model, Golden Sample or customer-specific report files were modified. No generator operation publishes or pushes Git changes.
 ## Files added or changed in this implementation
 
 Created:
 
+- `Templates/PageTemplates/overview.layout.schema.json`
+- `Templates/Sales/Sales.Report/GENERATION.json`
+
+Changed:
+
 - `Templates/PageTemplates/overview.layout.json`
 - `Templates/Sales/overview.bindings.json`
+- `Templates/Sales/Sales.Report/COMPONENTS.json`
+- `Templates/Sales/Sales.Report/SALES_OVERVIEW.md`
+- `Templates/Theme/DESIGN_SYSTEM.md`
+- `Templates/Theme/CHANGELOG.md`
 - `tools/generation/generate.py`
 - `tools/generation/Validate-Plan.ps1`
 - `tools/generation/test_generation.py`
 - `docs/GENERATION.md`
 
-Changed:
-
-- `Templates/Theme/DESIGN_SYSTEM.md`
-- `Templates/Theme/CHANGELOG.md`
-- `Templates/Sales/Sales.Report/SALES_OVERVIEW.md`
+COMPONENTS.json and GENERATION.json are external metadata. No schema-controlled Power BI definition changed.

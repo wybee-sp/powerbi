@@ -7,6 +7,7 @@ import re
 import subprocess
 import tempfile
 import uuid
+from functools import lru_cache
 from pathlib import Path
 
 
@@ -45,6 +46,31 @@ def nodes(value):
 
 def literal(value):
     return {'expr': {'Literal': {'Value': value}}}
+
+
+@lru_cache(maxsize=32)
+def validate_layout_schema(document, schema):
+    # PowerShell's standards-based JSON Schema validator; no network resolution.
+    with tempfile.TemporaryDirectory(prefix='topevo-layout-schema-') as tmp:
+        path = Path(tmp) / 'schema.json'
+        path.write_bytes(schema)
+        result = subprocess.run(['pwsh', '-NoProfile', '-Command',
+            "$ErrorActionPreference='Stop'; $json=[Console]::In.ReadToEnd(); "
+            "if (!(Test-Json -Json $json -SchemaFile '" + str(path).replace("'", "''") + "')) { exit 1 }"], input=document, capture_output=True)
+        check(result.returncode == 0, 'Invalid layout schema: ' + result.stderr.decode('utf-8', errors='replace'))
+
+
+def format_variant(visual, spec):
+    for patch in spec.get('formatPatches', []):
+        path = patch['path']
+        check(path[0] in ('visualType', 'objects', 'visualContainerObjects'), 'Variant may only change visual formatting')
+        parent = visual['visual']
+        for key in path[:-1]:
+            parent = parent[key]
+        if patch.get('remove'):
+            parent.pop(path[-1], None)
+        else:
+            parent[path[-1]] = copy.deepcopy(patch['value'])
 
 
 class Reader:
@@ -140,6 +166,10 @@ def build_plan(root, binding_path):
     model = 'Templates/TopEvoAnalytics.SemanticModel'
     check(b['semanticModel'] == model, 'Shared semantic model required')
     layout = r.json(b['layout'])
+    validate_layout_schema(encode(layout), r.data('Templates/PageTemplates/overview.layout.schema.json'))
+    variant_name = b.get('variant')
+    check(variant_name is None or variant_name in layout['variants'], 'Unknown layout variant')
+    variant = layout['variants'].get(variant_name, {}).get('slots', {})
     check(layout.get('version') == 1 and layout['name'] == 'overview', 'Unsupported layout')
     check(layout['emptySlotPolicy'] == 'omit-without-reflow', 'Unsupported optional-slot policy')
     check(layout['interactionPolicy'] == 'primary-filters-all-analytics; granularity-trend-only; no-incoming-granularity', 'Unsupported interaction policy')
@@ -179,7 +209,7 @@ def build_plan(root, binding_path):
     check(len(kpis) <= 4, 'More than four KPIs requires a page-design decision')
     check(layout['kpiRow']['x'] == 24 and layout['kpiRow']['width'] == 1232 and layout['kpiRow']['gutter'] == 16, 'KPI row must use TopEvo margins and 16 px gutters')
     sources = {}
-    fingerprints = {'layout': {k: v for k, v in layout.items() if k != 'review'}, 'sources': {}, 'theme': digest(r.data(layout['theme'])), 'designSystem': digest(r.data('Templates/Theme/DESIGN_SYSTEM.md'))}
+    fingerprints = {'variant': variant_name, 'layout': {k: v for k, v in layout.items() if k != 'review'}, 'sources': {}, 'theme': digest(r.data(layout['theme'])), 'designSystem': digest(r.data('Templates/Theme/DESIGN_SYSTEM.md'))}
     for slot, spec in layout['slots'].items():
         check(safe(r.root, spec['source']).is_relative_to(safe(r.root, layout['reference'] + '/definition/pages')), 'Component source must be Golden Sample')
         sources[slot] = r.json(spec['source'])
@@ -200,11 +230,12 @@ def build_plan(root, binding_path):
         if slot in ('filter.period', 'control.granularity'):
             check(binding['query'] == sources[slot]['visual']['query'], 'TimeControl must retain canonical field and sort bindings')
         visual = copy.deepcopy(sources[slot])
+        format_variant(visual, variant.get(slot, {}))
         visual['name'] = vid
         visual.pop('filterConfig', None)  # Do not inherit Receivables parameter selections.
         v = visual['visual']
         v.pop('query', None)
-        if binding['query']:
+        if binding['query'] and not (slot == 'header.title' and v['visualType'] == 'textbox'):
             v['query'] = copy.deepcopy(binding['query'])
         check(slot in ('header.title', 'navigation.pages') or binding['query'], 'Missing business query')
         v = relabel(v, binding['labels'])
@@ -223,7 +254,7 @@ def build_plan(root, binding_path):
             width = (row['width'] - row['gutter'] * (len(kpis) - 1)) / len(kpis)
             visual['position'] = dict(x=row['x'] + n * (width + row['gutter']), y=row['y'], width=width, height=row['height'], z=6000 + n * 1000, tabOrder=6000 + n * 1000)
         else:
-            visual['position'] = copy.deepcopy(layout['slots'][slot]['position'])
+            visual['position'] = copy.deepcopy(variant.get(slot, {}).get('position', layout['slots'][slot]['position']))
         if slot == 'table.summary':
             projections = v['query']['queryState']['Values']['projections']
             widths = layout['summaryWidths'].get(str(len(projections)))
@@ -253,24 +284,34 @@ def build_plan(root, binding_path):
         if role != 'control.granularity':
             interactions += [{'source': visuals[role]['name'], 'target': visuals['control.granularity']['name'], 'type': 'NoFilter'}, {'source': visuals['control.granularity']['name'], 'target': visuals[role]['name'], 'type': 'DataFilter' if role == 'chart.trend' else 'NoFilter'}]
     page.update(layout['canvas'])
-    page['visualInteractions'] = interactions
+    generated_pairs = {(i['source'], i['target']) for i in interactions}
+    active_ids = {v['name'] for v in visuals.values()}
+    interactions += [i for i in page.get('visualInteractions', [])
+                     if (i['source'], i['target']) not in generated_pairs
+                     and i['source'] in active_ids and i['target'] in active_ids]
+    # Array order does not change interaction semantics. Preserve original order
+    # when the generated interaction set is identical, avoiding needless rewrites.
+    interaction_key = lambda i: (i['source'], i['target'], i['type'])
+    if sorted(map(interaction_key, page.get('visualInteractions', []))) != sorted(map(interaction_key, interactions)):
+        page['visualInteractions'] = interactions
     page['displayName'] = labels[b['page']['label']]['en-US']
     writes = {page_path + '/page.json': page}
     writes.update({page_path + '/visuals/' + v['name'] + '/visual.json': v for v in visuals.values()})
     deletes = [page_path + '/visuals/' + vid + '/visual.json' for vid in sorted(set(owned.values()) - {v['name'] for v in visuals.values()})]
     check(not deletes or not list(safe(r.root, report + '/definition').glob('bookmarks/**/*.json')), 'Removing bookmarked visuals requires explicit dependency migration')
-    manifest['status'] = 'Generated candidate; Desktop/embedded validation required'
-    manifest['components'] = [dict(role=role, id=v['name'], type=v['visual']['visualType'], position=v['position'], bindings=v['visual'].get('query', {}).get('queryState', {}), status='Generated candidate') for role, v in visuals.items()]
+    equivalent = not deletes and all(r.json(p) == v for p, v in writes.items() if safe(r.root, p).exists()) and all(safe(r.root, p).exists() for p in writes)
+    manifest['status'] = 'Synchronized; rendering evidence recorded separately'
+    manifest['components'] = [dict(role=role, id=v['name'], type=v['visual']['visualType'], position=v['position'], bindings=v['visual'].get('query', {}).get('queryState', {}), status='Synchronized component') for role, v in visuals.items()]
     manifest['kpiLayout'] = {'count': len(kpis), 'gutter': layout['kpiRow']['gutter']}
     for group in manifest.get('componentGroups', []):
-        group['status'] = 'Generated candidate; module rendering pending'
-    manifest['localization']['runtimeValidation'] = 'Generated module candidate; verify all supported locales in Desktop/embedding'
+        group['status'] = 'Synchronized component group'
+    manifest['localization']['runtimeValidation'] = 'No runtime validation claimed by generation; see documented Desktop/embedded evidence'
     writes[report + '/COMPONENTS.json'] = manifest
-    writes[registry_path] = {'version': 1, 'classification': 'STANDARD', 'page': pid, 'bindings': binding_path, 'layoutFingerprint': fingerprint, 'visuals': {k: v['name'] for k, v in visuals.items()}}
+    writes[registry_path] = {'version': 1, 'classification': 'STANDARD', 'page': pid, 'bindings': binding_path, 'variant': variant_name, 'layoutFingerprint': fingerprint, 'visuals': {k: v['name'] for k, v in visuals.items()}}
     writes = {p: v for p, v in writes.items() if not safe(r.root, p).exists() or json.loads(safe(r.root, p).read_text(encoding='utf-8-sig')) != v}
     review = layout.get('review', {})
     approved = review.get('status') == 'APPROVED' and review.get('fingerprint') == fingerprint and review.get('desktopBuild') and review.get('evidence')
-    return {'version': 1, 'bindings': binding_path, 'report': report, 'page': pid, 'classification': 'STANDARD', 'layoutFingerprint': fingerprint, 'applyEligible': bool(approved), 'blockers': [] if approved else ['Current layout/component fingerprint needs recorded Golden Sample Desktop approval'], 'limitations': b.get('limitations', []), 'inputs': r.inputs, 'writes': writes, 'deletes': deletes}
+    return {'version': 1, 'bindings': binding_path, 'report': report, 'page': pid, 'classification': 'STANDARD', 'layoutFingerprint': fingerprint, 'pbirEquivalent': equivalent, 'applyEligible': bool(approved or equivalent), 'blockers': [] if approved or equivalent else ['Current layout/component fingerprint needs recorded Golden Sample Desktop approval'], 'limitations': b.get('limitations', []), 'inputs': r.inputs, 'writes': writes, 'deletes': deletes}
 
 
 def apply_plan(root, plan, validator):
@@ -308,7 +349,7 @@ def main():
         if args.plan:
             check(not args.plan.resolve().is_relative_to(root), 'Review plans must stay outside the repository')
             args.plan.write_bytes(encode(plan))
-        print(json.dumps({k: plan[k] for k in ('layoutFingerprint', 'applyEligible', 'blockers', 'limitations')}, indent=2))
+        print(json.dumps({k: plan[k] for k in ('layoutFingerprint', 'pbirEquivalent', 'applyEligible', 'blockers', 'limitations')}, indent=2))
         for p in plan['writes']:
             print('WRITE ' + p)
         for p in plan['deletes']:

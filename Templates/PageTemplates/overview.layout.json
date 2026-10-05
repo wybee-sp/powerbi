@@ -158,5 +158,322 @@
     ]
   },
   "emptySlotPolicy": "omit-without-reflow",
-  "interactionPolicy": "primary-filters-all-analytics; granularity-trend-only; no-incoming-granularity"
+  "interactionPolicy": "primary-filters-all-analytics; granularity-trend-only; no-incoming-granularity",
+  "$schema": "./overview.layout.schema.json",
+  "variants": {
+    "existing-overview": {
+      "description": "Preserve the existing Sales Overview during generator adoption; newer Golden Sample repairs are not propagated by adoption.",
+      "slots": {
+        "header.title": {
+          "position": {
+            "x": 24,
+            "y": 24,
+            "z": 0,
+            "width": 608,
+            "height": 32,
+            "tabOrder": 0
+          },
+          "formatPatches": [
+            {
+              "path": [
+                "objects",
+                "general"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "objects",
+                "label"
+              ],
+              "value": [
+                {
+                  "properties": {
+                    "show": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "false"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "path": [
+                "objects",
+                "value"
+              ],
+              "value": [
+                {
+                  "properties": {
+                    "fontSize": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "20D"
+                        }
+                      }
+                    },
+                    "fontFamily": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "'Segoe UI Semibold'"
+                        }
+                      }
+                    },
+                    "horizontalAlignment": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "'left'"
+                        }
+                      }
+                    },
+                    "fontColor": {
+                      "solid": {
+                        "color": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'#182230'"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "textWrap": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "false"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "path": [
+                "objects",
+                "values"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "visualContainerObjects",
+                "background"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "visualContainerObjects",
+                "border"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "visualContainerObjects",
+                "dropShadow"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "visualContainerObjects",
+                "padding"
+              ],
+              "value": [
+                {
+                  "properties": {
+                    "top": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "0D"
+                        }
+                      }
+                    },
+                    "bottom": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "0D"
+                        }
+                      }
+                    },
+                    "left": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "0D"
+                        }
+                      }
+                    },
+                    "right": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "0D"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "path": [
+                "visualType"
+              ],
+              "value": "cardVisual"
+            }
+          ]
+        },
+        "navigation.pages": {
+          "position": {
+            "x": 648,
+            "y": 24,
+            "z": 2000,
+            "width": 608,
+            "height": 32,
+            "tabOrder": 1000
+          }
+        },
+        "filter.period": {
+          "formatPatches": [
+            {
+              "path": [
+                "objects",
+                "general"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "objects",
+                "header"
+              ],
+              "value": [
+                {
+                  "properties": {
+                    "show": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "false"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "path": [
+                "visualContainerObjects",
+                "title"
+              ],
+              "value": [
+                {
+                  "properties": {
+                    "show": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "true"
+                        }
+                      }
+                    },
+                    "text": {
+                      "expr": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_ReportLabels"
+                            }
+                          },
+                          "Property": "DateRange"
+                        }
+                      }
+                    },
+                    "fontSize": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "10D"
+                        }
+                      }
+                    },
+                    "fontFamily": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "'Segoe UI'"
+                        }
+                      }
+                    },
+                    "fontColor": {
+                      "solid": {
+                        "color": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'#526174'"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "alignment": {
+                      "expr": {
+                        "Literal": {
+                          "Value": "'left'"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "kpi": {
+          "formatPatches": [
+            {
+              "path": [
+                "objects",
+                "cardCalloutArea"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "objects",
+                "layout"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "objects",
+                "padding"
+              ],
+              "remove": true
+            },
+            {
+              "path": [
+                "objects",
+                "spacing"
+              ],
+              "remove": true
+            }
+          ]
+        },
+        "table.summary": {
+          "formatPatches": [
+            {
+              "path": [
+                "objects",
+                "columnHeaders"
+              ],
+              "remove": true
+            }
+          ]
+        }
+      }
+    }
+  }
 }

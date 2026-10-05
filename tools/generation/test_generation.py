@@ -51,11 +51,46 @@ class GenerationTests(unittest.TestCase):
         return self.plan()
 
     def test_pending_cannot_write(self):
+        b = self.read(BINDINGS)
+        b.pop('variant', None)
+        self.write(BINDINGS, b)
         before = (self.root / REPORT / '.platform').read_bytes()
         with self.assertRaisesRegex(GenerationError, 'Desktop approval'):
             apply_plan(self.root, self.plan(), lambda p: self.fail('Validator must not run before approval'))
         self.assertEqual(before, (self.root / REPORT / '.platform').read_bytes())
-        self.assertFalse((self.root / REPORT / 'GENERATION.json').exists())
+
+    def test_equivalent_adoption_is_byte_preserving_and_idempotent(self):
+        files = list((self.root / REPORT / 'definition').rglob('*.json'))
+        before = {str(p): p.read_bytes() for p in files}
+        plan = self.plan()
+        self.assertTrue(plan['pbirEquivalent'])
+        self.assertTrue(plan['applyEligible'])
+        self.assertFalse(any('/definition/' in p for p in plan['writes']))
+        apply_plan(self.root, plan, lambda p: None)
+        self.assertEqual(before, {str(p): p.read_bytes() for p in files})
+        self.assertEqual({}, self.plan()['writes'])
+
+    def test_schema_rejects_unknown_properties_and_wrong_types(self):
+        original = self.read(LAYOUT)
+        for edit in ({'extends': 'unsupported'}, {'version': '1'}):
+            layout = copy.deepcopy(original)
+            layout.update(edit)
+            self.write(LAYOUT, layout)
+            with self.assertRaisesRegex(GenerationError, 'Invalid layout schema'):
+                self.plan()
+
+    def test_central_change_propagates_after_review_preserving_bindings(self):
+        layout = self.read(LAYOUT)
+        layout['slots']['chart.trend']['position']['height'] = 216
+        self.write(LAYOUT, layout)
+        self.assertFalse(self.plan()['applyEligible'])
+        plan = self.approve_fixture()
+        b = self.read(BINDINGS)['components']['chart.trend']
+        path = REPORT + '/definition/pages/ReportSection/visuals/' + b['id'] + '/visual.json'
+        self.assertEqual(216, plan['writes'][path]['position']['height'])
+        self.assertEqual(b['query'], plan['writes'][path]['visual']['query'])
+        apply_plan(self.root, plan, lambda p: None)
+        self.assertEqual({}, self.plan()['writes'])
 
     def test_custom_and_unclassified_are_protected(self):
         original = self.read(BINDINGS)

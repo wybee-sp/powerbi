@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "classification": "STANDARD",
+  "page": "ReportSection",
+  "bindings": "Templates/Sales/overview.bindings.json",
+  "variant": "existing-overview",
+  "layoutFingerprint": "dd1ecd5498fe48c8663fe3ed8b62c5a7b3875cc93d1d4b2892f745d1f45e5212",
+  "visuals": {
+    "header.title": "d5eafabc9a22487ab761",
+    "navigation.pages": "8eedc44eb7424924b051",
+    "filter.branch": "180c9822021860e112cb",
+    "filter.period": "fdce3d4398dea1000cb5",
+    "control.granularity": "83289b6c6dda4d7292bf",
+    "filter.customer": "e61b9b4c725baec66b1d",
+    "kpi.netRevenue": "0aa8e8393114177d073d",
+    "kpi.invoiceCount": "c85dcd65ae5d7a09692d",
+    "chart.trend": "077d31a04274ad85ed05",
+    "chart.ranking": "f0f9619e57eeb2b79732",
+    "table.summary": "48080225a009c7816619"
+  }
+}

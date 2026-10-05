@@ -34,7 +34,14 @@ foreach($entry in $p.inputs.GetEnumerator()) {
  if(!$path.StartsWith($root+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Input path escapes repository'}
  if((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.Value){throw "Stale plan: $($entry.Key)"}
 }
-foreach($entry in $p.writes.GetEnumerator()) {
+$candidates=@{}
+$pageRoot=Join-Path $root ($p.report+'/definition/pages/'+$p.page)
+foreach($file in Get-ChildItem -LiteralPath $pageRoot -Recurse -Filter '*.json') {
+ $relative=[IO.Path]::GetRelativePath($root,$file.FullName).Replace('\','/')
+ if($relative -notin $p.deletes){$candidates[$relative]=Get-Content -LiteralPath $file.FullName -Raw|ConvertFrom-Json -AsHashtable}
+}
+foreach($entry in $p.writes.GetEnumerator()) {$candidates[$entry.Key]=$entry.Value}
+foreach($entry in $candidates.GetEnumerator()) {
  $value=$entry.Value
  Check-References $value @{}
  if($entry.Key.EndsWith('/visual.json')) {

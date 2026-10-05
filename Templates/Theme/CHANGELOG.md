@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Generation workflow 1.1 - 2026-10-05
+
+- Adds the closed Overview layout schema and central existing-overview compatibility variant.
+- Adopts Sales with complete PBIR equivalence, preserving interaction exclusions and module bindings. Records ownership externally; newer Golden Sample repairs remain pending.
+- Validates the complete target page, rejects malformed layouts and tests byte-preserving adoption.
+
 ## Generation workflow 1 - 2026-10-05
 
 - Adds central Overview layout, Sales bindings and a read-only candidate plan with guarded synchronization. Geometry/component implementations remain based on the current Golden Sample.

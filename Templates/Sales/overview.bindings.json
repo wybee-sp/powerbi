@@ -17,7 +17,27 @@
     "header.title": {
       "id": "d5eafabc9a22487ab761",
       "slot": "header.title",
-      "query": {},
+      "query": {
+        "queryState": {
+          "Data": {
+            "projections": [
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "_ReportLabels"
+                      }
+                    },
+                    "Property": "HeaderSalesOverview"
+                  }
+                },
+                "queryRef": "_ReportLabels.HeaderSalesOverview"
+              }
+            ]
+          }
+        }
+      },
       "labels": {
         "HeaderReceivablesOverview": "HeaderSalesOverview"
       }
@@ -531,8 +551,8 @@
     "reason": "Preserve existing Sales definitions documented in SALES_OVERVIEW.md; migration to _Measures is outside this workflow. No new business calculation."
   },
   "limitations": [
-    "Golden Sample component/render approval pending.",
     "Sales metadata-only captions and native navigation still require all-locale rendering.",
     "No new reports, report-local measures or customer overrides are created by this first workflow."
-  ]
+  ],
+  "variant": "existing-overview"
 }
