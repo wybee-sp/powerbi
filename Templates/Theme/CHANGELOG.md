@@ -1,5 +1,11 @@
 # TopEvo visual foundation changelog
 
+## Generation workflow 1 - 2026-10-05
+
+- Adds central Overview layout, Sales bindings and a read-only candidate plan with guarded synchronization. Geometry/component implementations remain based on the current Golden Sample.
+- Adds STANDARD/CUSTOM ownership protection, stable target identities, adaptive optional components, static/TOM/schema validation and idempotence tests.
+- Current template review remains PENDING; no live Sales PBIR or other report/model definitions were synchronized.
+
 ## Component specification 1.5.2 - 2026-09-30
 
 - Replaces the still-clipped Golden Sample title card with a dynamic textbox at x20/y16/w600/h48, retaining 20 pt. Navigation moves to y16/h40; filters remain at y72.

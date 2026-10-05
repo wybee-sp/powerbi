@@ -299,3 +299,10 @@ See `docs/GOLDEN_SAMPLE_LOCALIZATION_VALIDATION.md` for the three-locale static 
 The Golden Sample date slicer retains x232/y72/w280/h56. Restore its native slicer header and hide the added visual-container title; preserve Between mode, Date[Date], slider hidden and all existing interactions. Set `objects.general.responsive=false` explicitly so the date inputs do not turn into a filter icon. The native header currently uses the catalog's English `Date range` fallback. Do not assume the container-title measure expression can be moved to the native header without a Desktop test; complete native-header localization is pending. Display by and the remaining TimeControl geometry are unchanged.
 
 The user rejected the previous card-header correction after rendering. Static schema and font tests did not detect its runtime clipping. The replacement textbox and restored slicer are **pending Desktop verification**, not approved components. Review `docs/HEADER_DATE_SLICER_REPAIR.md` before generation or release.
+
+
+## Central Overview generation workflow
+
+`Templates/PageTemplates/overview.layout.json` now owns machine-readable Overview geometry and component slots; `Templates/Sales/overview.bindings.json` owns Sales business queries, label references and target IDs. See `docs/GENERATION.md` for the read-only candidate plan, validation and guarded apply commands. Golden Sample remains the component implementation reference. PBIR contains generated results, not inheritance properties or generator metadata.
+
+The first workflow supports adaptive 0–4 KPI rows and omission of optional charts/tables without reflow. STANDARD report/page classification is explicit; protected/unclassified artifacts cannot be adopted implicitly. Source/layout/theme/design-system changes invalidate the recorded review fingerprint. The current layout remains PENDING until the outstanding Golden Sample render checks are completed; adding the generator does not approve the header/date-slicer repair or modify live Sales PBIR.

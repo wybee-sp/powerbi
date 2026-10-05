@@ -49,3 +49,8 @@ Removed both unavailable KPI placeholder visuals and their interaction reference
 ## Localization integration
 
 This report remains a single definition for de-DE, en-US and ro-RO. Shared model captions and _ReportLabels measures supply translated UI text; Time Granularity.Locale is a hidden host-controlled filter with English default. Numeric Order=2 preserves the initial Month selection across languages. Geometry and business bindings remain stable, but text-measure headers and native visual titles replace literal header text. The localized render is not yet approved: verify all languages and screen-reader text in Desktop/embedding. Native page-navigation captions still use English until the host navigation contract in docs/LOCALIZATION.md is integrated.
+
+
+## Central generation adoption
+
+`Templates/Sales/overview.bindings.json` now declares this report/Overview STANDARD and preserves its existing IDs, Sales queries and label keys. The hidden Receivables page is protected and outside generator ownership. The central `Templates/PageTemplates/overview.layout.json` describes the shared geometry and Golden Sample sources. Run the candidate/validation workflow in `docs/GENERATION.md`; the current Golden Sample render gate prevents live synchronization. Existing Sales PBIR remains unchanged by this adoption. The two existing measures on a42001 are explicitly documented legacy bindings; no measure migration or new business calculation is introduced.

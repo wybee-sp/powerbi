@@ -1,0 +1,538 @@
+{
+  "version": 1,
+  "layout": "Templates/PageTemplates/overview.layout.json",
+  "classification": "STANDARD",
+  "report": "Templates/Sales/Sales.Report",
+  "logicalId": "d2f031c0-ee7b-4966-8427-ba612535b6ab",
+  "semanticModel": "Templates/TopEvoAnalytics.SemanticModel",
+  "page": {
+    "id": "ReportSection",
+    "classification": "STANDARD",
+    "label": "Overview"
+  },
+  "protectedPages": {
+    "cc2566e279b27d3608e1": "CUSTOM"
+  },
+  "components": {
+    "header.title": {
+      "id": "d5eafabc9a22487ab761",
+      "slot": "header.title",
+      "query": {},
+      "labels": {
+        "HeaderReceivablesOverview": "HeaderSalesOverview"
+      }
+    },
+    "navigation.pages": {
+      "id": "8eedc44eb7424924b051",
+      "slot": "navigation.pages",
+      "query": {},
+      "labels": {
+        "AltNavigation": "AltNavigation"
+      }
+    },
+    "filter.branch": {
+      "id": "180c9822021860e112cb",
+      "slot": "filter.branch",
+      "query": {
+        "queryState": {
+          "Values": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a9002"
+                      }
+                    },
+                    "Property": "Bezeichnung [102]"
+                  }
+                },
+                "queryRef": "a9002.Bezeichnung [102]",
+                "active": true
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a9002"
+                    }
+                  },
+                  "Property": "Bezeichnung [102]"
+                }
+              },
+              "direction": "Ascending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "Branch": "Branch",
+        "AltBranch": "AltBranch"
+      }
+    },
+    "filter.period": {
+      "id": "fdce3d4398dea1000cb5",
+      "slot": "filter.period",
+      "query": {
+        "queryState": {
+          "Values": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Date"
+                      }
+                    },
+                    "Property": "Date"
+                  }
+                },
+                "queryRef": "Date.Date",
+                "active": true
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "direction": "Ascending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "DateRange": "DateRange",
+        "AltDateRange": "AltDateRange"
+      }
+    },
+    "control.granularity": {
+      "id": "83289b6c6dda4d7292bf",
+      "slot": "control.granularity",
+      "query": {
+        "queryState": {
+          "Values": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Time Granularity"
+                      }
+                    },
+                    "Property": "Granularity"
+                  }
+                },
+                "queryRef": "Time Granularity.Granularity",
+                "active": true
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Time Granularity"
+                    }
+                  },
+                  "Property": "Granularity"
+                }
+              },
+              "direction": "Ascending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "DisplayBy": "DisplayBy",
+        "AltGranularity": "AltGranularity"
+      }
+    },
+    "filter.customer": {
+      "id": "e61b9b4c725baec66b1d",
+      "slot": "filter.customer",
+      "query": {
+        "queryState": {
+          "Values": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a1101"
+                      }
+                    },
+                    "Property": "Suchbegriff [101]"
+                  }
+                },
+                "queryRef": "a1101.Suchbegriff [101]",
+                "active": true
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a1101"
+                    }
+                  },
+                  "Property": "Suchbegriff [101]"
+                }
+              },
+              "direction": "Ascending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "Customer": "Customer",
+        "AltCustomer": "AltCustomer"
+      }
+    },
+    "kpi.netRevenue": {
+      "id": "0aa8e8393114177d073d",
+      "slot": "kpi",
+      "query": {
+        "queryState": {
+          "Data": {
+            "projections": [
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Net Revenue"
+                  }
+                },
+                "queryRef": "a42001.Net Revenue"
+              }
+            ]
+          }
+        }
+      },
+      "labels": {
+        "InvoiceCount": "NetRevenue"
+      },
+      "numberFormat": {
+        "labelDisplayUnits": {
+          "expr": {
+            "Literal": {
+              "Value": "1D"
+            }
+          }
+        },
+        "labelPrecision": {
+          "expr": {
+            "Literal": {
+              "Value": "2D"
+            }
+          }
+        }
+      }
+    },
+    "kpi.invoiceCount": {
+      "id": "c85dcd65ae5d7a09692d",
+      "slot": "kpi",
+      "query": {
+        "queryState": {
+          "Data": {
+            "projections": [
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Invoice Count"
+                  }
+                },
+                "queryRef": "a42001.Invoice Count"
+              }
+            ]
+          }
+        }
+      },
+      "labels": {
+        "InvoiceCount": "InvoiceCount"
+      },
+      "numberFormat": {
+        "labelDisplayUnits": {
+          "expr": {
+            "Literal": {
+              "Value": "1D"
+            }
+          }
+        },
+        "labelPrecision": {
+          "expr": {
+            "Literal": {
+              "Value": "0D"
+            }
+          }
+        }
+      }
+    },
+    "chart.trend": {
+      "id": "077d31a04274ad85ed05",
+      "slot": "chart.trend",
+      "query": {
+        "queryState": {
+          "Category": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Date"
+                      }
+                    },
+                    "Property": "YearMonth"
+                  }
+                },
+                "queryRef": "Date.YearMonth",
+                "active": true
+              }
+            ],
+            "fieldParameters": [
+              {
+                "parameterExpr": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Time Granularity"
+                      }
+                    },
+                    "Property": "Fields"
+                  }
+                },
+                "index": 0,
+                "length": 1,
+                "sortDirection": "Ascending"
+              }
+            ]
+          },
+          "Y": {
+            "projections": [
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Net Revenue"
+                  }
+                },
+                "queryRef": "a42001.Net Revenue"
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
+                  "Property": "YearMonth"
+                }
+              },
+              "direction": "Ascending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "InvoiceActivity": "RevenueTrend",
+        "AltInvoiceTrend": "AltSalesTrend"
+      }
+    },
+    "chart.ranking": {
+      "id": "f0f9619e57eeb2b79732",
+      "slot": "chart.ranking",
+      "query": {
+        "queryState": {
+          "Category": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a1101"
+                      }
+                    },
+                    "Property": "Suchbegriff [101]"
+                  }
+                },
+                "queryRef": "a1101.Suchbegriff [101]",
+                "active": true
+              }
+            ]
+          },
+          "Y": {
+            "projections": [
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Net Revenue"
+                  }
+                },
+                "queryRef": "a42001.Net Revenue"
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "direction": "Descending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "CustomerInvoiceRanking": "RevenueRanking"
+      }
+    },
+    "table.summary": {
+      "id": "48080225a009c7816619",
+      "slot": "table.summary",
+      "query": {
+        "queryState": {
+          "Values": {
+            "projections": [
+              {
+                "field": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a1101"
+                      }
+                    },
+                    "Property": "Suchbegriff [101]"
+                  }
+                },
+                "queryRef": "a1101.Suchbegriff [101]"
+              },
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Invoice Count"
+                  }
+                },
+                "queryRef": "a42001.Invoice Count"
+              },
+              {
+                "field": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "a42001"
+                      }
+                    },
+                    "Property": "Net Revenue"
+                  }
+                },
+                "queryRef": "a42001.Net Revenue"
+              }
+            ]
+          }
+        },
+        "sortDefinition": {
+          "sort": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "a42001"
+                    }
+                  },
+                  "Property": "Net Revenue"
+                }
+              },
+              "direction": "Descending"
+            }
+          ]
+        }
+      },
+      "labels": {
+        "CustomerCounts": "SalesSummary"
+      }
+    }
+  },
+  "legacyMeasureException": {
+    "table": "a42001",
+    "measures": [
+      "Net Revenue",
+      "Invoice Count"
+    ],
+    "reason": "Preserve existing Sales definitions documented in SALES_OVERVIEW.md; migration to _Measures is outside this workflow. No new business calculation."
+  },
+  "limitations": [
+    "Golden Sample component/render approval pending.",
+    "Sales metadata-only captions and native navigation still require all-locale rendering.",
+    "No new reports, report-local measures or customer overrides are created by this first workflow."
+  ]
+}
